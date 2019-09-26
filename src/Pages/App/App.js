@@ -1,6 +1,6 @@
 import React from 'react';
-import {Switch, Route, Link} from 'react-router-dom';
-import './App.css';
+import {Switch, Route} from 'react-router-dom';
+import './App.scss';
 import HomePage from '../HomePage/HomePage';
 import AboutPage from '../AboutPage/AboutPage';
 import ProjectPage from '../ProjectPage/ProjectPage';
@@ -11,19 +11,77 @@ import Footer from '../../Components/Footer/Footer';
 class App extends React.Component {
 
   state = {
-    user: "Meisam Poorzand"
+    theme: null
   }
+
+  handleThemeChange = (theme) => {
+    let newTheme = {};
+    if (theme === "darkTheme") {
+      newTheme = {
+        backgroundColor: "#191A1C",
+        fontColor: "#E2E2E2",
+        borderColor: "#7A7979",
+        linkColor: "#E2E2E2"
+      };
+    }
+    if (theme === "lightTheme") {
+      newTheme = {
+        backgroundColor: "#E2E2E2",
+        fontColor: "#191A1C",
+        borderColor: "#B4B4BC",
+        linkColor: "#191A1C"
+      };
+    }
+
+    localStorage.setItem("theme", theme);
+    document.body.style.backgroundColor = newTheme.backgroundColor;
+    document.body.style.color = newTheme.fontColor;
+    this.setState({theme : newTheme})
+  }
+
 
   componentWillMount () {
     console.log ('1- Component Will Mount...');
-    let user = "Kiana Kiaei";
-    this.setState({user});
+    this.setState({theme: {
+      backgroundColor: "#191A1C",
+      fontColor: "#E2E2E2",
+      borderColor: "#7A7979",
+      linkColor: "#E2E2E2"
+    }})
   }
 
   componentDidMount () {
     console.log ("3- Component Did Mount...");
-    let user = "Tooraj Kiaei";
-    this.setState({user});
+
+    let theme = localStorage.getItem("theme");
+    let savedTheme;
+    if (theme) {
+      if (theme.charAt(0) === '"' && theme.charAt(theme.length -1) === '"')
+        theme = theme.substr(1,theme.length -2);
+      if (theme === "darkTheme")
+        savedTheme = {
+          backgroundColor: "#191A1C",
+          fontColor: "#E2E2E2",
+          borderColor: "#7A7979",
+          linkColor: "#E2E2E2"
+        };
+      if (theme === "lightTheme") 
+        savedTheme = {
+          backgroundColor: "#E2E2E2",
+          fontColor: "#191A1C",
+          borderColor: "#B4B4BC",
+          linkColor: "#191A1C"
+        };
+    } else {
+      savedTheme = {
+        backgroundColor: "#191A1C",
+        fontColor: "#E2E2E2",
+        borderColor: "#7A7979"
+      };
+    }
+    this.setState({theme: savedTheme});
+    document.body.style.backgroundColor = savedTheme.backgroundColor;
+    document.body.style.color = savedTheme.fontColor;
   }
 
   componentDidCatch () {
@@ -37,6 +95,7 @@ class App extends React.Component {
 
   componentWillUpdate () {
     console.log ("Component Will Update...");
+    
   }
 
   componentWillUnmount () {
@@ -46,17 +105,16 @@ class App extends React.Component {
   render () {
     console.log ("2- Render...")
     return (
-      <>
-        <Navbar />
-        
+      <div className="app">
+        <Navbar theme={this.state.theme} handleThemeChange={this.handleThemeChange} />
         <Switch className="App">
-          <Route exact path="/" render={() => <HomePage/>} />
+          <Route exact path="/" render={() => <HomePage />} />
           <Route exact path="/about" render={ () => <AboutPage /> } />
           <Route exact path="/projects" render={ () => <ProjectPage /> } />
           <Route exact path="/contact" render={ () => <ContactPage /> } />
         </Switch>
-        <Footer />
-      </>
+        <Footer theme={this.state.theme} />
+      </div>
     );  
   }
   
