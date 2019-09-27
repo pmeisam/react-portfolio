@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import './App.scss';
 import HomePage from '../HomePage/HomePage';
-import AboutPage from '../AboutPage/AboutPage';
+import SkillsPage from '../SkillsPage/SkillsPage';
 import ProjectPage from '../ProjectPage/ProjectPage';
 import ContactPage from '../ContactPage/ContactPage';
 import Navbar from '../../Components/Navbar/Navbar';
@@ -109,7 +109,7 @@ class App extends React.Component {
         <Navbar theme={this.state.theme} handleThemeChange={this.handleThemeChange} />
         <Switch className="App">
           <Route exact path="/" render={() => <HomePage />} />
-          <Route exact path="/about" render={ () => <AboutPage /> } />
+          <Route exact path="/skills" render={ () => <SkillsPage /> } />
           <Route exact path="/projects" render={ () => <ProjectPage /> } />
           <Route exact path="/contact" render={ () => <ContactPage /> } />
         </Switch>
