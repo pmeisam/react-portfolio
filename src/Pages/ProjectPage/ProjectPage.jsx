@@ -1,5 +1,5 @@
-import React, {Component, Fragment} from 'react';
-import Fade from 'react-reveal/Fade';
+import React, {Component} from 'react';
+import Fade from 'react-reveal/Zoom';
 import styled from 'styled-components';
 import Minesweeper from '../../Components/Minesweeper/Minesweeper';
 import Memesagram from '../../Components/Memesagram/Memesagram';
@@ -23,16 +23,16 @@ class ProjectPage extends Component {
             
         <>
             <Project>
-                <Fade left><DevSpot /></Fade>
+                <Fade center><DevSpot /></Fade>
             </Project>
             <Project>
-                <Fade right><Triplaner /></Fade>
+                <Fade center><Triplaner /></Fade>
             </Project>
             <Project>
-                <Fade left><Memesagram /></Fade>
+                <Fade center><Memesagram /></Fade>
             </Project>
             <Project>
-                <Fade right><Minesweeper /><img src="https://cdn-ds.com/media/dfmodels/2506/AdditionalImage-73096.jpg" alt=""/></Fade>
+                <Fade center><Minesweeper /></Fade>
             </Project>
         </>
    
