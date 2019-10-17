@@ -1,10 +1,18 @@
 i {
-   font-size: 70px;
+   font-size: 140px;
+   text-align: center;
 }
 .skillSearch {
     font-size: 1px;
     color: transparent;
 }
 .skills {
-    
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto auto;
+    width: 60vw;
+    height: 100vh;
 }
