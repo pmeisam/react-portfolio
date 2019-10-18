@@ -30,7 +30,7 @@ class HomePage extends Component {
             animation: 3s ${keyframes`${tada}`} 1;
             & > h1 {
                 font-family: 'Saira Stencil One', cursive;
-                font-size: 70px;
+                font-size: 4vw;
             }
 
         `;
@@ -43,7 +43,7 @@ class HomePage extends Component {
             justify-content: center;
             & > h1 {
                 font-family: 'Saira Stencil One', cursive;
-                font-size: 50px;
+                font-size: 2vw;
             }
         }
         `;

@@ -37,22 +37,17 @@ class SkillsPage extends Component {
                         <i className="devicon-cplusplus-plain colored skillSize"></i>
                         <span className="skillSearch">Cplusplus</span>
                         <i className="devicon-github-plain-wordmark skillSize"></i>
-                       
+                        <span className="skillSearch">git</span>
                         <i className="devicon-html5-plain-wordmark colored skillSize"></i>
                         <span className="skillSearch">HTML5</span>
                         <i className="devicon-css3-plain-wordmark colored skillSize"></i>
                         <span className="skillSearch">CSS</span>
-                        
                         <i className="devicon-java-plain-wordmark colored skillSizeplain"></i>
                         <span className="skillSearch">java</span>
                         <i className="devicon-sass-original colored skillSize"></i>
                         <span className="skillSearch">sass scss</span>
-                        
                         <i className="devicon-wordpress-plain-wordmark colored skillSize"></i>
                         <span className="skillSearch">wordpress</span>
-                        <i class="fas fa-code"></i>
-                        <br/>
-                        <i class="fas fa-book-open"></i>
                         <i className="devicon-amazonwebservices-plain-wordmark colored skillSize"></i>
                         <span className="skillSearch">Amazon Web Service</span>
                         <i className="devicon-bootstrap-plain-wordmark colored skillSize"></i>
@@ -62,8 +57,6 @@ class SkillsPage extends Component {
                         <span className="skillSearch">git</span>
                         <i className="devicon-heroku-plain-wordmark colored skillSize"></i>
                         <span className="skillSearch">heroku</span>
-                        <br/>
-                        <i class="fas fa-database"></i>
                         <i className="devicon-mysql-plain-wordmark colored skillSize"></i>
                         <span className="skillSearch">mysql</span>
                     </div>

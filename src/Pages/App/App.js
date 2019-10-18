@@ -11,12 +11,13 @@ import Footer from '../../Components/Footer/Footer';
 class App extends React.Component {
 
   state = {
-    theme: null
+    theme: null,
+    isDark: null
   }
 
-  handleThemeChange = (theme) => {
+  handleThemeChange = (isDark) => {
     let newTheme = {};
-    if (theme === "darkTheme") {
+    if (isDark) {
       newTheme = {
         backgroundColor: "#191A1C",
         fontColor: "#E2E2E2",
@@ -24,7 +25,7 @@ class App extends React.Component {
         linkColor: "#E2E2E2"
       };
     }
-    if (theme === "lightTheme") {
+    if (!isDark) {
       newTheme = {
         backgroundColor: "#E2E2E2",
         fontColor: "#191A1C",
@@ -33,10 +34,10 @@ class App extends React.Component {
       };
     }
 
-    localStorage.setItem("theme", theme);
+    localStorage.setItem("theme", isDark);
     document.body.style.backgroundColor = newTheme.backgroundColor;
     document.body.style.color = newTheme.fontColor;
-    this.setState({theme : newTheme})
+    this.setState({theme : newTheme, isDark})
   }
 
 
@@ -53,33 +54,40 @@ class App extends React.Component {
   componentDidMount () {
     console.log ("3- Component Did Mount...");
 
-    let theme = localStorage.getItem("theme");
+    let isDark = localStorage.getItem("theme");
     let savedTheme;
-    if (theme) {
-      if (theme.charAt(0) === '"' && theme.charAt(theme.length -1) === '"')
-        theme = theme.substr(1,theme.length -2);
-      if (theme === "darkTheme")
+    if (isDark) {
+      if (isDark.charAt(0) === '"' && isDark.charAt(isDark.length -1) === '"')
+        isDark = isDark.substr(1,isDark.length -2);
+        console.log(isDark)
+        console.log(typeof isDark)
+      if (isDark === "true"){
+        isDark = true;
         savedTheme = {
           backgroundColor: "#191A1C",
           fontColor: "#E2E2E2",
           borderColor: "#7A7979",
           linkColor: "#E2E2E2"
         };
-      if (theme === "lightTheme") 
+      }
+      if (isDark === "false"){ 
+        isDark = false;
         savedTheme = {
           backgroundColor: "#E2E2E2",
           fontColor: "#191A1C",
           borderColor: "#B4B4BC",
           linkColor: "#191A1C"
         };
+      }
     } else {
       savedTheme = {
         backgroundColor: "#191A1C",
         fontColor: "#E2E2E2",
         borderColor: "#7A7979"
       };
+      isDark = true;
     }
-    this.setState({theme: savedTheme});
+    this.setState({theme: savedTheme, isDark});
     document.body.style.backgroundColor = savedTheme.backgroundColor;
     document.body.style.color = savedTheme.fontColor;
   }
@@ -106,7 +114,7 @@ class App extends React.Component {
     console.log ("2- Render...")
     return (
       <div className="app">
-        <Navbar theme={this.state.theme} handleThemeChange={this.handleThemeChange} />
+        <Navbar isDark={this.state.isDark} handleThemeChange={this.handleThemeChange} theme={this.state.theme} />
         <Switch className="App">
           <Route exact path="/" render={() => <HomePage />} />
           <Route exact path="/skills" render={ () => <SkillsPage /> } />

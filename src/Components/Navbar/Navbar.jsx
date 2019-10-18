@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
+import Switch from '../Switch/Switch';
 
 
 class Navbar extends Component {
@@ -64,9 +65,8 @@ class Navbar extends Component {
                 <NavLink activeClassName="isActive" className="link" to="/projects">PROJECTS</NavLink>
                 <NavLink activeClassName="isActive" className="link" to="/contact">CONTACT ME</NavLink>
                 <div className="themes">
-                    <button className="darkMode" type="submit" onClick={ () => this.props.handleThemeChange("darkTheme")}></button>
-                    <button className="lightMode" type="submit" onClick={ () => this.props.handleThemeChange("lightTheme")}></button>
-                </div>
+                    <Switch className="themes" handleThemeChange={this.props.handleThemeChange} isDark={this.props.isDark} />
+                </div>              
             </NavWrapper>
         )
     }
