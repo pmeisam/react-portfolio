@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Switch from '../Switch/Switch';
+import './Navbar.scss';
 
 
 class Navbar extends Component {
+
+    handleClick = () => {
+        const nav = document.getElementById("myNav");
+        if (nav.className === "navWrapper") {
+            nav.className += " responsive";
+        } else {
+            nav.className = "navWrapper";
+        }
+    }
 
     render () {
         const NavWrapper = styled.nav`
@@ -59,13 +69,17 @@ class Navbar extends Component {
            
         `;
         return (
-            <NavWrapper>
-                <NavLink activeClassName="isActive" exact={true} className="link" to="/">HOME</NavLink>
-                <NavLink activeClassName="isActive" className="link" to="/skills">SKILLS</NavLink>
-                <NavLink activeClassName="isActive" className="link" to="/projects">PROJECTS</NavLink>
-                <NavLink activeClassName="isActive" className="link" to="/contact">CONTACT ME</NavLink>
-                <div className="themes">
+            <NavWrapper className="navWrapper" id="myNav">
+                <NavLink  exact={true} className="link" to="/"> Meisam Poorzand</NavLink>
+                <NavLink activeClassName="isActive" exact={true} className="link response" to="/">HOME</NavLink>
+                <NavLink activeClassName="isActive" className="link response" to="/skills">SKILLS</NavLink>
+                <NavLink activeClassName="isActive" className="link response" to="/projects">PROJECTS</NavLink>
+                <NavLink activeClassName="isActive" className="link response" to="/contact">CONTACT ME</NavLink>
+                <div className="themes response">
                     <Switch className="themes" handleThemeChange={this.props.handleThemeChange} isDark={this.props.isDark} />
+                </div>
+                <div className="icon">
+                    <i className="fas fa-bars" onClick={this.handleClick}></i>
                 </div>              
             </NavWrapper>
         )
