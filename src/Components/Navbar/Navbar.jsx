@@ -2,85 +2,130 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Switch from '../Switch/Switch';
-import './Navbar.scss';
+// import './Navbar.scss';
 
 
 class Navbar extends Component {
 
     handleClick = () => {
         const nav = document.getElementById("myNav");
-        if (nav.className === "navWrapper") {
+        if (nav.className === "links") {
             nav.className += " responsive";
         } else {
-            nav.className = "navWrapper";
+            nav.className = "links";
         }
     }
 
     render () {
         const NavWrapper = styled.nav`
-            width: 100%;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            // border-bottom: 1px solid ${this.props.theme.borderColor};
-            & > .link {
-                color: ${this.props.theme.linkColor};
-                font-size: 25px;
-                text-decoration: none;
-                font-weight: 800;
-                margin: 40px;
-                padding: 20px;
+            .navWrapper {
+                display: none;
             }
-            & > .isActive {
-                border-bottom: 4px solid ${this.props.theme.linkColor};
-            }
-            & > .themes {
-                background-color: transparent;
-                padding: 10px;
-                margin-left: auto;
-                min-height: 50px;
-                & > .darkMode {
-                    // background-color: #191A1C;
-                    background-color: black;
-                    width: 50px;
-                    height: 50px;
-                    border-bottom-left-radius: 10px;
-                    border: none;
+            .links {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                & > .link {
+                    color: ${this.props.theme.linkColor};
+                    font-size: 25px;
+                    text-decoration: none;
+                    font-weight: 800;
                 }
-                & > .lightMode {
-                    // background-color: #E2E2E2;
-                    background-color: white;
-                    width: 50px;
-                    height: 50px;
-                    border-bottom-left-radius: 10px;
-                    border: none;
-                }
-                & > .darkMode:hover {
-                    // width: 50px;
-                    height: 70px;
-                    content: "Dark Mode";
-                }
-                & > .lightMode:hover {
-                    // width: 50px;
-                    height: 70px;
-                    content: "Light Mode";
+                & > .isActive {
+                    border-bottom: 4px solid ${this.props.theme.linkColor};
                 }
             }
+
+            
+          
            
+            @media screen and (max-width: 600px) {
+                .links {
+                    & > .link {
+                        display: none;
+                    }
+                    & > .themes {
+                        display: none;
+                    }
+                }
+                .navWrapper {
+                    
+                    max-width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    min-height: 50px;
+                    justify-content: space-between;
+                                         
+                    & > .icon {
+                        display: inline;
+                        // margin-left: auto;
+                        margin-top: 10px;
+                        margin-right: 10px;
+                        float: right;
+                        & > .fa-bars {
+                            font-size: 40px;
+                        }
+                    }
+                    
+                    & > .logo {
+                        color: ${this.props.theme.linkColor};
+                        font-size: 25px;
+                        text-decoration: none;
+                        font-weight: 800;
+                    }
+                }
+                .responsive {
+                    position: relative;
+                    margin: 20px;
+                    & > .icon {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                    & > .link {
+                        display: block;
+                        text-align: left;
+                        color: ${this.props.theme.linkColor};
+                        font-size: 22px;
+                        text-decoration: none;
+                        font-weight: 800;
+                    }
+                    & > .themes {
+                        display: block;
+                    }
+                    & > .isActive {
+                        // border-bottom: 4px solid ${this.props.theme.linkColor};
+                        background-color: ${this.props.theme.linkColor};
+                        color: ${this.props.theme.backgroundColor};
+                    }
+                    
+                }
+            }
+            
+           
+
         `;
+        
+        
         return (
-            <NavWrapper className="navWrapper" id="myNav">
-                <NavLink  exact={true} className="link" to="/"> Meisam Poorzand</NavLink>
-                <NavLink activeClassName="isActive" exact={true} className="link response" to="/">HOME</NavLink>
-                <NavLink activeClassName="isActive" className="link response" to="/skills">SKILLS</NavLink>
-                <NavLink activeClassName="isActive" className="link response" to="/projects">PROJECTS</NavLink>
-                <NavLink activeClassName="isActive" className="link response" to="/contact">CONTACT ME</NavLink>
-                <div className="themes response">
-                    <Switch className="themes" handleThemeChange={this.props.handleThemeChange} isDark={this.props.isDark} />
+            <NavWrapper >
+                <div className="navWrapper" >
+                    <NavLink  exact={true} className="logo" to="/"> Meisam Poorzand</NavLink>
+                    <div className="icon">
+                        <i className="fas fa-bars" onClick={this.handleClick}></i>
+                    </div> 
+                </div>  
+                <div className="links" id="myNav">
+                    <NavLink activeClassName="isActive" exact={true} className="link" to="/">HOME</NavLink>
+                    <NavLink activeClassName="isActive" className="link" to="/skills">SKILLS</NavLink>
+                    <NavLink activeClassName="isActive" className="link" to="/projects">PROJECTS</NavLink>
+                    <NavLink activeClassName="isActive" className="link" to="/contact">CONTACT ME</NavLink>
+                    <div className="themes">
+                        <Switch className="themes" handleThemeChange={this.props.handleThemeChange} isDark={this.props.isDark} />
+                    </div>
                 </div>
-                <div className="icon">
-                    <i className="fas fa-bars" onClick={this.handleClick}></i>
-                </div>              
             </NavWrapper>
         )
     }
