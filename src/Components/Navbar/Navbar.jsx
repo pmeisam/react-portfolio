@@ -77,6 +77,8 @@ class Navbar extends Component {
                     }
                 }
                 .responsive {
+                    display: flex;
+                    flex-direction: column;
                     position: relative;
                     margin: 20px;
                     & > .icon {
