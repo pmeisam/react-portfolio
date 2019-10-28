@@ -23,3 +23,6 @@ class ContactPage extends Component {
 }
 
 export default ContactPage;
+
+// jacekjeznach.com/skills/
+// caferati.me
