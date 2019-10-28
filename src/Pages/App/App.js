@@ -21,7 +21,7 @@ class App extends React.Component {
       newTheme = {
         backgroundColor: "#191A1C",
         fontColor: "#E2E2E2",
-        borderColor: "#7A7979",
+        borderColor: "#ff0044",
         linkColor: "#E2E2E2"
       };
     }
@@ -29,7 +29,7 @@ class App extends React.Component {
       newTheme = {
         backgroundColor: "#E2E2E2",
         fontColor: "#191A1C",
-        borderColor: "#B4B4BC",
+        borderColor: "#ff0044",
         linkColor: "#191A1C"
       };
     }
@@ -59,14 +59,13 @@ class App extends React.Component {
     if (isDark) {
       if (isDark.charAt(0) === '"' && isDark.charAt(isDark.length -1) === '"')
         isDark = isDark.substr(1,isDark.length -2);
-        console.log(isDark)
-        console.log(typeof isDark)
+      
       if (isDark === "true"){
         isDark = true;
         savedTheme = {
           backgroundColor: "#191A1C",
           fontColor: "#E2E2E2",
-          borderColor: "#7A7979",
+          borderColor: "#ff0044",
           linkColor: "#E2E2E2"
         };
       }
@@ -75,7 +74,7 @@ class App extends React.Component {
         savedTheme = {
           backgroundColor: "#E2E2E2",
           fontColor: "#191A1C",
-          borderColor: "#B4B4BC",
+          borderColor: "#ff0044",
           linkColor: "#191A1C"
         };
       }
@@ -83,7 +82,8 @@ class App extends React.Component {
       savedTheme = {
         backgroundColor: "#191A1C",
         fontColor: "#E2E2E2",
-        borderColor: "#7A7979"
+        borderColor: "#ff0044",
+        linkColor: "#E2E2E2"
       };
       isDark = true;
     }
@@ -118,7 +118,7 @@ class App extends React.Component {
         <Switch className="App">
           <Route exact path="/" render={() => <HomePage />} />
           <Route exact path="/skills" render={ () => <SkillsPage /> } />
-          <Route exact path="/projects" render={ () => <ProjectPage /> } />
+          <Route exact path="/projects" render={ () => <ProjectPage theme={this.state.theme}/> } />
           <Route exact path="/contact" render={ () => <ContactPage /> } />
         </Switch>
         <Footer theme={this.state.theme} />

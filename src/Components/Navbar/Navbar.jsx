@@ -18,6 +18,13 @@ class Navbar extends Component {
 
     render () {
         const NavWrapper = styled.nav`
+            position: fixed;
+            z-index: 999;
+            background-color: ${this.props.theme.backgroundColor};
+            padding: 10px;
+            width: 100%;
+            height: 60px;
+            top: 0;
             .navWrapper {
                 display: none;
             }
@@ -31,9 +38,10 @@ class Navbar extends Component {
                     font-size: 25px;
                     text-decoration: none;
                     font-weight: 800;
+                    padding: 0 20px 10px 20px;
                 }
                 & > .isActive {
-                    border-bottom: 4px solid ${this.props.theme.linkColor};
+                    border-bottom: 4px solid ${this.props.theme.borderColor};
                 }
             }
 
@@ -120,7 +128,7 @@ class Navbar extends Component {
                     </div> 
                 </div>  
                 <div className="links" id="myNav">
-                    <NavLink activeClassName="isActive" exact={true} className="link" to="/">HOME</NavLink>
+                    <NavLink activeClassName="isActive" className="link" to="/" exact={true}>HOME</NavLink>
                     <NavLink activeClassName="isActive" className="link" to="/skills">SKILLS</NavLink>
                     <NavLink activeClassName="isActive" className="link" to="/projects">PROJECTS</NavLink>
                     <NavLink activeClassName="isActive" className="link" to="/contact">CONTACT ME</NavLink>

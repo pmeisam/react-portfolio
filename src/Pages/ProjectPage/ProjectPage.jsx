@@ -23,16 +23,16 @@ class ProjectPage extends Component {
             
         <>
             <Project>
-                <Fade center><DevSpot /></Fade>
+                <Fade center><DevSpot theme={this.props.theme} /></Fade>
             </Project>
             <Project>
-                <Fade center><Triplaner /></Fade>
+                <Fade center><Triplaner theme={this.props.theme} /></Fade>
             </Project>
             <Project>
-                <Fade center><Memesagram /></Fade>
+                <Fade center><Memesagram theme={this.props.theme} /></Fade>
             </Project>
             <Project>
-                <Fade center><Minesweeper /></Fade>
+                <Fade center><Minesweeper theme={this.props.theme} /></Fade>
             </Project>
         </>
    

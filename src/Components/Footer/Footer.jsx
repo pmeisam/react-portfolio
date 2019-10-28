@@ -12,6 +12,7 @@ class Footer extends Component {
             width: 100%;
             text-align: center;
             border-top: 1px solid ${this.props.theme.borderColor};
+            background-color: ${this.props.theme.backgroundColor};
         `;
         return (
             <FooterWrapper>

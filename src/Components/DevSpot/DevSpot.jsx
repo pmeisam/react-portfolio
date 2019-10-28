@@ -1,46 +1,73 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const Project = styled.div`
-    & > img {
-        width: 870px;
-        height: 480px;
-    }
-`;
+
 
 class DevSpot extends Component {
 
     render () {
+        const Project = styled.div`
+            display: flex;
+            width: 60%;
+            margin: 0 auto;
+            & > img {
+                width: 870px;
+                height: 480px;
+            }
+            & > div {
+                
+                width: 40%;
+                
+                & > .techs {
+                    display: flex;
+                    width: 50%;
+                    margin: 0 auto;
+                    text-align: center;
+
+                    & > div {
+                        & > p {
+                            background-color: ${this.props.theme.fontColor};
+                            color: ${this.props.theme.backgroundColor};
+                            padding: 5px 5px;
+                            width: 140px;
+                            margin 10px;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+            i {
+                font-size: 40px;
+                padding: 30px;
+            }
+        `;
         return (
             <Project>
                 <img src="images/devSpot1.png" alt=""/>
                 <div>
-                    <h2>DEVSPOT</h2>
+                    <h2>devSpot</h2>
                     <p>devSpot is a web app where developers can share their projects through iframes. In addition, users can chat with each other through the app. The posted projects are live, meaning users can interact with them as they would if they were to visit the project.</p>
-                </div>
-                <div>
-                    React.js
-
-                    Node.js
-
-                    Express.js
-
-                    MongoDB
-
-                    Heroku
-
-                    Socket.io
-
-                    Mongoose
-
-                    Token Based Auth
-
-                    Material UI
-
-                    Bootstrap cdn
-                </div>
-                <div>
-                    link to github and project
+                    <div className="techs">
+                        <div>
+                            <p>React.js</p>
+                            <p>Node.js</p>
+                            <p>Express.js</p>
+                            <p>MongoDB</p>
+                            <p>Heroku</p>
+                        </div>
+                        <div>
+                            <p>Socket.io</p>
+                            <p>Mongoose</p>
+                            <p>Token Based Auth</p>
+                            <p>Material UI</p>
+                            <p>Bootstrap</p>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <i class="fas fa-link"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
                 </div>
             </Project>
         )
