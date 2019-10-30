@@ -20,7 +20,7 @@ class Minesweeper extends Component {
                 & > .techs {
                     display: flex;
                     width: 50%;
-                    margin: 0 auto;
+                    // margin: 0 auto;
                     text-align: center;
 
                     & > div {

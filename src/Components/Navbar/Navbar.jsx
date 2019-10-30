@@ -7,6 +7,42 @@ import Switch from '../Switch/Switch';
 
 class Navbar extends Component {
 
+    state = {home: null, skills: null, projects: null, contact: null};
+
+    onMouseEnterHandler = (icon) => {
+        switch(icon) {
+            case "home":
+                    this.setState({home: "HOME"});
+                    break;
+            case "skills":
+                    this.setState({skills: "SKILLS"})
+                    break;
+            case "projects":
+                    this.setState({projects: "PROJECTS"});
+                    break;
+            case "contact":
+                    this.setState({contact: "CONTACT ME"});
+                    break;
+        }
+    }
+
+    onMouseLeaveHandler = (text) => {
+        switch(text) {
+            case "home":
+                    this.setState({home: <i class="fas fa-building"></i>});
+                    break;
+            case "skills":
+                    this.setState({skills: <i class="fas fa-code"></i>})
+                    break;
+            case "projects":
+                    this.setState({projects: <i class="fas fa-project-diagram"></i>});
+                    break;
+            case "contact":
+                    this.setState({contact: <i class="fas fa-user"></i>});
+                    break;
+        }
+    }
+
     handleClick = () => {
         const nav = document.getElementById("myNav");
         if (nav.className === "links") {
@@ -16,32 +52,52 @@ class Navbar extends Component {
         }
     }
 
+    componentDidMount() {
+        let home = <i class="far fa-building"></i>;
+        let skills = <i class="fas fa-code"></i>;
+        let projects = <i class="fas fa-project-diagram"></i>;
+        let contact = <i class="far fa-user"></i>;
+        this.setState({home, skills, projects, contact});
+    }
+
     render () {
         const NavWrapper = styled.nav`
+            i {
+                font-size: 30px;
+            }
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
             position: fixed;
             z-index: 999;
             background-color: ${this.props.theme.backgroundColor};
             padding: 10px;
-            width: 100%;
-            height: 60px;
+            width: 80px;
+            // height: 60px;
             top: 0;
             .navWrapper {
                 display: none;
             }
             .links {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: space-around;
                 align-items: center;
+                height: 80vh;
+                margin: auto 0;
                 & > .link {
                     color: ${this.props.theme.linkColor};
-                    font-size: 25px;
+                    font-size: 15px;
                     text-decoration: none;
-                    font-weight: 800;
-                    padding: 0 20px 10px 20px;
+                    // font-weight: 800;
+                    // padding: 0 20px 10px 20px;
+                }
+                & > .link:hover {
+                    color: #f04;
                 }
                 & > .isActive {
-                    border-bottom: 4px solid ${this.props.theme.borderColor};
+                    color: #f04;
+                    // border-bottom: 4px solid ${this.props.theme.borderColor};
                 }
             }
 
@@ -58,14 +114,12 @@ class Navbar extends Component {
                     }
                 }
                 .navWrapper {
-                    
-                    max-width: 100%;
+                    width: 100vw;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                     min-height: 50px;
-                    justify-content: space-between;
-                                         
+                    justify-content: space-around;            
                     & > .icon {
                         display: inline;
                         // margin-left: auto;
@@ -86,16 +140,18 @@ class Navbar extends Component {
                 }
                 .responsive {
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
                     position: relative;
-                    margin: 20px;
+                    height: 40px;
+                    width: 100vw;
+                    margin: 0;
                     & > .icon {
                         position: absolute;
                         right: 0;
                         top: 0;
                     }
                     & > .link {
-                        display: block;
+                        display: inline;
                         text-align: left;
                         color: ${this.props.theme.linkColor};
                         font-size: 22px;
@@ -106,16 +162,11 @@ class Navbar extends Component {
                         display: block;
                     }
                     & > .isActive {
-                        // border-bottom: 4px solid ${this.props.theme.linkColor};
-                        background-color: ${this.props.theme.linkColor};
-                        color: ${this.props.theme.backgroundColor};
+                        color: #f04;
                     }
                     
                 }
             }
-            
-           
-
         `;
         
         
@@ -128,10 +179,10 @@ class Navbar extends Component {
                     </div> 
                 </div>  
                 <div className="links" id="myNav">
-                    <NavLink activeClassName="isActive" className="link" to="/" exact={true}>HOME</NavLink>
-                    <NavLink activeClassName="isActive" className="link" to="/skills">SKILLS</NavLink>
-                    <NavLink activeClassName="isActive" className="link" to="/projects">PROJECTS</NavLink>
-                    <NavLink activeClassName="isActive" className="link" to="/contact">CONTACT ME</NavLink>
+                    <NavLink activeClassName="isActive" className="link" to="/" exact={true} onMouseEnter={() => this.onMouseEnterHandler("home")} onMouseLeave={() => this.onMouseLeaveHandler("home")} >{this.state.home}</NavLink>
+                    <NavLink activeClassName="isActive" className="link" to="/skills" onMouseEnter={() => this.onMouseEnterHandler("skills")} onMouseLeave={() => this.onMouseLeaveHandler("skills")} >{this.state.skills}</NavLink>
+                    <NavLink activeClassName="isActive" className="link" to="/projects" onMouseEnter={() => this.onMouseEnterHandler("projects")} onMouseLeave={() => this.onMouseLeaveHandler("projects")} >{this.state.projects}</NavLink>
+                    <NavLink activeClassName="isActive" className="link" to="/contact" onMouseEnter={() => this.onMouseEnterHandler("contact")} onMouseLeave={() => this.onMouseLeaveHandler("contact")} >{this.state.contact}</NavLink>
                     <div className="themes">
                         <Switch className="themes" handleThemeChange={this.props.handleThemeChange} isDark={this.props.isDark} />
                     </div>
