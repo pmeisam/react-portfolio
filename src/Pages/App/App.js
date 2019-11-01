@@ -114,7 +114,7 @@ class App extends React.Component {
     console.log ("2- Render...")
     return (
       <div className="app">
-        <Navbar isDark={this.state.isDark} handleThemeChange={this.handleThemeChange} theme={this.state.theme} />
+        <Navbar className="nav" isDark={this.state.isDark} handleThemeChange={this.handleThemeChange} theme={this.state.theme} />
         <Switch className="App">
           <Route exact path="/" render={() => <HomePage />} />
           <Route exact path="/skills" render={ () => <SkillsPage /> } />

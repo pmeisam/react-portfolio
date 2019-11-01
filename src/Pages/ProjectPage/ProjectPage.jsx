@@ -5,7 +5,10 @@ import Minesweeper from '../../Components/Minesweeper/Minesweeper';
 import Memesagram from '../../Components/Memesagram/Memesagram';
 import Triplaner from '../../Components/Triplaner/Triplaner';
 import DevSpot from '../../Components/DevSpot/DevSpot';
-
+const Wrapper = styled.div`
+            display: flex;
+            flex-direction: column;
+`;
 const Project = styled.div`
             width: 100%;
             height: 100vh;
@@ -21,7 +24,7 @@ class ProjectPage extends Component {
         
         return (
             
-        <>
+        <Wrapper>
             <Project>
                 <Fade center><DevSpot theme={this.props.theme} /></Fade>
             </Project>
@@ -34,7 +37,7 @@ class ProjectPage extends Component {
             <Project>
                 <Fade center><Minesweeper theme={this.props.theme} /></Fade>
             </Project>
-        </>
+        </Wrapper>
    
         )
     }

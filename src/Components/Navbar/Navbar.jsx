@@ -66,23 +66,20 @@ class Navbar extends Component {
 
     render () {
         const NavWrapper = styled.nav`
+            
             i {
                 font-size: 30px;
             }
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            position: fixed;
-            z-index: 999;
-            background-color: ${this.props.theme.backgroundColor};
-            padding: 10px;
-            width: 80px;
-            // height: 60px;
-            top: 0;
+            
             .navWrapper {
                 display: none;
             }
             .links {
+                background-color: red;
+                width: 70px;
+                min-height: 100vh;
+                position: fixed;
+                background-color: ${this.props.theme.backgroundColor};
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
@@ -109,24 +106,18 @@ class Navbar extends Component {
           
            
             @media screen and (max-width: 600px) {
+                
                 .links {
-                    & > .link {
-                        display: none;
-                    }
-                    & > .themes {
-                        display: none;
-                    }
+                    display: none;
                 }
                 .navWrapper {
-                    width: 100vw;
+                    max-height: 30px;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
-                    min-height: 50px;
                     justify-content: space-around;            
                     & > .icon {
                         display: inline;
-                        // margin-left: auto;
                         margin-top: 10px;
                         margin-right: 10px;
                         float: right;
@@ -145,15 +136,18 @@ class Navbar extends Component {
                 .responsive {
                     display: flex;
                     flex-direction: row;
-                    position: relative;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    margin-top: 45px;
+                    // position: relative;
                     height: 40px;
                     width: 100vw;
-                    margin: 0;
-                    & > .icon {
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-                    }
+                    // margin: 0;
+                    // & > .icon {
+                    //     position: absolute;
+                    //     right: 0;
+                    //     top: 0;
+                    // }
                     & > .link {
                         display: inline;
                         text-align: left;
@@ -164,11 +158,11 @@ class Navbar extends Component {
                     }
                     & > .themes {
                         display: block;
+                        margin-top: -16px;
                     }
                     & > .isActive {
                         color: #f04;
                     }
-                    
                 }
             }
         `;

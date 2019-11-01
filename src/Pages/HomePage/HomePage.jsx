@@ -32,6 +32,11 @@ class HomePage extends Component {
                 font-family: 'Saira Stencil One', cursive;
                 font-size: 4vw;
             }
+            @media screen and (max-width: 600px) {
+                & > h1 {
+                    font-size: 26px;
+                }
+            }
 
         `;
         const Intro = styled.div`
@@ -45,6 +50,12 @@ class HomePage extends Component {
                 font-family: 'Saira Stencil One', cursive;
                 font-size: 2vw;
             }
+            @media screen and (max-width: 600px) {
+                & > h1 {
+                    font-size: 17px;
+                }
+            }
+
         }
         `;
         return (
