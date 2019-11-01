@@ -23,6 +23,8 @@ class Navbar extends Component {
             case "contact":
                     this.setState({contact: "CONTACT ME"});
                     break;
+            default:
+                break;
         }
     }
 
@@ -39,6 +41,8 @@ class Navbar extends Component {
                     break;
             case "contact":
                     this.setState({contact: <i class="fas fa-user"></i>});
+                    break;
+            default: 
                     break;
         }
     }
