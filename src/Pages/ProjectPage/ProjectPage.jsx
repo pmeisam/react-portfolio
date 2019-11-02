@@ -23,22 +23,20 @@ class ProjectPage extends Component {
     render () {
         
         return (
-            
-        <Wrapper>
-            <Project>
-                <Fade center><DevSpot theme={this.props.theme} /></Fade>
-            </Project>
-            <Project>
-                <Fade center><Triplaner theme={this.props.theme} /></Fade>
-            </Project>
-            <Project>
-                <Fade center><Memesagram theme={this.props.theme} /></Fade>
-            </Project>
-            <Project>
-                <Fade center><Minesweeper theme={this.props.theme} /></Fade>
-            </Project>
-        </Wrapper>
-   
+            <Wrapper>
+                <Project>
+                    <Fade center><DevSpot theme={this.props.theme} /></Fade>
+                </Project>
+                <Project>
+                    <Fade center><Triplaner theme={this.props.theme} /></Fade>
+                </Project>
+                <Project>
+                    <Fade center><Memesagram theme={this.props.theme} /></Fade>
+                </Project>
+                <Project>
+                    <Fade center><Minesweeper theme={this.props.theme} /></Fade>
+                </Project>
+            </Wrapper>
         )
     }
 }

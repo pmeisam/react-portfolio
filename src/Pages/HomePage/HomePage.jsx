@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled, {keyframes} from 'styled-components';
 import { tada } from 'react-animations';
+import Tada from 'react-reveal/Tada';
 import './HomePage.scss';
 
 class HomePage extends Component {
@@ -21,10 +22,17 @@ class HomePage extends Component {
         this.state.bio.split("").forEach( (letter, idx) => {
             setTimeout( () => {
                 this.setState(state => ({ theText: state.theText + letter}));
-            }, 20 * idx);
-        })
+            }, 50 * idx);
+        });
+        // setInterval( () => {
+        //     this.setState(state => ({
+        //         blinker: !state.blinker
+        //     }));
+        //     console.log(this.state.blinker)
+        // }, 300);
+       
     }
-    
+
     render () {
         const SlideIn = styled.div`
             animation: 3s ${keyframes`${tada}`} 1;
@@ -62,7 +70,9 @@ class HomePage extends Component {
 
             <Intro>
                 <SlideIn>
+                {/* <Tada> */}
                     <h1>{this.state.intro}</h1>
+                    {/* </Tada> */}
                 </SlideIn>
                 <h1>{this.state.theText}</h1>
             </Intro>

@@ -17,3 +17,9 @@ i {
     height: 90vh;
     // margin-top: 10vh;
 }
+
+@media screen and (max-width: 600px) {
+    i {
+        font-size: 10vw;
+    }
+}
