@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled, {keyframes} from 'styled-components';
 import { tada } from 'react-animations';
-import Tada from 'react-reveal/Tada';
+// import Tada from 'react-reveal/Tada';
 import './HomePage.scss';
 
 class HomePage extends Component {
