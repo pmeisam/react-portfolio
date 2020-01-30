@@ -31,7 +31,7 @@ class Navbar extends Component {
     onMouseLeaveHandler = (text) => {
         switch(text) {
             case "home":
-                    this.setState({home: <i class="fas fa-building"></i>});
+                    this.setState({home: <i class="fas fa-home"></i>});
                     break;
             case "skills":
                     this.setState({skills: <i class="fas fa-code"></i>})
@@ -57,10 +57,10 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
-        let home = <i class="far fa-building"></i>;
+        let home = <i class="fas fa-home"></i>;
         let skills = <i class="fas fa-code"></i>;
         let projects = <i class="fas fa-project-diagram"></i>;
-        let contact = <i class="far fa-user"></i>;
+        let contact = <i class="fas fa-user"></i>;
         this.setState({home, skills, projects, contact});
     }
 

@@ -119,7 +119,7 @@ class App extends React.Component {
           <Route exact path="/" render={() => <HomePage />} />
           <Route exact path="/skills" render={ () => <SkillsPage /> } />
           <Route exact path="/projects" render={ () => <ProjectPage theme={this.state.theme}/> } />
-          <Route exact path="/contact" render={ () => <ContactPage /> } />
+          <Route exact path="/contact" render={ () => <ContactPage theme={this.state.theme} /> } />
         </Switch>
         <Footer theme={this.state.theme} />
       </div>

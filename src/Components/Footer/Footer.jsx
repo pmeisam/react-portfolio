@@ -16,7 +16,7 @@ class Footer extends Component {
         return (
             <FooterWrapper>
 
-                <h4>Ⓒ2019 Meisam Poorzand. All rights reserved.</h4>
+                <h4>Ⓒ2020 Meisam Poorzand. All rights reserved.</h4>
 
             </FooterWrapper>
         )
