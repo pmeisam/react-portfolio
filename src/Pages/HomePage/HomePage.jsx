@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import styled, {keyframes} from 'styled-components';
-import { tada } from 'react-animations';
+import { slideInRight } from 'react-animations';
 // import Tada from 'react-reveal/Tada';
 import './HomePage.scss';
+// import slideInLeft from 'react-animations/lib/slide-in-left';
 
 class HomePage extends Component {
     state = {
-        intro: null, bio: null, theText: ""
+        intro: null, bio: null, theText: "", cursor: null
     }
 
     componentWillMount () {
@@ -24,18 +25,18 @@ class HomePage extends Component {
                 this.setState(state => ({ theText: state.theText + letter}));
             }, 50 * idx);
         });
-        // setInterval( () => {
-        //     this.setState(state => ({
-        //         blinker: !state.blinker
-        //     }));
-        //     console.log(this.state.blinker)
-        // }, 300);
-       
+        setInterval(() => {
+            if (this.state.cursor) {
+                this.setState({cursor: false});
+            } else {
+                this.setState({cursor: true});
+            }
+        },300);
     }
 
     render () {
         const SlideIn = styled.div`
-            animation: 3s ${keyframes`${tada}`} 1;
+            // animation: 3s ${keyframes`${slideInRight}`} 1;
             & > h1 {
                 font-family: 'Saira Stencil One', cursive;
                 font-size: 4vw;
@@ -50,7 +51,7 @@ class HomePage extends Component {
         const Intro = styled.div`
             width: 80%;
             margin: 0 auto;
-            height: 90vh;
+            max-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -72,9 +73,13 @@ class HomePage extends Component {
                 <SlideIn>
                 {/* <Tada> */}
                     <h1>{this.state.intro}</h1>
-                    {/* </Tada> */}
+                {/* </Tada> */}
                 </SlideIn>
-                <h1>{this.state.theText}</h1>
+                <h1>
+                    {this.state.theText}
+                    {this.state.cursor ? <span>__</span> : <p></p>}
+                </h1>
+                
             </Intro>
         )
     }
