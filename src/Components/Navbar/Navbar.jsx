@@ -75,8 +75,9 @@ class Navbar extends Component {
                 display: none;
             }
             .links {
+                text-align: center;
                 background-color: red;
-                width: 70px;
+                width: 90px;
                 min-height: 100vh;
                 position: fixed;
                 background-color: ${this.props.theme.backgroundColor};
