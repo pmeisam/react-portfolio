@@ -37,6 +37,7 @@ class HomePage extends Component {
     render () {
         const SlideIn = styled.div`
             // animation: 3s ${keyframes`${slideInRight}`} 1;
+            margin-top: 150px;
             & > h1 {
                 font-family: 'Saira Stencil One', cursive;
                 font-size: 4vw;
