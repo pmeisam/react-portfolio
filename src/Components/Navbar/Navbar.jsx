@@ -12,16 +12,16 @@ class Navbar extends Component {
     onMouseEnterHandler = (icon) => {
         switch(icon) {
             case "home":
-                    this.setState({home: "HOME"});
+                    this.setState({home: <h4>HOME</h4>});
                     break;
             case "skills":
-                    this.setState({skills: "SKILLS"})
+                    this.setState({skills: <h4>SKILLS</h4>})
                     break;
             case "projects":
-                    this.setState({projects: "PROJECTS"});
+                    this.setState({projects: <h4>PROJECTS</h4>});
                     break;
             case "contact":
-                    this.setState({contact: "CONTACT ME"});
+                    this.setState({contact: <h4>CONTACT ME</h4>});
                     break;
             default:
                 break;
