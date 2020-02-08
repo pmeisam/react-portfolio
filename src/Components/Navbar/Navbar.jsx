@@ -31,16 +31,16 @@ class Navbar extends Component {
     onMouseLeaveHandler = (text) => {
         switch(text) {
             case "home":
-                    this.setState({home: <i class="fas fa-home"></i>});
+                    this.setState({home: <i className="fas fa-home"></i>});
                     break;
             case "skills":
-                    this.setState({skills: <i class="fas fa-code"></i>})
+                    this.setState({skills: <i className="fas fa-code"></i>})
                     break;
             case "projects":
-                    this.setState({projects: <i class="fas fa-project-diagram"></i>});
+                    this.setState({projects: <i className="fas fa-project-diagram"></i>});
                     break;
             case "contact":
-                    this.setState({contact: <i class="fas fa-user"></i>});
+                    this.setState({contact: <i className="fas fa-user"></i>});
                     break;
             default: 
                     break;
@@ -57,10 +57,10 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
-        let home = <i class="fas fa-home"></i>;
-        let skills = <i class="fas fa-code"></i>;
-        let projects = <i class="fas fa-project-diagram"></i>;
-        let contact = <i class="fas fa-user"></i>;
+        let home = <i className="fas fa-home"></i>;
+        let skills = <i className="fas fa-code"></i>;
+        let projects = <i className="fas fa-project-diagram"></i>;
+        let contact = <i className="fas fa-user"></i>;
         this.setState({home, skills, projects, contact});
     }
 
@@ -86,21 +86,25 @@ class Navbar extends Component {
                 justify-content: space-around;
                 align-items: center;
                 height: 80vh;
-                margin: auto 0;
-                & > .link {
-                    color: ${this.props.theme.linkColor};
-                    font-size: 15px;
-                    text-decoration: none;
-                    // font-weight: 800;
-                    // padding: 0 20px 10px 20px;
+                // margin: auto 0;
+                &> .divLinks {
+                    & > .link {
+                        color: ${this.props.theme.linkColor};
+                        font-size: 15px;
+                        text-decoration: none;
+                        position: absolute;
+                        left: 30px;
+                    }
+                    & > .link:hover {
+                        color: #f04;
+                        left: 25px;
+                    }
+                    & > .isActive {
+                        color: #f04;
+                        // border-bottom: 4px solid ${this.props.theme.borderColor};
+                    }
                 }
-                & > .link:hover {
-                    color: #f04;
-                }
-                & > .isActive {
-                    color: #f04;
-                    // border-bottom: 4px solid ${this.props.theme.borderColor};
-                }
+               
             }
 
             
@@ -178,10 +182,18 @@ class Navbar extends Component {
                     </div> 
                 </div>  
                 <div className="links" id="myNav">
-                    <NavLink activeClassName="isActive" className="link" to="/" exact={true} onMouseEnter={() => this.onMouseEnterHandler("home")} onMouseLeave={() => this.onMouseLeaveHandler("home")} >{this.state.home}</NavLink>
-                    <NavLink activeClassName="isActive" className="link" to="/skills" onMouseEnter={() => this.onMouseEnterHandler("skills")} onMouseLeave={() => this.onMouseLeaveHandler("skills")} >{this.state.skills}</NavLink>
-                    <NavLink activeClassName="isActive" className="link" to="/projects" onMouseEnter={() => this.onMouseEnterHandler("projects")} onMouseLeave={() => this.onMouseLeaveHandler("projects")} >{this.state.projects}</NavLink>
-                    <NavLink activeClassName="isActive" className="link" to="/contact" onMouseEnter={() => this.onMouseEnterHandler("contact")} onMouseLeave={() => this.onMouseLeaveHandler("contact")} >{this.state.contact}</NavLink>
+                    <div className="divLinks">
+                        <NavLink activeClassName="isActive" className="link" to="/" exact={true} onMouseEnter={() => this.onMouseEnterHandler("home")} onMouseLeave={() => this.onMouseLeaveHandler("home")} >{this.state.home}</NavLink>
+                    </div>
+                    <div  className="divLinks">
+                        <NavLink activeClassName="isActive" className="link" to="/skills" onMouseEnter={() => this.onMouseEnterHandler("skills")} onMouseLeave={() => this.onMouseLeaveHandler("skills")} >{this.state.skills}</NavLink>
+                    </div>
+                    <div  className="divLinks">
+                        <NavLink activeClassName="isActive" className="link" to="/projects" onMouseEnter={() => this.onMouseEnterHandler("projects")} onMouseLeave={() => this.onMouseLeaveHandler("projects")} >{this.state.projects}</NavLink>
+                    </div>
+                    <div  className="divLinks">
+                        <NavLink activeClassName="isActive" className="link" to="/contact" onMouseEnter={() => this.onMouseEnterHandler("contact")} onMouseLeave={() => this.onMouseLeaveHandler("contact")} >{this.state.contact}</NavLink>
+                    </div>
                     <div className="themes">
                         <Switch className="themes" handleThemeChange={this.props.handleThemeChange} isDark={this.props.isDark} />
                     </div>

@@ -60,8 +60,8 @@ class Triplaner extends Component {
                         
                     </div>
                     <div>
-                        <i class="fas fa-link"></i>
-                        <i class="fab fa-github"></i>
+                        <i className="fas fa-link"></i>
+                        <i className="fab fa-github"></i>
                     </div>
                 </div>
                 

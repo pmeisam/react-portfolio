@@ -38,17 +38,17 @@ class ContactPage extends Component {
                     <h4>info@meisam.org</h4>
                 </a>
 
-                <a _blank className="icon" href="https://www.linkedin.com/in/pmeisam"><i class="fab fa-linkedin"></i></a>
+                <a _blank className="icon" href="https://www.linkedin.com/in/pmeisam"><i className="fab fa-linkedin"></i></a>
 
-                <a _blank className="icon" href="https://www.facebook.com/pmeisam"><i class="fab fa-facebook-square"></i></a>
+                <a _blank className="icon" href="https://www.facebook.com/pmeisam"><i className="fab fa-facebook-square"></i></a>
 
-                <a _blank className="icon" href="https://www.twitter.com/pmeisam"><i class="fab fa-twitter-square"></i></a>
+                <a _blank className="icon" href="https://www.twitter.com/pmeisam"><i className="fab fa-twitter-square"></i></a>
 
-                <a _blank className="icon" href="https://www.instagram.com/me.i.sam/"><i class="fab fa-instagram"></i></a>
+                <a _blank className="icon" href="https://www.instagram.com/me.i.sam/"><i className="fab fa-instagram"></i></a>
 
-                <a _blank className="icon" href="https://www.github.com/pmeisam"><i class="fab fa-github"></i></a>
+                <a _blank className="icon" href="https://www.github.com/pmeisam"><i className="fab fa-github"></i></a>
                 
-                <a _blank className="icon" href="mailto: info@meisam.org"><i class="fas fa-envelope-open-text"></i></a>
+                <a _blank className="icon" href="mailto: info@meisam.org"><i className="fas fa-envelope-open-text"></i></a>
             </Contact>
         )
     }
