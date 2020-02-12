@@ -88,16 +88,21 @@ class Navbar extends Component {
                 height: 80vh;
                 // margin: auto 0;
                 &> .divLinks {
+
+                    display: flex;
+                    flex-direction: columnt;
+                    align-items: center;
+                    justify-content: center;
+
                     & > .link {
                         color: ${this.props.theme.linkColor};
                         font-size: 15px;
                         text-decoration: none;
                         position: absolute;
-                        left: 30px;
+                       
                     }
                     & > .link:hover {
                         color: #f04;
-                        left: 25px;
                     }
                     & > .isActive {
                         color: #f04;
