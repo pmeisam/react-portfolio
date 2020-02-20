@@ -116,7 +116,7 @@ class App extends React.Component {
       <div className="app">
         <Navbar className="nav" isDark={this.state.isDark} handleThemeChange={this.handleThemeChange} theme={this.state.theme} />
         <Switch className="App">
-          <Route exact path="/" render={() => <HomePage />} />
+          <Route exact path="/" render={() => <HomePage theme={this.state.theme} />} />
           <Route exact path="/skills" render={ () => <SkillsPage /> } />
           <Route exact path="/projects" render={ () => <ProjectPage theme={this.state.theme}/> } />
           <Route exact path="/contact" render={ () => <ContactPage theme={this.state.theme} /> } />

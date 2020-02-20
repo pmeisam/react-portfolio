@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled, {keyframes} from 'styled-components';
-import { slideInRight } from 'react-animations';
+import { slideInRight, tada } from 'react-animations';
 // import Tada from 'react-reveal/Tada';
 import './HomePage.scss';
 // import slideInLeft from 'react-animations/lib/slide-in-left';
@@ -25,18 +25,19 @@ class HomePage extends Component {
                 this.setState(state => ({ theText: state.theText + letter}));
             }, 50 * idx);
         });
-        setInterval(() => {
-            if (this.state.cursor) {
-                this.setState({cursor: false});
-            } else {
-                this.setState({cursor: true});
-            }
-        },300);
+        // setInterval(() => {
+        //     if (this.state.cursor) {
+        //         this.setState({cursor: false});
+        //     } else {
+        //         this.setState({cursor: true});
+        //     }
+        // },300);
     }
 
     render () {
         const SlideIn = styled.div`
-            // animation: 3s ${keyframes`${slideInRight}`} 1;
+            animation: 3s ${keyframes`${tada}`} 1;
+            animation-delay: 0.5s;
             margin-top: 150px;
             & > h1 {
                 font-family: 'Saira Stencil One', cursive;
@@ -59,6 +60,16 @@ class HomePage extends Component {
             & > h1 {
                 font-family: 'Saira Stencil One', cursive;
                 font-size: 2vw;
+                .blinking{
+                    animation:blinkingText 0.8s infinite;
+                }
+                @keyframes blinkingText{
+                    0%{		color: ${this.props.theme.fontColor};	}
+                    49%{	color: transparent;	}
+                    50%{	color: transparent;	}
+                    99%{	color:transparent;	}
+                    100%{	color: ${this.props.theme.fontColor};	}
+                }
             }
             @media screen and (max-width: 600px) {
                 & > h1 {
@@ -78,7 +89,8 @@ class HomePage extends Component {
                 </SlideIn>
                 <h1>
                     {this.state.theText}
-                    {this.state.cursor ? <span>__</span> : <p></p>}
+                    {/* {this.state.cursor ? <span>__</span> : <p></p>} */}
+                    <span className="blinking">|</span>
                 </h1>
                 
             </Intro>

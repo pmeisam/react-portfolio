@@ -98,8 +98,7 @@ class Navbar extends Component {
                         color: ${this.props.theme.linkColor};
                         font-size: 15px;
                         text-decoration: none;
-                        position: absolute;
-                       
+                        position: absolute; 
                     }
                     & > .link:hover {
                         color: #f04;
