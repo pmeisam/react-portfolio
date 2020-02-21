@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled, {keyframes} from 'styled-components';
-import { slideInRight, tada } from 'react-animations';
+import { tada } from 'react-animations';
 // import Tada from 'react-reveal/Tada';
 import './HomePage.scss';
 // import slideInLeft from 'react-animations/lib/slide-in-left';

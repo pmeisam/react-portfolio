@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
+import { rollIn } from 'react-animations';
+import styled, {keyframes} from 'styled-components';
 
 class ContactPage extends Component {
     
     render () {
         const Contact = styled.div`
+            animation: 2s ${keyframes`${rollIn}`} 1;
             width: 40%;
             margin: 300px auto;
             font-family: 'Saira Stencil One', cursive;
@@ -29,26 +31,27 @@ class ContactPage extends Component {
         `;
         return (
             <Contact>
-                <a className="title" href="https://www.meisam.org">
-                    <h1>MEISAM</h1>
-                    <h1>POORZAND</h1>
-                </a>
+                    <a className="title" href="https://www.meisam.org">
+                        <h1>MEISAM</h1>
+                        <h1>POORZAND</h1>
+                    </a>
+                    
+                    <a className="email" href="mailto: info@meisam.org">
+                        <h4>info@meisam.org</h4>
+                    </a>
 
-                <a className="email" href="mailto: info@meisam.org">
-                    <h4>info@meisam.org</h4>
-                </a>
+                    <a _blank className="icon" href="https://www.linkedin.com/in/pmeisam"><i className="fab fa-linkedin"></i></a>
 
-                <a _blank className="icon" href="https://www.linkedin.com/in/pmeisam"><i className="fab fa-linkedin"></i></a>
+                    <a _blank className="icon" href="https://www.facebook.com/pmeisam"><i className="fab fa-facebook-square"></i></a>
 
-                <a _blank className="icon" href="https://www.facebook.com/pmeisam"><i className="fab fa-facebook-square"></i></a>
+                    <a _blank className="icon" href="https://www.twitter.com/pmeisam"><i className="fab fa-twitter-square"></i></a>
 
-                <a _blank className="icon" href="https://www.twitter.com/pmeisam"><i className="fab fa-twitter-square"></i></a>
+                    <a _blank className="icon" href="https://www.instagram.com/me.i.sam/"><i className="fab fa-instagram"></i></a>
 
-                <a _blank className="icon" href="https://www.instagram.com/me.i.sam/"><i className="fab fa-instagram"></i></a>
-
-                <a _blank className="icon" href="https://www.github.com/pmeisam"><i className="fab fa-github"></i></a>
+                    <a _blank className="icon" href="https://www.github.com/pmeisam"><i className="fab fa-github"></i></a>
+                    
+                    <a _blank className="icon" href="mailto: info@meisam.org"><i className="fas fa-envelope-open-text"></i></a>
                 
-                <a _blank className="icon" href="mailto: info@meisam.org"><i className="fas fa-envelope-open-text"></i></a>
             </Contact>
         )
     }
