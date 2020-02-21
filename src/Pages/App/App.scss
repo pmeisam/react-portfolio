@@ -8,6 +8,33 @@
       position: fixed;
   }
 }
+p::selection {
+    color: red;
+}
+h1::selection {
+    color: red;
+}
+h2::selection {
+    color: red;
+}
+h3::selection {
+    color: red;
+}
+h4::selection {
+    color: red;
+}
+h5::selection {
+    color: red;
+}
+h6::selection {
+    color: red;
+}
+span::selection {
+    color: green;
+}
+img::selection {
+    background-color: red;
+}
 
 @media screen and (max-width: 600px) {
     .app {
