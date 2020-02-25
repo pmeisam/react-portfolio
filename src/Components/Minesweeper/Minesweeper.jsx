@@ -34,6 +34,13 @@ class Minesweeper extends Component {
                         }
                     }
                 }
+                & > .links {
+                    & > a {
+                        & > i {
+                            color: #f04;
+                        }
+                    }
+                }
             }
             i {
                 font-size: 40px;
@@ -92,9 +99,13 @@ class Minesweeper extends Component {
                         </div>
                         
                     </div>
-                    <div>
-                        <i className="fas fa-link"></i>
-                        <i className="fab fa-github"></i>
+                    <div className="links">
+                        <a rel="noopener noreferrer" target="_blank" href="http://www.meisam.org/minesweeper">
+                            <i className="fas fa-link"></i>
+                        </a>
+                        <a rel="noopener noreferrer" target="_blank" href="https://github.com/pmeisam/minesweeper">
+                            <i className="fab fa-github"></i>
+                        </a>
                     </div>
                 </div>
                 
