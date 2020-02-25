@@ -85,7 +85,7 @@ class DevSpot extends Component {
         `;
         return (
             <Project>
-                <img src="images/devSpot1.png" alt=""/>
+                <img src="images/devspot.png" alt=""/>
                 <div>
                     <h2>devSpot</h2>
                     <p>devSpot is a web app where developers can share their projects through iframes. In addition, users can chat with each other through the app. The posted projects are live, meaning users can interact with them as they would if they were to visit the project.</p>
