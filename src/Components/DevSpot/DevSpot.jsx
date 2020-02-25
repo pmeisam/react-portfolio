@@ -35,6 +35,15 @@ class DevSpot extends Component {
                         }
                     }
                 }
+
+                & > .links {
+                    & > a {
+                        & > i {
+                            color: #f04;
+                        }
+                    }
+                }
+
             }
             i {
                 font-size: 40px;
@@ -97,9 +106,13 @@ class DevSpot extends Component {
                         </div>
                         
                     </div>
-                    <div>
-                        <i className="fas fa-link"></i>
-                        <i className="fab fa-github"></i>
+                    <div className="links">
+                        <a rel="noopener noreferrer" target="_blank" href="http://dev-spot.herokuapp.com/">
+                            <i className="fas fa-link"></i>
+                        </a>
+                        <a rel="noopener noreferrer" target="_blank" href="https://github.com/pmeisam/devSpot">
+                            <i className="fab fa-github"></i>
+                        </a>
                     </div>
                 </div>
             </Project>

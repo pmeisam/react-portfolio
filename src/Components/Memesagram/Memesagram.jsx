@@ -34,6 +34,15 @@ class Memesagram extends Component {
                         }
                     }
                 }
+
+                & > .links {
+                    & > a {
+                        & > i {
+                            color: #f04;
+                        }
+                    }
+                }
+
             }
             i {
                 font-size: 40px;
@@ -68,6 +77,8 @@ class Memesagram extends Component {
                         }
 
                     }
+
+                  
                 }
             }
         `;
@@ -90,11 +101,15 @@ class Memesagram extends Component {
                             <p>Passport Authentication</p>
                             <p>Bootstrap</p>
                         </div>
-                        
                     </div>
-                    <div>
-                        <i className="fas fa-link"></i>
-                        <i className="fab fa-github"></i>
+
+                    <div className="links">
+                        <a rel="noopener noreferrer" target="_blank" href="http://memesagram.herokuapp.com/">
+                            <i className="fas fa-link"></i>
+                        </a>
+                        <a rel="noopener noreferrer" target="_blank" href="https://github.com/pmeisam/instagram">
+                            <i className="fab fa-github"></i>
+                        </a>
                     </div>
                 </div>
                 
