@@ -40,6 +40,39 @@ class DevSpot extends Component {
                 font-size: 40px;
                 padding: 30px;
             }
+
+            @media screen and (max-width: 600px) {
+                display: flex;
+                flex-direction: column;
+                margin-top: 150px;
+                width: 100%;
+                justify-content: center;
+                
+                & > img {
+                    width: 90%;
+                    height: 200px;
+                    margin: 0 auto;
+                }
+                
+                & > div {
+                    text-align: center;
+                    width: 80%;
+                    margin: 0 auto;
+
+                    & > .techs {
+                        margin: 0 auto;
+                        width: 90%;
+                        & > div {
+                            & > p {
+                                width: 100px;
+                                font-size: 11px;
+                            }
+                        }
+
+                    }
+                }
+            }
+
         `;
         return (
             <Project>

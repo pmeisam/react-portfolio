@@ -115,76 +115,32 @@ class Navbar extends Component {
           
            
             @media screen and (max-width: 600px) {
-                
-                .links {
-                    display: none;
-                }
-                .navWrapper {
-                    max-height: 30px;
+                & > .links {
+                    position: fixed;
                     display: flex;
                     flex-direction: row;
-                    align-items: center;
-                    justify-content: space-around;            
-                    & > .icon {
-                        display: inline;
-                        margin-top: 10px;
-                        margin-right: 10px;
-                        float: right;
-                        & > .fa-bars {
-                            font-size: 40px;
+                    width: 100%;
+                    height: 50px;
+                    min-height: 50px;
+                    & > .divLinks {
+
+                        & > .link {
+                            & > i{
+                                font-size: 21px;
+                            }
                         }
                     }
-                    
-                    & > .logo {
-                        color: ${this.props.theme.linkColor};
-                        font-size: 25px;
-                        text-decoration: none;
-                        font-weight: 800;
-                    }
-                }
-                .responsive {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: flex-start;
-                    justify-content: space-around;
-                    margin-top: 45px;
-                    // position: relative;
-                    height: 40px;
-                    width: 100vw;
-                    // margin: 0;
-                    // & > .icon {
-                    //     position: absolute;
-                    //     right: 0;
-                    //     top: 0;
-                    // }
-                    & > .link {
-                        display: inline;
-                        text-align: left;
-                        color: ${this.props.theme.linkColor};
-                        font-size: 22px;
-                        text-decoration: none;
-                        font-weight: 800;
-                    }
                     & > .themes {
-                        display: block;
-                        margin-top: -16px;
-                    }
-                    & > .isActive {
-                        color: #f04;
+                        display: none;
                     }
                 }
+               
             }
         `;
         
         
         return (
             <NavWrapper >
-                <div className="navWrapper" >
-                    <NavLink  exact={true} className="logo" to="/"> Meisam Poorzand</NavLink>
-                    <div className="icon">
-                        <i className="fas fa-bars" onClick={this.handleClick}></i>
-                    </div> 
-                </div>  
                 <div className="links" id="myNav">
                     <div className="divLinks">
                         <NavLink activeClassName="isActive" className="link" to="/" exact={true} onMouseEnter={() => this.onMouseEnterHandler("home")} onMouseLeave={() => this.onMouseLeaveHandler("home")} >{this.state.home}</NavLink>

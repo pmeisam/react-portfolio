@@ -40,6 +40,12 @@ img::selection {
     .app {
         display: flex;
         flex-direction: column;
+        
+        & > .nav {
+            height: 50px;
+            width: 100%;
+            position: fixed;
+        }
     }
     
 }

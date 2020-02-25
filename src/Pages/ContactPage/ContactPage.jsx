@@ -10,15 +10,15 @@ class ContactPage extends Component {
             width: 40%;
             margin: 300px auto;
             font-family: 'Saira Stencil One', cursive;
-            .title {
+            & > .title {
                 color: ${this.props.theme.fontColor};
                 text-decoration: none;
                 font-size: 50px;
-                h1 {
+                & > h1 {
                     margin: -75px 0;
                 }
             }
-            .email {
+            & > .email {
                 color: ${this.props.theme.fontColor};
                 text-decoration: none;
                 font-size: 64px;
@@ -27,6 +27,25 @@ class ContactPage extends Component {
                 color: ${this.props.theme.fontColor};
                 font-size: 40px;
                 margin-right: 40px;
+            }
+            
+            @media screen and (max-width: 600px) {
+                margin: 180px auto 0 auto;
+                width: 75%;
+                & > .title {
+                    font-size: 25px;
+                    & > h1 {
+                        margin: -30px 0;
+                    }
+                }
+
+                & > .email {
+                    font-size: 32px;
+                }
+
+                & > .icon {
+                    
+                }
             }
         `;
         return (

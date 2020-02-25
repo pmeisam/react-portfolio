@@ -12,6 +12,12 @@ class Footer extends Component {
             width: 100%;
             text-align: center;
             background-color: ${this.props.theme.backgroundColor};
+
+            @media screen and (max-width: 600px) {
+                & > h4 {
+                    font-size: 10px;
+                }
+            }
         `;
         return (
             <FooterWrapper>
