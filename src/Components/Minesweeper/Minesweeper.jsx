@@ -100,7 +100,7 @@ class Minesweeper extends Component {
                         
                     </div>
                     <div className="links">
-                        <a rel="noopener noreferrer" target="_blank" href="http://www.meisam.org/minesweeper">
+                        <a rel="noopener noreferrer" target="_blank" href="https://pmeisam.github.io/minesweeper/">
                             <i className="fas fa-link"></i>
                         </a>
                         <a rel="noopener noreferrer" target="_blank" href="https://github.com/pmeisam/minesweeper">
