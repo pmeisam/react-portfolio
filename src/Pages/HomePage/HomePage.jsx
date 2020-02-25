@@ -73,7 +73,7 @@ class HomePage extends Component {
             }
             @media screen and (max-width: 600px) {
                 & > h1 {
-                    font-size: 17px;
+                    font-size: 14px;
                 }
             }
 
