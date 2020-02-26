@@ -110,7 +110,7 @@ class DevSpot extends Component {
                         <a rel="noopener noreferrer" target="_blank" href="http://dev-spot.herokuapp.com/">
                             <i className="fas fa-link"></i>
                         </a>
-                        <a rel="noopener noreferrer" target="_blank" href="https://github.com/pmeisam/devSpot">
+                        <a rel="noopener noreferrer" target="_blank" href="http://dev-spot.herokuapp.com/">
                             <i className="fab fa-github"></i>
                         </a>
                     </div>
