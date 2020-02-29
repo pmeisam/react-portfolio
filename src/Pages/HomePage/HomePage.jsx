@@ -23,7 +23,7 @@ class HomePage extends Component {
         this.state.bio.split("").forEach( (letter, idx) => {
             setTimeout( () => {
                 this.setState(state => ({ theText: state.theText + letter}));
-            }, 50 * idx);
+            }, 30 * idx);
         });
         // setInterval(() => {
         //     if (this.state.cursor) {
@@ -35,7 +35,7 @@ class HomePage extends Component {
     }
 
     render () {
-        const SlideIn = styled.div`
+        const Tada = styled.div`
             animation: 3s ${keyframes`${tada}`} 1;
             animation-delay: 0.5s;
             margin-top: 150px;
@@ -44,6 +44,8 @@ class HomePage extends Component {
                 font-size: 4vw;
             }
             @media screen and (max-width: 600px) {
+                
+                margin-top: 20%;
                 & > h1 {
                     font-size: 26px;
                 }
@@ -82,11 +84,11 @@ class HomePage extends Component {
         return (
 
             <Intro>
-                <SlideIn>
+                <Tada>
                 {/* <Tada> */}
                     <h1>{this.state.intro}</h1>
                 {/* </Tada> */}
-                </SlideIn>
+                </Tada>
                 <h1>
                     {this.state.theText}
                     {/* {this.state.cursor ? <span>__</span> : <p></p>} */}
