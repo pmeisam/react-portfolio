@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import slideOutDown from 'react-animations/lib/slide-out-down';
+// import slideOutDown from 'react-animations/lib/slide-out-down';
 
 
 const ProjectComponent = props => {
@@ -57,10 +57,12 @@ const ProjectComponent = props => {
             flex-direction: column;
             width: 100%;
             justify-content: center;
-            
+            align-items: center;
+            height: 90vh;
+            margin-top: 45px;
             & > img {
-                width: 90%;
-                height: 200px;
+                width: 325px;
+                height: 180px;
                 margin: 0 auto;
             }
             
@@ -69,15 +71,19 @@ const ProjectComponent = props => {
                 width: 80%;
                 margin: 0 auto;
 
+                & > h1 {
+                    margin: 5px;
+                }
+
                 & > .techs {
                     margin: 0 auto;
                     width: 90%;
-                    & > div {
-                        & > p {
-                            width: 100px;
-                            font-size: 11px;
-                        }
+                    & > p {
+                        width: 100px;
+                        font-size: 11px;
+                        margin: 3px;
                     }
+
 
                 }
 

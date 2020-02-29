@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import { rollIn } from 'react-animations';
+import { slideInUp } from 'react-animations';
 import styled, {keyframes} from 'styled-components';
+// import slideInUp from 'react-animations/lib/slide-in-up';
 
 class ContactPage extends Component {
     
     render () {
         const Contact = styled.div`
-            animation: 2s ${keyframes`${rollIn}`} 1;
+            animation: 2s ${keyframes`${slideInUp}`} 1;
             width: 40%;
             margin: 300px auto;
             font-family: 'Saira Stencil One', cursive;

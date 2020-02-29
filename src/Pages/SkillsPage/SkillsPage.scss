@@ -1,7 +1,4 @@
-i {
-   font-size: 5vw;
-   text-align: center;
-}
+
 .skillSearch {
     font-size: 1px;
     color: transparent;
@@ -15,11 +12,19 @@ i {
     margin: auto auto;
     width: 75vw;
     height: 90vh;
+    & > i {
+        font-size: 5vw;
+        text-align: center;
+     }
     // margin-top: 10vh;
 }
 
 @media screen and (max-width: 600px) {
-    i {
-        font-size: 10vw;
+    .skills {
+        margin-top: 40px;
+        max-height: 90vh;
+        & > i {
+            font-size: 10vw;
+        }
     }
 }

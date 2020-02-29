@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import Fade from 'react-reveal/Flash';
-import { slideInLeft } from 'react-animations';
-import styled, {keyframes} from 'styled-components';
+import Fade from 'react-reveal/Zoom';
+import styled from 'styled-components';
 import ProjectComponent from '../../Components/Project/Project';
 import { FullPage, Slide } from 'react-full-page';
 
 
 const Project = styled.div`
             
-            width: 100%;
-            height: 100vh;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 40px;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
