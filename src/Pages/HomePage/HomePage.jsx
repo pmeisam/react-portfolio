@@ -42,8 +42,7 @@ class HomePage extends Component {
     const Tada = styled.div`
       animation: 3s ${keyframes`${tada}`} 1;
       animation-delay: 0.5s;
-      width: 70vw;
-
+      margin-top: 150px;
       & > h1 {
         font-family: "Saira Stencil One", cursive;
         font-size: 4vw;
@@ -56,36 +55,34 @@ class HomePage extends Component {
       }
     `;
     const Intro = styled.div`
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      & > h1 {
-          font-family: 'Saira Stencil One', cursive;
-          font-size: 2vw;
-          width: 70%;
-          height: 50vh;
-          margin: 0 auto;
-          .blinking{
-              animation:blinkingText 0.8s infinite;
-          }
-          @keyframes blinkingText{
-              0%{		color: ${this.props.theme.fontColor};	}
-              49%{	color: transparent;	}
-              50%{	color: transparent;	}
-              99%{	color:transparent;	}
-              100%{	color: ${this.props.theme.fontColor};	}
-          }
-      }
-      @media screen and (max-width: 600px) {
-          & > h1 {
-              font-size: 14px;
-          }
-      }
-     }
-    `;
+            width: 80%;
+            margin: 0 auto;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            & > h1 {
+                font-family: 'Saira Stencil One', cursive;
+                font-size: 2vw;
+                .blinking{
+                    animation:blinkingText 0.8s infinite;
+                }
+                @keyframes blinkingText{
+                    0%{		color: ${this.props.theme.fontColor};	}
+                    49%{	color: transparent;	}
+                    50%{	color: transparent;	}
+                    99%{	color:transparent;	}
+                    100%{	color: ${this.props.theme.fontColor};	}
+                }
+            }
+            @media screen and (max-width: 600px) {
+                & > h1 {
+                    font-size: 14px;
+                }
+            }
+
+        }
+        `;
     return (
       <Intro>
         <Tada>
