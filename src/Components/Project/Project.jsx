@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import slideOutDown from 'react-animations/lib/slide-out-down';
-
 
 const ProjectComponent = props => {
 
@@ -9,7 +7,6 @@ const ProjectComponent = props => {
     const Project = styled.div`
         display: flex;
         width: 60%;
-        margin: 0 auto;
         flex-direction: row;
         & > img {
             width: 870px;
@@ -23,22 +20,14 @@ const ProjectComponent = props => {
             width: 40%;
             text-align: center;
             & > .techs {
-                display: grid;
-                text-align: center;
-                grid-template-columns: auto auto;
-
-              
+                
                     & > p {
                         background-color: ${props.theme.fontColor};
                         color: ${props.theme.backgroundColor};
-                        padding: 5px 5px;
-                        width: 180px;
-                        margin 10px 10px 10px 0;
                         border-radius: 5px;
                     }
                 
             }
-
             & > .links {
                 & > a {
                     & > i {
@@ -46,48 +35,48 @@ const ProjectComponent = props => {
                     }
                 }
             }
-
         }
-        i {
-            font-size: 40px;
-            padding: 30px;
-        }
+       
         @media screen and (max-width: 600px) {
             display: flex;
             flex-direction: column;
             width: 100%;
             justify-content: center;
             align-items: center;
-            height: 90vh;
-            margin-top: 45px;
+            height: 100%;
             & > img {
                 width: 325px;
                 height: 180px;
-                margin: 0 auto;
             }
-            
             & > div {
                 text-align: center;
                 width: 80%;
-                margin: 0 auto;
-
                 & > h1 {
-                    margin: 5px;
+                    font-family: "Saira Stencil One", cursive;
+                    margin: 0;
                 }
-
+                & > p {
+                    font-size: 12px;
+                }
                 & > .techs {
-                    margin: 0 auto;
-                    width: 90%;
+                    display: grid;
+                    text-align: center;
+                    grid-template-columns: 120px 120px;
                     & > p {
-                        width: 100px;
-                        font-size: 11px;
-                        margin: 3px;
+                        font-size: 9px;
+                        margin: 2px;
+                        padding: 3px;
                     }
-
-
                 }
-
-                
+                & > .links {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    width: 80%;
+                    & > a {
+                        font-size: 40px;
+                    }
+                }
             }
         }
     `;

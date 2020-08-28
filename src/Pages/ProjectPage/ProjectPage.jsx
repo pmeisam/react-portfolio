@@ -6,9 +6,8 @@ import { FullPage, Slide } from "react-full-page";
 
 const Project = styled.div`
   width: 90%;
-  margin: 0 auto;
-  margin-top: 40px;
-  height: 90vh;
+  margin: 0 auto 0 auto;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,42 +87,48 @@ const ProjectPage = props => {
   });
 
   return (
-    <FullPage>
-      {/* <Wrapper> */}
-      <Slide>
-        <Project>
+    <div>
+     <FullPage>
+       <Slide>
+       <ProjectComponent theme={props.theme} project={devSpot} />
+
+        {/* <Project>
           <Fade center>
             <ProjectComponent theme={props.theme} project={devSpot} />
           </Fade>
-        </Project>
-      </Slide>
+        </Project> */}
+       </Slide>
 
       <Slide>
-        <Project>
+      <ProjectComponent theme={props.theme} project={triplaner} />
+
+        {/* <Project>
           <Fade center>
             <ProjectComponent theme={props.theme} project={triplaner} />
           </Fade>
-        </Project>
+        </Project> */}
       </Slide>
 
       <Slide>
-        <Project>
+      <ProjectComponent theme={props.theme} project={memesagram} />
+
+        {/* <Project>
           <Fade center>
-            <ProjectComponent theme={props.theme} project={memesagram} />
           </Fade>
-        </Project>
+        </Project> */}
       </Slide>
 
       <Slide>
-        <Project>
+      <ProjectComponent theme={props.theme} project={minesweeper} />
+
+        {/* <Project>
           <Fade center>
-            <ProjectComponent theme={props.theme} project={minesweeper} />
           </Fade>
-        </Project>
+        </Project> */}
       </Slide>
 
-      {/* </Wrapper> */}
-    </FullPage>
+    </FullPage> 
+    </div>
   );
 };
 

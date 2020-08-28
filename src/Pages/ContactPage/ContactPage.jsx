@@ -30,7 +30,7 @@ class ContactPage extends Component {
       .icon {
         color: ${this.props.theme.fontColor};
         font-size: 40px;
-        margin-right: 40px;
+        // margin-right: 40px;
       }
 
       @media screen and (max-width: 600px) {
@@ -45,7 +45,10 @@ class ContactPage extends Component {
           font-size: 32px;
         }
 
-        & > .icon {
+        & > .icons {
+          display: flex;
+          justify-content: space-around;
+          width: 90%;
         }
       }
     `;
@@ -58,7 +61,7 @@ class ContactPage extends Component {
         <a className="email" href="mailto: info@meisam.org">
           <h4>info@meisam.org</h4>
         </a>
-        <div>
+        <div className="icons">
           <a _blank className="icon" href="https://www.linkedin.com/in/pmeisam">
             <i className="fab fa-linkedin"></i>
           </a>

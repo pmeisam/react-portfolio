@@ -61,9 +61,9 @@ class HomePage extends Component {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            & > h1 {
-                font-family: 'Saira Stencil One', cursive;
-                font-size: 2vw;
+            & > p {
+                font-family: 'Roboto', sans-serif;
+                font-size: 13px;
                 .blinking{
                     animation:blinkingText 0.8s infinite;
                 }
@@ -76,8 +76,9 @@ class HomePage extends Component {
                 }
             }
             @media screen and (max-width: 600px) {
-                & > h1 {
+                & > p {
                     font-size: 14px;
+                    letter-spacing: 0.5px;
                 }
             }
 
