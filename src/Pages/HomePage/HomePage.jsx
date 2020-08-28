@@ -14,7 +14,7 @@ class HomePage extends Component {
   };
 
   componentWillMount() {
-    let intro = "HI THERE, I'M MEISAM.";
+    let intro = "HI THERE, I'M MEISAM";
     let bio =
       "I'm a full-stack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
     bio = bio.toUpperCase();
@@ -50,7 +50,7 @@ class HomePage extends Component {
       @media screen and (max-width: 600px) {
         margin-top: 20%;
         & > h1 {
-          font-size: 26px;
+          font-size: 21px;
         }
       }
     `;
@@ -86,15 +86,12 @@ class HomePage extends Component {
     return (
       <Intro>
         <Tada>
-          {/* <Tada> */}
           <h1>{this.state.intro}</h1>
-          {/* </Tada> */}
         </Tada>
-        <h1>
+        <p>
           {this.state.theText}
-          {/* {this.state.cursor ? <span>__</span> : <p></p>} */}
           <span className="blinking">|</span>
-        </h1>
+        </p>
       </Intro>
     );
   }
