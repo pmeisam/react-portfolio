@@ -1,20 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Fade from "react-reveal/Zoom";
 import styled from "styled-components";
 import ProjectComponent from "../../Components/Project/Project";
 import { FullPage, Slide } from "react-full-page";
 
-const Project = styled.div`
-  width: 90%;
-  margin: 0 auto 0 auto;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
 
-const ProjectPage = props => {
+const ProjectPage = (props) => {
   const [devSpot] = useState({
     img: "images/devspot.png",
     name: "devSpot",
@@ -30,10 +20,10 @@ const ProjectPage = props => {
       "Mongoose",
       "Token Based Auth",
       "Material UI",
-      "Bootstrap"
+      "Bootstrap",
     ],
     link: "http://dev-spot.herokuapp.com/",
-    gitHubLink: "https://github.com/pmeisam/devSpot"
+    gitHubLink: "https://github.com/pmeisam/devSpot",
   });
 
   const [memesagram] = useState({
@@ -49,10 +39,10 @@ const ProjectPage = props => {
       "Mongoose",
       "Passport Authentication",
       "Cloudinary",
-      "Bootstrap"
+      "Bootstrap",
     ],
     link: "http://memesagram.herokuapp.com/",
-    gitHubLink: "https://github.com/pmeisam/instagram"
+    gitHubLink: "https://github.com/pmeisam/instagram",
   });
 
   const [triplaner] = useState({
@@ -66,10 +56,10 @@ const ProjectPage = props => {
       "PostgreSQL",
       "IATA Codes API",
       "Amadeus API",
-      "Bootstrap"
+      "Bootstrap",
     ],
     link: "http://triplaner.herokuapp.com/",
-    gitHubLink: "https://github.com/pmeisam/trip-planner"
+    gitHubLink: "https://github.com/pmeisam/trip-planner",
   });
 
   const [minesweeper] = useState({
@@ -79,7 +69,7 @@ const ProjectPage = props => {
       "The game is about finding the hidden mines. Each box you click on will either show a number of mines around each box or a mine. If there is no number it means that there is no mine around it. You can put a flag by right-clicking anywhere you think there is a mine. If you click all the boxes without clicking a mine, you will win.",
     toolsUsed: ["JavaScript", "jQuery", "HTML", "CSS"],
     link: "https://pmeisam.github.io/minesweeper/",
-    gitHubLink: "https://github.com/pmeisam/minesweeper"
+    gitHubLink: "https://github.com/pmeisam/minesweeper",
   });
 
   useEffect(() => {
@@ -88,46 +78,23 @@ const ProjectPage = props => {
 
   return (
     <div>
-     <FullPage>
-       <Slide>
-       <ProjectComponent theme={props.theme} project={devSpot} />
+      <FullPage>
+        <Slide>
+          <ProjectComponent theme={props.theme} project={devSpot} />
+        </Slide>
 
-        {/* <Project>
-          <Fade center>
-            <ProjectComponent theme={props.theme} project={devSpot} />
-          </Fade>
-        </Project> */}
-       </Slide>
+        <Slide>
+          <ProjectComponent theme={props.theme} project={triplaner} />
+        </Slide>
 
-      <Slide>
-      <ProjectComponent theme={props.theme} project={triplaner} />
+        <Slide>
+          <ProjectComponent theme={props.theme} project={memesagram} />
+        </Slide>
 
-        {/* <Project>
-          <Fade center>
-            <ProjectComponent theme={props.theme} project={triplaner} />
-          </Fade>
-        </Project> */}
-      </Slide>
-
-      <Slide>
-      <ProjectComponent theme={props.theme} project={memesagram} />
-
-        {/* <Project>
-          <Fade center>
-          </Fade>
-        </Project> */}
-      </Slide>
-
-      <Slide>
-      <ProjectComponent theme={props.theme} project={minesweeper} />
-
-        {/* <Project>
-          <Fade center>
-          </Fade>
-        </Project> */}
-      </Slide>
-
-    </FullPage> 
+        <Slide>
+          <ProjectComponent theme={props.theme} project={minesweeper} />
+        </Slide>
+      </FullPage>
     </div>
   );
 };

@@ -27,10 +27,25 @@ class ContactPage extends Component {
         text-decoration: none;
         font-size: 64px;
       }
-      .icon {
-        color: ${this.props.theme.fontColor};
-        font-size: 40px;
-        // margin-right: 40px;
+      & > .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 50%;
+        & > .icon {
+          color: ${this.props.theme.fontColor};
+          font-size: 40px;
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        & > .icons {
+          display: flex;
+          justify-content: space-around;
+          width: 70%;
+          color: ${this.props.theme.fontColor};
+          font-size: 45px;
+        }
       }
 
       @media screen and (max-width: 600px) {
@@ -46,6 +61,8 @@ class ContactPage extends Component {
         }
 
         & > .icons {
+          color: ${this.props.theme.fontColor};
+          font-size: 45px;
           display: flex;
           justify-content: space-around;
           width: 90%;
