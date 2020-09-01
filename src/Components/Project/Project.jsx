@@ -167,8 +167,8 @@ const ProjectComponent = (props) => {
           <p>{props.project.description}</p>
 
           <div className="techs">
-            {props.project.toolsUsed.map((t) => (
-              <p>{t}</p>
+            {props.project.toolsUsed.map((t, index) => (
+              <p key={index}>{t}</p>
             ))}
           </div>
 

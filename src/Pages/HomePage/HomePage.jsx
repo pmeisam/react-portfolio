@@ -75,6 +75,9 @@ class HomePage extends Component {
                     100%{	color: ${this.props.theme.fontColor};	}
                 }
             }
+            @media screen and (max-width: 1000px) {
+              width: 70%;
+            }
             @media screen and (max-width: 600px) {
                 & > p {
                     font-size: 14px;

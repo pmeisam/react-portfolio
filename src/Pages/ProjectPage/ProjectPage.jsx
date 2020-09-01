@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import ProjectComponent from "../../Components/Project/Project";
 import { FullPage, Slide } from "react-full-page";
 
