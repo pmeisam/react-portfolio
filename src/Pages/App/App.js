@@ -72,10 +72,10 @@ class App extends React.Component {
       if (isDark === "false") {
         isDark = false;
         savedTheme = {
-          backgroundColor: "#E2E2E2",
-          fontColor: "#191A1C",
+          backgroundColor: "rgb(255,255,255)",
+          fontColor: "rgb(41,43,58)",
           borderColor: "#ff0044",
-          linkColor: "#191A1C"
+          linkColor: "rgb(42,28,58)"
         };
       }
     } else {

@@ -8,22 +8,22 @@ class Navbar extends Component {
   state = { home: null, skills: null, projects: null, contact: null };
 
   onMouseEnterHandler = (icon) => {
-    switch (icon) {
-      case "home":
-        this.setState({ home: <h4>HOME</h4> });
-        break;
-      case "skills":
-        this.setState({ skills: <h4>SKILLS</h4> });
-        break;
-      case "projects":
-        this.setState({ projects: <h4>PROJECTS</h4> });
-        break;
-      case "contact":
-        this.setState({ contact: <h4>CONTACT</h4> });
-        break;
-      default:
-        break;
-    }
+    // switch (icon) {
+    //   case "home":
+    //     this.setState({ home: <h4>HOME</h4> });
+    //     break;
+    //   case "skills":
+    //     this.setState({ skills: <h4>SKILLS</h4> });
+    //     break;
+    //   case "projects":
+    //     this.setState({ projects: <h4>PROJECTS</h4> });
+    //     break;
+    //   case "contact":
+    //     this.setState({ contact: <h4>CONTACT</h4> });
+    //     break;
+    //   default:
+    //     break;
+    // }
   };
 
   onMouseLeaveHandler = (text) => {
@@ -55,16 +55,7 @@ class Navbar extends Component {
 
   render() {
     const NavWrapper = styled.nav`
-      i {
-        font-size: 30px;
-      }
-
-      .navWrapper {
-        display: none;
-      }
       .links {
-        text-align: center;
-        background-color: red;
         width: 90px;
         min-height: 100vh;
         position: fixed;
@@ -72,27 +63,56 @@ class Navbar extends Component {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        align-items: center;
-        height: 80vh;
-        // margin: auto 0;
+        // align-items: center;
         & > .divLinks {
-          display: flex;
-          flex-direction: columnt;
-          align-items: center;
-          justify-content: center;
-
+          // display: flex;
+          // flex-direction: column;
+          // align-items: center;
+          // justify-content: center;
+          width: 90px;
           & > .link {
             color: ${this.props.theme.linkColor};
-            font-size: 15px;
             text-decoration: none;
             position: absolute;
+            background-color: rgb(244, 244, 244);
+            border-radius: 100px;
+            width: 20px;
+            height: 20px;
+            padding: 15px;
+            text-align: center;
+            & > i {
+              font-size: 15px;
+            }
           }
           & > .link:hover {
-            color: #f04;
+            color: rgb(255, 255, 255);
+            background-image: linear-gradient(
+              to bottom,
+              rgb(117, 101, 236),
+              rgb(122, 42, 196)
+            ) !important;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+              0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            & > i {
+              // font-size: 25px;
+              // margin-left: -6px;
+              // margin-top: -3px;
+            }
           }
           & > .isActive {
-            color: #f04;
+            color: rgb(255, 255, 255);
+            // background-color: rgb(122,42,196);
+            background-image: linear-gradient(
+              to bottom,
+              rgb(117, 101, 236),
+              rgb(122, 42, 196)
+            ) !important;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+              0 6px 20px 0 rgba(0, 0, 0, 0.19);
           }
+        }
+        & > .themes {
+            
         }
       }
 
@@ -185,13 +205,11 @@ class Navbar extends Component {
               {this.state.contact}
             </NavLink>
           </div>
-          <div className="themes">
-            <Switch
-              className="themes"
-              handleThemeChange={this.props.handleThemeChange}
-              isDark={this.props.isDark}
-            />
-          </div>
+          <Switch
+            className="themes"
+            handleThemeChange={this.props.handleThemeChange}
+            isDark={this.props.isDark}
+          />
         </div>
       </NavWrapper>
     );
