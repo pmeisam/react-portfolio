@@ -48,32 +48,51 @@ class Navbar extends Component {
   componentDidMount() {
     let home = <i className="fas fa-home"></i>;
     let skills = <i className="fas fa-code"></i>;
-    let projects = <i className="fas fa-project-diagram"></i>;
+    let projects = <i className="fas fa-layer-group"></i>;
     let contact = <i className="fas fa-user"></i>;
     this.setState({ home, skills, projects, contact });
   }
 
   render() {
+    console.log(this.props.isDark);
     const NavWrapper = styled.nav`
-      .links {
-        width: 90px;
-        min-height: 100vh;
+      border: 1px solid red;
+      height: 100vh;
+      z-index: 999;
+      width: 160px;
+      position: fixed;
+      left: 0;
+      background-color: ${this.props.theme.backgroundColor};
+      & > p {
+        height: 50%;
+        width: 2px;
+        background-color: gray;
         position: fixed;
-        background-color: ${this.props.theme.backgroundColor};
+        top: 23.5vh;
+        z-index: -1;
+        left: 80px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      & > div {
+        background-color: transparent;
+        position: fixed;
+        top: 25vh;
+        border: 1px solid blue;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        // align-items: center;
+        justify-content: space-between;
+        height: 50%;
+        align-items: center;
+        left: 30px;
+        z-index: 999;
+        width: 100px;
+
         & > .divLinks {
-          // display: flex;
-          // flex-direction: column;
-          // align-items: center;
-          // justify-content: center;
-          width: 90px;
           & > .link {
             color: ${this.props.theme.linkColor};
             text-decoration: none;
-            position: absolute;
             background-color: rgb(244, 244, 244);
             border-radius: 100px;
             width: 20px;
@@ -111,36 +130,34 @@ class Navbar extends Component {
               0 6px 20px 0 rgba(0, 0, 0, 0.19);
           }
         }
-        & > .themes {
-            
-        }
       }
 
-      @media screen and (max-width: 600px) {
-        & > .links {
-          position: fixed;
-          display: flex;
-          flex-direction: row;
-          width: 100%;
-          height: 50px;
-          min-height: 50px;
-          & > .divLinks {
-            & > .link {
-              & > i {
-                font-size: 21px;
-              }
-            }
-          }
-          & > .themes {
-            display: none;
-          }
-        }
-      }
+      // @media screen and (max-width: 600px) {
+      //   & > .links {
+      //     position: fixed;
+      //     display: flex;
+      //     flex-direction: row;
+      //     width: 100%;
+      //     height: 50px;
+      //     min-height: 50px;
+      //     & > .divLinks {
+      //       & > .link {
+      //         & > i {
+      //           font-size: 21px;
+      //         }
+      //       }
+      //     }
+      //     & > .themes {
+      //       display: none;
+      //     }
+      //   }
+      // }
     `;
 
     return (
       <NavWrapper>
-        <div className="links" id="myNav">
+        <p></p>
+        <div>
           <div className="divLinks">
             <NavLink
               activeClassName="isActive"
@@ -205,11 +222,14 @@ class Navbar extends Component {
               {this.state.contact}
             </NavLink>
           </div>
-          <Switch
-            className="themes"
-            handleThemeChange={this.props.handleThemeChange}
-            isDark={this.props.isDark}
-          />
+          <div clasName="divLinks">
+            <p>{this.props.isDark ? "Dark" : "Light"}</p>
+            <Switch
+              className="themes"
+              handleThemeChange={this.props.handleThemeChange}
+              isDark={this.props.isDark}
+            />
+          </div>
         </div>
       </NavWrapper>
     );
