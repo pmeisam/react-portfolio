@@ -8,7 +8,7 @@ class Footer extends Component {
         const FooterWrapper = styled.div`
             position: fixed;
             left: 0;
-            bottom: 0;
+            top: 0;
             width: 100%;
             text-align: center;
             background-color: ${this.props.theme.backgroundColor};
