@@ -5,7 +5,13 @@ import Switch from "../Switch/Switch";
 import { isMobile } from "react-device-detect";
 
 class Navbar extends Component {
-  state = { home: null, skills: null, projects: null, contact: null };
+  state = {
+    home: null,
+    skills: null,
+    projects: null,
+    contact: null,
+    setting: null,
+  };
 
   onMouseEnterHandler = (icon) => {
     // switch (icon) {
@@ -40,6 +46,9 @@ class Navbar extends Component {
       case "contact":
         this.setState({ contact: <i className="fas fa-user"></i> });
         break;
+      case "setting":
+        this.setState({ setting: <i className="fas fa-user"></i> });
+        break;
       default:
         break;
     }
@@ -50,7 +59,8 @@ class Navbar extends Component {
     let skills = <i className="fas fa-code"></i>;
     let projects = <i className="fas fa-layer-group"></i>;
     let contact = <i className="fas fa-user"></i>;
-    this.setState({ home, skills, projects, contact });
+    let setting = <i className="fas fa-cog"></i>;
+    this.setState({ home, skills, projects, contact, setting });
   }
 
   render() {
@@ -71,8 +81,6 @@ class Navbar extends Component {
         top: 23.5vh;
         z-index: -1;
         left: 80px;
-        // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        //   0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
 
       & > div {
@@ -88,9 +96,25 @@ class Navbar extends Component {
         z-index: 999;
         width: 160px;
 
+        & > .settingContent {
+          margin-top: -30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          & > .setting {
+            color: rgb(48, 32, 66);
+            text-decoration: none;
+            background-color: rgb(244, 244, 244);
+            border-radius: 100px;
+            padding: 14px 0px;
+            width: 46px;
+            text-align: center;
+          }
+        }
         & > .divLinks {
           & > .link {
-            color: rgb(48,32,66);
+            color: rgb(48, 32, 66);
             text-decoration: none;
             background-color: rgb(244, 244, 244);
             border-radius: 100px;
@@ -110,41 +134,91 @@ class Navbar extends Component {
               rgb(117, 101, 236),
               rgb(122, 42, 196)
             ) !important;
-            box-shadow: 0px 0px 26px 4px rgb(122,42,196);
+            box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
           }
           & > .isActive {
             color: rgb(255, 255, 255);
-            // background-color: rgb(122,42,196);
             background-image: linear-gradient(
               to bottom,
               rgb(117, 101, 236),
               rgb(122, 42, 196)
             ) !important;
-            box-shadow: 0px 0px 26px 4px rgb(122,42,196);
+            box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
           }
         }
       }
 
-      // @media screen and (max-width: 600px) {
-      //   & > .links {
-      //     position: fixed;
-      //     display: flex;
-      //     flex-direction: row;
-      //     width: 100%;
-      //     height: 50px;
-      //     min-height: 50px;
-      //     & > .divLinks {
-      //       & > .link {
-      //         & > i {
-      //           font-size: 21px;
-      //         }
-      //       }
-      //     }
-      //     & > .themes {
-      //       display: none;
-      //     }
-      //   }
-      // }
+      @media screen and (max-width: 900px) {
+        height: 60px;
+        z-index: 999;
+        width: 100%;
+        position: fixed;
+        left: 0;
+        & > div:before {
+          content: "";
+          height: 1px;
+          width: 80vw;
+          background-color: rgb(244, 244, 244);
+          position: fixed;
+          top: 30px;
+          left: 10vw;
+          z-index: -1;
+        }
+        & > div {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          position: fixed;
+          background-color: transparent;
+          top: 7px;
+          left: 10vw;
+          height: 60px;
+          width: 80vw;
+          z-index: 999;
+          & > .settingContent {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            & > .setting {
+              color: rgb(48, 32, 66);
+              text-decoration: none;
+              background-color: rgb(244, 244, 244);
+              border-radius: 100px;
+              padding: 6px 0px;
+              width: 29px;
+              text-align: center;
+            }
+            & > .setting:after {
+              content: "";
+              width: 2px;
+              height: 50px;
+              // background-color: black;
+              background-color: rgb(244, 244, 244);
+              position: fixed;
+              top: 30px;
+              margin-left: -8px;
+              z-index: -1;
+            }
+          }
+          & > .divLinks {
+            & > .link {
+              padding: 3px 2px 7px 2px;
+
+              & > i {
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
+              }
+            }
+            & > .isActive {
+              padding: 8px 6px 11px 6px;
+            }
+          }
+        }
+      }
     `;
 
     return (
@@ -182,6 +256,7 @@ class Navbar extends Component {
               {this.state.skills}
             </NavLink>
           </div>
+
           <div className="divLinks">
             <NavLink
               activeClassName="isActive"
@@ -214,8 +289,8 @@ class Navbar extends Component {
               {this.state.contact}
             </NavLink>
           </div>
-          <div clasName="divLinks">
-            <p>{this.props.isDark ? "Dark" : "Light"}</p>
+          <div className="settingContent">
+            <p className="setting">{this.state.setting}</p>
             <Switch
               className="themes"
               handleThemeChange={this.props.handleThemeChange}

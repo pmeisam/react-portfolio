@@ -41,11 +41,11 @@ img::selection {
         display: flex;
         flex-direction: column;
         
-        & > .nav {
-            height: 50px;
-            width: 100%;
-            position: fixed;
-        }
+        // & > .nav {
+        //     height: 50px;
+        //     width: 100%;
+        //     position: fixed;
+        // }
     }
     
 }

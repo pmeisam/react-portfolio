@@ -102,13 +102,14 @@ class HomePage extends Component {
         width: 50vw;
       }
 
-      @media screen and (max-width: 1000px) {
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-        & > svg {
-          width: 100%;
-        }
+      @media screen and (max-width: 900px) {
+        display: none;
+        // display: flex;
+        // flex-direction: column;
+        // width: 70%;
+        // & > svg {
+        //   width: 100%;
+        // }
       }
       @media screen and (max-width: 600px) {
         & > p {
