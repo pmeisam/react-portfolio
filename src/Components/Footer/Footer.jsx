@@ -12,6 +12,7 @@ class Footer extends Component {
             width: 100%;
             text-align: center;
             background-color: ${this.props.theme.backgroundColor};
+            color: rgb(206, 206, 206);
 
             @media screen and (max-width: 600px) {
                 & > h4 {
@@ -22,7 +23,7 @@ class Footer extends Component {
         return (
             <FooterWrapper>
 
-                <h4>Ⓒ2020 Meisam Poorzand. All Rights Reserved.</h4>
+                <p>Ⓒ2020 Meisam Poorzand. All Rights Reserved.</p>
 
             </FooterWrapper>
         )

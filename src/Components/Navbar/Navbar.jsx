@@ -35,7 +35,7 @@ class Navbar extends Component {
         this.setState({ skills: <i className="fas fa-code"></i> });
         break;
       case "projects":
-        this.setState({ projects: <i className="fas fa-project-diagram"></i> });
+        this.setState({ projects: <i className="fas fa-layer-group"></i> });
         break;
       case "contact":
         this.setState({ contact: <i className="fas fa-user"></i> });
@@ -54,55 +54,55 @@ class Navbar extends Component {
   }
 
   render() {
-    console.log(this.props.isDark);
     const NavWrapper = styled.nav`
-      border: 1px solid red;
       height: 100vh;
       z-index: 999;
       width: 160px;
       position: fixed;
       left: 0;
-      background-color: ${this.props.theme.backgroundColor};
-      & > p {
+      // background-color: ${this.props.theme.backgroundColor};
+
+      & > div:before {
+        content: "";
         height: 50%;
-        width: 2px;
-        background-color: gray;
+        width: 3px;
+        background-color: rgb(244, 244, 244);
         position: fixed;
         top: 23.5vh;
         z-index: -1;
         left: 80px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        //   0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
 
       & > div {
         background-color: transparent;
         position: fixed;
         top: 25vh;
-        border: 1px solid blue;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 50%;
         align-items: center;
-        left: 30px;
+        // left: 30px;
         z-index: 999;
-        width: 100px;
+        width: 160px;
 
         & > .divLinks {
           & > .link {
-            color: ${this.props.theme.linkColor};
+            color: rgb(48,32,66);
             text-decoration: none;
             background-color: rgb(244, 244, 244);
             border-radius: 100px;
-            width: 20px;
-            height: 20px;
-            padding: 15px;
+            padding: 14px 1px;
             text-align: center;
             & > i {
+              width: 45px;
+              height: 45px;
               font-size: 15px;
             }
           }
+
           & > .link:hover {
             color: rgb(255, 255, 255);
             background-image: linear-gradient(
@@ -110,13 +110,7 @@ class Navbar extends Component {
               rgb(117, 101, 236),
               rgb(122, 42, 196)
             ) !important;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-              0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            & > i {
-              // font-size: 25px;
-              // margin-left: -6px;
-              // margin-top: -3px;
-            }
+            box-shadow: 0px 0px 26px 4px rgb(122,42,196);
           }
           & > .isActive {
             color: rgb(255, 255, 255);
@@ -126,8 +120,7 @@ class Navbar extends Component {
               rgb(117, 101, 236),
               rgb(122, 42, 196)
             ) !important;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-              0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0px 0px 26px 4px rgb(122,42,196);
           }
         }
       }
@@ -156,7 +149,6 @@ class Navbar extends Component {
 
     return (
       <NavWrapper>
-        <p></p>
         <div>
           <div className="divLinks">
             <NavLink

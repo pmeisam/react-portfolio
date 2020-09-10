@@ -11,25 +11,25 @@ import Footer from "../../Components/Footer/Footer";
 class App extends React.Component {
   state = {
     theme: null,
-    isDark: null
+    isDark: null,
   };
 
-  handleThemeChange = isDark => {
+  handleThemeChange = (isDark) => {
     let newTheme = {};
     if (isDark) {
       newTheme = {
         backgroundColor: "#191A1C",
         fontColor: "#E2E2E2",
         borderColor: "#ff0044",
-        linkColor: "#E2E2E2"
+        linkColor: "#E2E2E2",
       };
     }
     if (!isDark) {
       newTheme = {
-        backgroundColor: "#E2E2E2",
-        fontColor: "#191A1C",
+        backgroundColor: "rgb(255,255,255)",
+        fontColor: "rgb(41,43,58)",
         borderColor: "#ff0044",
-        linkColor: "#191A1C"
+        linkColor: "rgb(42,28,58)",
       };
     }
 
@@ -46,8 +46,8 @@ class App extends React.Component {
         backgroundColor: "#191A1C",
         fontColor: "#E2E2E2",
         borderColor: "#7A7979",
-        linkColor: "#E2E2E2"
-      }
+        linkColor: "#E2E2E2",
+      },
     });
   }
 
@@ -66,7 +66,7 @@ class App extends React.Component {
           backgroundColor: "#191A1C",
           fontColor: "#E2E2E2",
           borderColor: "#ff0044",
-          linkColor: "#E2E2E2"
+          linkColor: "#E2E2E2",
         };
       }
       if (isDark === "false") {
@@ -75,7 +75,7 @@ class App extends React.Component {
           backgroundColor: "rgb(255,255,255)",
           fontColor: "rgb(41,43,58)",
           borderColor: "#ff0044",
-          linkColor: "rgb(42,28,58)"
+          linkColor: "rgb(42,28,58)",
         };
       }
     } else {
@@ -83,7 +83,7 @@ class App extends React.Component {
         backgroundColor: "#191A1C",
         fontColor: "#E2E2E2",
         borderColor: "#ff0044",
-        linkColor: "#E2E2E2"
+        linkColor: "#E2E2E2",
       };
       isDark = true;
     }
