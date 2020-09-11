@@ -3,7 +3,7 @@ import ProjectComponent from "../../Components/Project/Project";
 import { FullPage, Slide } from "react-full-page";
 
 
-const ProjectPage = (props) => {
+const ProjectPage = () => {
   const [devSpot] = useState({
     img: "images/devspot.png",
     name: "devSpot",
@@ -79,19 +79,18 @@ const ProjectPage = (props) => {
     <div>
       <FullPage>
         <Slide>
-          <ProjectComponent theme={props.theme} project={devSpot} />
+          <ProjectComponent project={devSpot} />
+        </Slide>
+        <Slide>
+          <ProjectComponent project={triplaner} />
         </Slide>
 
         <Slide>
-          <ProjectComponent theme={props.theme} project={triplaner} />
+          <ProjectComponent project={memesagram} />
         </Slide>
 
         <Slide>
-          <ProjectComponent theme={props.theme} project={memesagram} />
-        </Slide>
-
-        <Slide>
-          <ProjectComponent theme={props.theme} project={minesweeper} />
+          <ProjectComponent project={minesweeper} />
         </Slide>
       </FullPage>
     </div>

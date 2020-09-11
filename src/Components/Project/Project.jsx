@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Zoom";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 const ProjectComponent = (props) => {
+
+  const {theme} = useContext(ThemeContext);
   const Project = styled.div`
     display: flex;
     width: 80%;
@@ -31,8 +34,8 @@ const ProjectComponent = (props) => {
         text-align: center;
         grid-template-columns: 120px 120px;
         & > p {
-          background-color: ${props.theme.fontColor};
-          color: ${props.theme.backgroundColor};
+          background-color: ${theme.fontColor};
+          color: ${theme.backgroundColor};
           border-radius: 5px;
           font-size: 9px;
           margin: 2px;

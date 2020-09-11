@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 const SwitchWrap = styled.div`
   display: flex;
@@ -40,7 +41,7 @@ const SwitchWrap = styled.div`
   .react-switch-label .react-switch-button {
     content: "";
     position: absolute;
-    top: 1.5px;
+    top: 2px;
     left: 1px;
     width: 16px;
     height: 16px;
@@ -68,24 +69,64 @@ const SwitchWrap = styled.div`
   }
 
   @media screen and (max-width: 600px) {
+
+    p {
+      font-size: 9px;
+      padding: 2.5px 20px 3px 8px;
+    }
+    .react-switch-label {
+      height: 16px;
+      width: 35px;
+    }
+    .react-switch-label .react-switch-button {
+      height: 12px;
+      width: 12px;
+    }
   }
 `;
 
-const Switch = (props) => {
+const Switch = () => {
+
+  const {setTheme, isDark, setIsDark} = useContext(ThemeContext);
+
+  const handleThemeChange = (isDark) => {
+    let newTheme = {};
+    const darkTheme = {
+      backgroundColor: "rgb(39,50,56)",
+      fontColor: "rgb(255,255,255)",
+      borderColor: "#ff0044",
+      linkColor: "rgb(255,255,255)",
+    };
+    const lightTheme = {
+      backgroundColor: "rgb(255,255,255)",
+      fontColor: "rgb(41,43,58)",
+      borderColor: "#ff0044",
+      linkColor: "rgb(42,28,58)",
+    };
+    
+    isDark ? newTheme = darkTheme : newTheme = lightTheme;
+    
+    localStorage.setItem("theme", isDark);
+    document.body.style.backgroundColor = newTheme.backgroundColor;
+    document.body.style.color = newTheme.fontColor;
+    setTheme(newTheme);
+    setIsDark(isDark);
+  };
+  
   return (
     <SwitchWrap>
-      <p>{props.isDark ? "DARK" : "LIGHT"}</p>
+      <p>{isDark ? "DARK" : "LIGHT"}</p>
       <input
         className="react-switch-checkbox"
         id={`react-switch-new`}
         type="checkbox"
-        onChange={() => props.handleThemeChange(!props.isDark)}
-        checked={props.isDark}
+        onChange={() => handleThemeChange(!isDark)}
+        checked={isDark}
       />
       <label
         className="react-switch-label"
         htmlFor={`react-switch-new`}
-        active={props.isDark}
+        active={isDark}
       >
         <span className={`react-switch-button`} />
       </label>

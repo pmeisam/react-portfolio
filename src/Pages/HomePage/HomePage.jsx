@@ -1,138 +1,178 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled, { keyframes } from "styled-components";
 import { tada } from "react-animations";
-// import Tada from 'react-reveal/Tada';
 import "./HomePage.scss";
-// import slideInLeft from 'react-animations/lib/slide-in-left';
 import HomePageSvg from "./undraw_festivities_tvvj";
+import { Link } from "react-router-dom";
+import { ThemeContext } from "../../Context/ThemeContext";
+// import slideInLeft from 'react-animations/lib/slide-in-left';
+// import Tada from 'react-reveal/Tada';
 
-class HomePage extends Component {
-  state = {
-    intro: null,
-    bio: null,
-    theText: "",
-    cursor: null,
-  };
+const HomePage = () => {
+  const [intro, setIntro] = useState(null);
+  const [bio, setBio] = useState(null);
+  const { theme } = useContext(ThemeContext);
 
-  componentWillMount() {
+  useEffect(() => {
+    document.title = "Meisam Poorzand";
     let intro = "HI THERE, I'M MEISAM";
     let bio =
       "I'm a full-stack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
     bio = bio.toUpperCase();
     intro = intro.toUpperCase();
-    this.setState({ intro });
-    this.setState({ bio });
-  }
+    setIntro(intro);
+    setBio(bio);
+    //   let bio =
+    //     "I'm a full-stack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
+    //   this.setState({ theText: bio });
+    //   // this.state.bio.split("").forEach((letter, idx) => {
+    //   //   setTimeout(() => {
+    //   //     this.setState((state) => ({ theText: state.theText + letter }));
+    //   //   }, 30 * idx);
+    //   // });
+    //   // setInterval(() => {
+    //   //     if (this.state.cursor) {
+    //   //         this.setState({cursor: false});
+    //   //     } else {
+    //   //         this.setState({cursor: true});
+    //   //     }
+    //   // },300);
+  }, []);
 
-  componentDidMount() {
-    let bio =
-      "I'm a full-stack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
-    this.setState({ theText: bio });
-    // this.state.bio.split("").forEach((letter, idx) => {
-    //   setTimeout(() => {
-    //     this.setState((state) => ({ theText: state.theText + letter }));
-    //   }, 30 * idx);
-    // });
-    // setInterval(() => {
-    //     if (this.state.cursor) {
-    //         this.setState({cursor: false});
-    //     } else {
-    //         this.setState({cursor: true});
-    //     }
-    // },300);
-  }
-
-  render() {
-    const Tada = styled.div`
-      animation: 3s ${keyframes`${tada}`} 1;
-      animation-delay: 0.5s;
-      margin-top: 150px;
+  const Tada = styled.div`
+    animation: 3s ${keyframes`${tada}`} 1;
+    animation-delay: 0.5s;
+    margin-top: 100px;
+    & > h1 {
+      font-family: "Saira Stencil One", cursive;
+      font-size: 4.9vw;
+    }
+    @media screen and (max-width: 900px) {
+      margin-top: 10%;
       & > h1 {
-        font-family: "Saira Stencil One", cursive;
-        font-size: 3.6vw;
+        font-size: 6vw;
       }
-      @media screen and (max-width: 600px) {
-        margin-top: 20%;
-        & > h1 {
-          font-size: 21px;
-        }
+    }
+    @media screen and (max-width: 600px) {
+      margin-top: 16%;
+      & > h1 {
+        font-size: 6.8vw;
       }
-    `;
-    const Intro = styled.div`
+    }
+  `;
+  const Intro = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+    & > div {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 70%;
-      margin: 0 auto;
-      & > div {
-        display: flex;
-        flex-direction: column;
-        width: 57%;
-        & > p {
-          margin-top: -50px;
-          font-family: "Roboto", sans-serif;
-          color: rgb(138, 138, 138);
-          font-size: 19px;
-          & > .blinking {
-            animation: blinkingText 0.8s infinite;
+      flex-direction: column;
+      width: 77%;
+      & > .projectLink {
+        & > .projectButton {
+          background-image: linear-gradient(
+            to right,
+            rgb(117, 101, 236),
+            rgb(122, 42, 196)
+          ) !important;
+          width: 200px;
+          height: 50px;
+          border-radius: 60px;
+          border: none;
+          color: white;
+        }
+      }
+      & > p {
+        margin-top: -6vh;
+        font-family: "Roboto", sans-serif;
+        color: rgb(138, 138, 138);
+        font-size: 19px;
+        font-weight: 100;
+        & > .blinking {
+          animation: blinkingText 0.8s infinite;
+        }
+        @keyframes blinkingText {
+          0% {
+            color: ${theme.fontColor};
           }
-          @keyframes blinkingText {
-            0% {
-              color: ${this.props.theme.fontColor};
-            }
-            49% {
-              color: transparent;
-            }
-            50% {
-              color: transparent;
-            }
-            99% {
-              color: transparent;
-            }
-            100% {
-              color: ${this.props.theme.fontColor};
-            }
+          49% {
+            color: transparent;
+          }
+          50% {
+            color: transparent;
+          }
+          99% {
+            color: transparent;
+          }
+          100% {
+            color: ${theme.fontColor};
           }
         }
       }
-      & > svg {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        width: 50vw;
-      }
+    }
+    & > svg {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      width: 41vw;
+    }
 
-      @media screen and (max-width: 900px) {
-        display: none;
-        // display: flex;
-        // flex-direction: column;
-        // width: 70%;
-        // & > svg {
-        //   width: 100%;
-        // }
+    @media screen and (max-width: 900px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      & > svg {
+        width: 100%;
+        height: 50%;
       }
-      @media screen and (max-width: 600px) {
+      & > div {
         & > p {
-          font-size: 14px;
-          letter-spacing: 0.5px;
+          margin-top: -40px;
+        }
+        & > svg {
+          z-index: -1;
         }
       }
-    `;
-    return (
-      <Intro>
-        <div>
-          <Tada>
-            <h1>{this.state.intro}</h1>
-          </Tada>
-          <p>
-            {this.state.theText}
-            <span className="blinking">|</span>
-          </p>
-        </div>
-        <HomePageSvg />
-      </Intro>
-    );
-  }
-}
+    }
+    @media screen and (max-width: 600px) {
+      & > div {
+        width: 98%;
+        & > p {
+          margin-top: -15px;
+          font-size: 11px;
+        }
+        & > .projectLink {
+          z-index: 999;
+        }
+        & > svg {
+          z-index: -1;
+        }
+      }
+    }
+  `;
+  
+  return (
+    <Intro>
+      <div>
+        <Tada>
+          <h1>{intro}</h1>
+        </Tada>
+        <p>
+          {bio ? bio.toUpperCase() : null}
+          <span className="blinking">|</span>
+        </p>
+        <Link className="projectLink" to="/projects">
+          <button className="projectButton">
+            Projects&nbsp;&nbsp;<i className="fas fa-long-arrow-alt-right"></i>
+          </button>
+        </Link>
+      </div>
+      <HomePageSvg />
+    </Intro>
+  );
+};
 
 export default HomePage;
