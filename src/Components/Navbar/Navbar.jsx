@@ -9,6 +9,7 @@ function Navbar() {
   const [skills, setSkills] = useState(null);
   const [projects, setProjects] = useState(null);
   const [contact, setContact] = useState(null);
+  const [profile, setProfile] = useState(null);
   const [setting, setSetting] = useState(null);
   
 
@@ -58,10 +59,12 @@ function Navbar() {
     let skills = <i className="fas fa-code"></i>;
     let projects = <i className="fas fa-layer-group"></i>;
     let contact = <i className="fas fa-user"></i>;
+    let profile = <i className="fas fa-phone"></i>;
     let setting = <i className="fas fa-cog"></i>;
     setHome(home);
     setSkills(skills);
     setProjects(projects);
+    setProfile(profile);
     setContact(contact);
     setSetting(setting);
   }, []);
@@ -322,6 +325,22 @@ function Navbar() {
             // }
           >
             {contact}
+          </NavLink>
+        </div>
+        <div className="divLinks">
+          <NavLink
+            activeClassName="isActive"
+            className="link"
+            to="/profile"
+            exact={true}
+            // onMouseEnter={
+            //   isMobile ? false : () => this.onMouseEnterHandler("contact")
+            // }
+            // onMouseLeave={
+            //   isMobile ? false : () => this.onMouseLeaveHandler("contact")
+            // }
+          >
+            {profile}
           </NavLink>
         </div>
         <div className="settingContent">
