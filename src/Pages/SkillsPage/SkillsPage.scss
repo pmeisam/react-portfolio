@@ -1,11 +1,11 @@
 .skills_parent {
-    margin-top: 10vh;
-    margin-left: 10%;
-    height: 90vh;
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  margin-top: 10vh;
+  margin-left: 10%;
+  height: 90vh;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .skill_item {
@@ -27,4 +27,16 @@
   padding: 20px;
   background: rgba(255, 255, 255, 0.041);
   border-radius: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .skills_parent {
+    margin-top: 10vh;
+    margin-left: 0;
+    width: 100vw;
+    margin-bottom: 50px;
+  }
+  .skill_item {
+    margin: 0;
+  }
 }

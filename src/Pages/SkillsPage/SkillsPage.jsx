@@ -31,6 +31,10 @@ const SkillsPage = () => {
             <span className="skillSearch">React</span>
           </div>
           <div className="skill_item">
+            <i class="devicon-vuejs-plain colored skillSize"></i>
+            <span className="skillSearch">Vue</span>
+          </div>
+          <div className="skill_item">
             <i className="devicon-python-plain-wordmark colored skillSize"></i>
             <span className="skillSearch">Python</span>
           </div>
@@ -39,8 +43,16 @@ const SkillsPage = () => {
             <span className="skillSearch">Django</span>
           </div>
           <div className="skill_item">
+            <i className="devicon-java-plain-wordmark colored skillSizeplain"></i>
+            <span className="skillSearch">java</span>
+          </div>
+          <div className="skill_item">
             <i className="devicon-postgresql-plain-wordmark colored skillSize"></i>
             <span className="skillSearch">PostgreSQL</span>
+          </div>
+          <div className="skill_item">
+            <i className="devicon-mysql-plain-wordmark colored skillSize"></i>
+            <span className="skillSearch">mysql</span>
           </div>
           <div className="skill_item">
             <i className="devicon-typescript-plain colored skillSize"></i>
@@ -74,10 +86,7 @@ const SkillsPage = () => {
             <i className="devicon-css3-plain-wordmark colored skillSize"></i>
             <span className="skillSearch">CSS</span>
           </div>
-          <div className="skill_item">
-            <i className="devicon-java-plain-wordmark colored skillSizeplain"></i>
-            <span className="skillSearch">java</span>
-          </div>
+
           <div className="skill_item">
             <i className="devicon-sass-original colored skillSize"></i>
             <span className="skillSearch">sass scss</span>
@@ -102,10 +111,6 @@ const SkillsPage = () => {
           <div className="skill_item">
             <i className="devicon-heroku-plain-wordmark colored skillSize"></i>
             <span className="skillSearch">heroku</span>
-          </div>
-          <div className="skill_item">
-            <i className="devicon-mysql-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">mysql</span>
           </div>
         </div>
       </Fade>
