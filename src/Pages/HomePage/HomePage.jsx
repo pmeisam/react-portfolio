@@ -153,7 +153,7 @@ const HomePage = () => {
       }
     }
   `;
-
+  
   return (
     <Intro>
       <div>
