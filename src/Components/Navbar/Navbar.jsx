@@ -58,8 +58,8 @@ function Navbar() {
     let home = <i className="fas fa-home"></i>;
     let skills = <i className="fas fa-code"></i>;
     let projects = <i className="fas fa-layer-group"></i>;
-    let contact = <i className="fas fa-user"></i>;
-    let profile = <i className="fas fa-phone"></i>;
+    let profile = <i className="fas fa-user"></i>;
+    let contact = <i className="fas fa-phone"></i>;
     let setting = <i className="fas fa-cog"></i>;
     setHome(home);
     setSkills(skills);
