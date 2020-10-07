@@ -4,8 +4,7 @@ import Fade from "react-reveal/Zoom";
 import { ThemeContext } from "../../Context/ThemeContext";
 
 const ProjectComponent = (props) => {
-
-  const {theme} = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const Project = styled.div`
     display: flex;
     width: 80%;
@@ -50,9 +49,19 @@ const ProjectComponent = (props) => {
         width: 80%;
         & > a {
           margin-top: 10px;
-          font-size: 40px;
+          // font-size: 20px;
           & > i {
-            color: #f04;
+            font-size: 20px;
+            padding: 15px;
+            border-radius: 100px;
+            color: rgb(255, 255, 255);
+            background-image: linear-gradient(
+              to bottom,
+              rgb(117, 101, 236),
+              rgb(122, 42, 196)
+            ) !important;
+            box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
+
           }
         }
       }

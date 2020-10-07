@@ -327,22 +327,16 @@ function Navbar() {
             {contact}
           </NavLink>
         </div>
-        <div className="divLinks">
+        {/* <div className="divLinks">
           <NavLink
             activeClassName="isActive"
             className="link"
             to="/profile"
             exact={true}
-            // onMouseEnter={
-            //   isMobile ? false : () => this.onMouseEnterHandler("contact")
-            // }
-            // onMouseLeave={
-            //   isMobile ? false : () => this.onMouseLeaveHandler("contact")
-            // }
           >
             {profile}
           </NavLink>
-        </div>
+        </div> */}
         <div className="settingContent">
           <p className="setting">{setting}</p>
           <Switch className="themes" />
