@@ -106,6 +106,7 @@ function Navbar() {
         justify-content: center;
         align-items: center;
         & > .setting {
+          display: none;
           color: rgb(48, 32, 66);
           text-decoration: none;
           background-color: rgb(244, 244, 244);
@@ -186,12 +187,13 @@ function Navbar() {
         width: 80vw;
         z-index: 999;
         & > .settingContent {
-          margin-top: 30px;
+          margin-top: 40px;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: flex-end;
           & > .setting {
+            display: block;
             color: rgb(48, 32, 66);
             text-decoration: none;
             background-color: rgb(244, 244, 244);
@@ -244,15 +246,16 @@ function Navbar() {
         top: 0;
         left: 10vw;
         & > .settingContent {
+          
           & > .setting:after {
             width: 1px;
             height: 25px;
           }
           & > .setting {
-            margin-top: -3px;
+            margin-top: -20px;
           }
           & > div {
-            margin-top: -15px;
+            margin-top: 10px;
           }
         }
       }

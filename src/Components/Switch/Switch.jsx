@@ -7,6 +7,7 @@ const SwitchWrap = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 
   p {
     background-color: rgb(107,107,107);
@@ -69,6 +70,7 @@ const SwitchWrap = styled.div`
   }
 
   @media screen and (max-width: 600px) {
+    margin-top: 10px;
 
     p {
       font-size: 9px;

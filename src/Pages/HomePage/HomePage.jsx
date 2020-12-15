@@ -66,11 +66,17 @@ const HomePage = () => {
     justify-content: space-between;
     width: 70%;
     margin: 0 auto;
+    max-height: 80vh;
+    margin-top: 0vh;
+    h1 {
+      margin: 30px 0;
+    }
     & > div {
       display: flex;
       flex-direction: column;
       width: 77%;
       & > .projectLink {
+        cursor: pointer;
         & > .projectButton {
           background-image: linear-gradient(
             to right,
@@ -82,10 +88,15 @@ const HomePage = () => {
           border-radius: 60px;
           border: none;
           color: white;
+          cursor: pointer;
+          margin-top: 20px;
+        }
+        & > .projectButton:hover {
+          box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
         }
       }
       & > p {
-        margin-top: -6vh;
+        margin-top: 10px;
         font-family: "Roboto", sans-serif;
         color: rgb(138, 138, 138);
         font-size: 19px;
@@ -120,6 +131,7 @@ const HomePage = () => {
     }
 
     @media screen and (max-width: 900px) {
+      margin-top: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -130,7 +142,7 @@ const HomePage = () => {
       }
       & > div {
         & > p {
-          margin-top: -40px;
+          margin: -30px 0 20px 0;
         }
         & > svg {
           z-index: -1;

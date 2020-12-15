@@ -6,6 +6,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-height: 80vh;
+  margin-top: 8vh;
 }
 
 .skill_item {
@@ -30,10 +32,12 @@
 
 @media screen and (max-width: 900px) {
   .skills_parent {
-    margin-top: 10vh;
-    margin-left: 0;
-    width: 100vw;
+    max-height: 80vh;
+    margin-top: 13vh;
+    margin-left: auto;
+    width: 90vw;
     margin-bottom: 50px;
+    margin-right: auto;
   }
   .skill_item {
     margin: 0;

@@ -33,7 +33,7 @@ const Footer = () => {
       left: 0px;
       width: 100%;
       height: 40px;
-      top: 95%;
+      top: 98%;
       bottom: 0;
       & > p {
         font-size: 10px;
