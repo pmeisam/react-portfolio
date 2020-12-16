@@ -303,7 +303,7 @@ const ContactPage = () => {
                 rows="6"
                 placeholder="Message *"
               ></textarea>
-              <button className="btn_sent_mesaege m_w90_m-auto">
+              <button className="btn_sent_mesaege">
                 Send Message
               </button>
             </form>

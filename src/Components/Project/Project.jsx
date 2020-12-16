@@ -28,6 +28,9 @@ const ProjectComponent = (props) => {
         font-family: "Saira Stencil One", cursive;
         margin: 0;
       }
+      & > p {
+        margin-bottom: 10px;
+      }
       & > .techs {
         display: grid;
         text-align: center;

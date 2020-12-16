@@ -10,33 +10,34 @@ import { ThemeContext } from "../../Context/ThemeContext";
 
 const HomePage = () => {
   const [intro, setIntro] = useState(null);
-  const [bio, setBio] = useState(null);
+  const [bio, setBio] = useState("");
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     document.title = "Meisam Poorzand";
     let intro = "HI THERE, I'M MEISAM";
-    let bio =
+    let biography =
       "I'm a full-stack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
-    bio = bio.toUpperCase();
+    biography = biography.toUpperCase();
     intro = intro.toUpperCase();
     setIntro(intro);
-    setBio(bio);
-    //   let bio =
+    // setBio(biography);
+    //   let biography =
     //     "I'm a full-stack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
-    //   this.setState({ theText: bio });
-    //   // this.state.bio.split("").forEach((letter, idx) => {
-    //   //   setTimeout(() => {
-    //   //     this.setState((state) => ({ theText: state.theText + letter }));
-    //   //   }, 30 * idx);
-    //   // });
-    //   // setInterval(() => {
-    //   //     if (this.state.cursor) {
-    //   //         this.setState({cursor: false});
-    //   //     } else {
-    //   //         this.setState({cursor: true});
-    //   //     }
-    //   // },300);
+    //   this.setState({ theText: biography });
+
+    biography.split("").forEach((letter, idx) => {
+      setTimeout(() => {
+        setBio((bio) => bio + letter);
+      }, 55 * idx);
+    });
+    // setInterval(() => {
+    //     if (this.state.cursor) {
+    //         this.setState({cursor: false});
+    //     } else {
+    //         this.setState({cursor: true});
+    //     }
+    // },300);
   }, []);
 
   const Tada = styled.div`
@@ -78,6 +79,8 @@ const HomePage = () => {
       & > .projectLink {
         cursor: pointer;
         & > .projectButton {
+          position: absolute;
+          top: 55%;
           background-image: linear-gradient(
             to right,
             rgb(117, 101, 236),
@@ -101,6 +104,7 @@ const HomePage = () => {
         color: rgb(138, 138, 138);
         font-size: 19px;
         font-weight: 100;
+        text-align: justify;
         & > .blinking {
           animation: blinkingText 0.8s infinite;
         }
@@ -144,6 +148,11 @@ const HomePage = () => {
         & > p {
           margin: -30px 0 20px 0;
         }
+        & > .projectLink {
+          & > .projectButton {
+           top: 47%;
+          }
+        }
         & > svg {
           z-index: -1;
         }
@@ -154,10 +163,13 @@ const HomePage = () => {
         width: 98%;
         & > p {
           margin-top: -15px;
-          font-size: 11px;
+          font-size: 12px;
         }
         & > .projectLink {
           z-index: 999;
+          & > .projectButton {
+           top: 46%;
+          }
         }
         & > svg {
           z-index: -1;
