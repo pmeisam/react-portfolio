@@ -178,7 +178,7 @@ const HomePage = () => {
         </p>
         <Link className="projectLink" to="/projects">
           <button className="projectButton">
-            Projects&nbsp;&nbsp;<i className="fas fa-long-arrow-alt-right"></i>
+            Projects&nbsp;&nbsp;<i className="fas fa-chevron-right"></i>
           </button>
         </Link>
       </div>
