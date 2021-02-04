@@ -8,6 +8,7 @@ const ProfilePage = () => {
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     document.title = "Meisam Poorzand | Contact";
   });
 

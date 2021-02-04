@@ -73,6 +73,7 @@ const ProjectPage = () => {
 
   useEffect(() => {
     document.title = "Meisam Poorzand | Projects";
+    window.scrollTo(0, 0)
   });
 
   return (

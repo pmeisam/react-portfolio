@@ -207,6 +207,7 @@ const ContactPage = () => {
 
   useEffect(() => {
     document.title = "Meisam Poorzand | Contact";
+    window.scrollTo(0, 0)
   });
 
   return (

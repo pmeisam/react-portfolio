@@ -5,6 +5,7 @@ import "./SkillsPage.scss";
 const SkillsPage = () => {
   useEffect(() => {
     document.title = "Meisam Poorzand | Skills";
+    window.scrollTo(0, 0)
   });
   return (
     <React.Fragment>

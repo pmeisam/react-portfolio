@@ -15,6 +15,7 @@ const HomePage = () => {
 
   useEffect(() => {
     document.title = "Meisam Poorzand";
+    window.scrollTo(0, 0)
     let intro = "HI THERE, I'M MEISAM";
     let biography =
       "I'm a full-stack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
