@@ -9,62 +9,20 @@ function Navbar() {
   const [skills, setSkills] = useState(null);
   const [projects, setProjects] = useState(null);
   const [contact, setContact] = useState(null);
-  const [profile, setProfile] = useState(null);
   const [setting, setSetting] = useState(null);
   
-
-  const onMouseEnterHandler = (icon) => {
-    // switch (icon) {
-    //   case "home":
-    //     this.setState({ home: <h4>HOME</h4> });
-    //     break;
-    //   case "skills":
-    //     this.setState({ skills: <h4>SKILLS</h4> });
-    //     break;
-    //   case "projects":
-    //     this.setState({ projects: <h4>PROJECTS</h4> });
-    //     break;
-    //   case "contact":
-    //     this.setState({ contact: <h4>CONTACT</h4> });
-    //     break;
-    //   default:
-    //     break;
-    // }
-  };
-
-  const onMouseLeaveHandler = (text) => {
-    // switch (text) {
-    //   case "home":
-    //     this.setState({ home: <i className="fas fa-home"></i> });
-    //     break;
-    //   case "skills":
-    //     this.setState({ skills: <i className="fas fa-code"></i> });
-    //     break;
-    //   case "projects":
-    //     this.setState({ projects: <i className="fas fa-layer-group"></i> });
-    //     break;
-    //   case "contact":
-    //     this.setState({ contact: <i className="fas fa-user"></i> });
-    //     break;
-    //   case "setting":
-    //     this.setState({ setting: <i className="fas fa-user"></i> });
-    //     break;
-    //   default:
-    //     break;
-    // }
-  };
 
   useEffect(() => {
     let home = <i className="fas fa-home"></i>;
     let skills = <i className="fas fa-code"></i>;
     let projects = <i className="fas fa-layer-group"></i>;
-    let profile = <i className="fas fa-user"></i>;
+    // let profile = <i className="fas fa-user"></i>;
     let contact = <i className="fas fa-phone"></i>;
     let setting = <i className="fas fa-cog"></i>;
     setHome(home);
     setSkills(skills);
     setProjects(projects);
-    setProfile(profile);
+    // setProfile(profile);
     setContact(contact);
     setSetting(setting);
   }, []);

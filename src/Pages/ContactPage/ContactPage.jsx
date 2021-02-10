@@ -1,19 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
-import { slideInUp } from "react-animations";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { ThemeContext } from "../../Context/ThemeContext";
-// import slideInUp from 'react-animations/lib/slide-in-up';
 import ContactPageSVG from "./undraw_festivities_tvvj";
 import emailjs from "emailjs-com";
+import SubmitPopup from "../../Components/SubmitPopup/SubmitPopup";
+// import slideInUp from 'react-animations/lib/slide-in-up';
+// import { slideInUp } from "react-animations";
 
 const ContactPage = () => {
   const { theme } = useContext(ThemeContext);
-  const [message, setMessage] = useState(false);
-  const [email, setEmail] = useState(false);
-  const [name, setName] = useState(false);
-  const [subject, setSubject] = useState(false);
-  const isEnabled = message.length > 0 && email.length > 0 && name.length > 0 && subject.length > 0;
-
+  const [popup, setPopup] = useState(false);
+  // const [form, setForm] = useState({});
   const Contact = styled.div`
     svg {
       width: 100%;
@@ -193,6 +190,16 @@ const ContactPage = () => {
     }
   `;
 
+  const closePopup = () => {
+    setPopup(false);
+    // setDisplayNone(false);
+  };
+  // const onChange = (e) => {
+  //   console.log(e.target.name + "   " + e.target.value);
+  //   setForm({ ...form, [e.target.name]: e.target.value });
+  //   console.log(form)
+  // };
+
   function sendEmail(evt) {
     // Email Function
     evt.preventDefault();
@@ -211,30 +218,23 @@ const ContactPage = () => {
           console.log(error.text);
         }
       );
+
+    setPopup(true);
     evt.target.reset();
+    // setTimeout(() => {
+    //   setBio((bio) => bio + letter);
+    // }, 5);
   }
-
-  const handleChange = (e) => {
-    console.log(e.target.value)
-    if (e.target.name == "name") setName(e.target.value);
-    if (e.target.name == "subject") setSubject(e.target.value);
-    if (e.target.name == "message") setMessage(e.target.value);
-    if (e.target.name == "email") setEmail(e.target.value);
-  };
-
-  // const handleSubmitValidation = () => {
-  //   if (nameValidated && subjectValidated && messageValidated && emailValidated)
-  //     setSubmitValidated(true);
-  // };
 
   useEffect(() => {
     document.title = "Meisam Poorzand | Contact";
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     // console.log("useEffect called")
-  });
+  }, []);
 
   return (
     <Contact>
+      {popup ? <SubmitPopup closePopup={closePopup} /> : null}
       <main className="  m_w90_m-auto content ">
         <div className="parent_contact">
           <div className="info t_w90_m-auto">
@@ -247,7 +247,7 @@ const ContactPage = () => {
               </a>
               <div className="social contact_social m_w90_m-auto">
                 <a
-                  _blank
+                  _blank="true"
                   href="https://www.instagram.com/me.i.sam/"
                   className="icon_social"
                 >
@@ -255,7 +255,7 @@ const ContactPage = () => {
                   {/* <p>Instagram</p> */}
                 </a>
                 <a
-                  _blank
+                  _blank="true"
                   href="https://www.facebook.com/pmeisam"
                   className="icon_social"
                 >
@@ -263,7 +263,7 @@ const ContactPage = () => {
                   {/* <p>Facebook</p> */}
                 </a>
                 <a
-                  _blank
+                  _blank="true"
                   href="https://www.twitter.com/pmeisam"
                   className="icon_social"
                 >
@@ -271,7 +271,7 @@ const ContactPage = () => {
                   {/* <p>Twitter</p> */}
                 </a>
                 <a
-                  _blank
+                  _blank="true"
                   href="https://www.github.com/pmeisam"
                   className="icon_social"
                 >
@@ -279,7 +279,7 @@ const ContactPage = () => {
                   {/* <p>GitHub</p> */}
                 </a>
                 <a
-                  _blank
+                  _blank="true"
                   href="https://www.linkedin.com/in/pmeisam"
                   className="icon_social"
                 >
@@ -287,7 +287,7 @@ const ContactPage = () => {
                   {/* <p>LinkedIn</p> */}
                 </a>
                 <a
-                  _blank
+                  _blank="true"
                   href="mailto: info@meisam.org"
                   className="icon_social"
                 >
@@ -302,34 +302,36 @@ const ContactPage = () => {
               <input
                 type="text"
                 placeholder="Name *"
-                required
                 name="name"
-                onChange={handleChange}
+                // onChange={onChange}
+                required
               />
               <input
                 type="email"
                 placeholder="Email *"
-                required
                 name="email"
-                onChange={handleChange}
+                // onChange={onChange}
+                required
               />
               <input
                 type="text"
                 placeholder="Subject *"
-                required
                 name="subject"
-                onChange={handleChange}
+                // onChange={onChange}
+                required
               />
               <textarea
                 name="message"
                 cols="30"
                 rows="6"
-                onChange={handleChange}
+                // onChange={onChange}
                 placeholder="Message *"
+                required
               ></textarea>
               <button
                 className="btn_sent_mesaege"
-                disabled={!isEnabled}
+                type="submit"
+                // disabled={!isEnabled}
               >
                 Send Message
               </button>

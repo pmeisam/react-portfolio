@@ -128,7 +128,7 @@ const Switch = () => {
       <label
         className="react-switch-label"
         htmlFor={`react-switch-new`}
-        active={isDark}
+        active={isDark.toString()}
       >
         <span className={`react-switch-button`} />
       </label>

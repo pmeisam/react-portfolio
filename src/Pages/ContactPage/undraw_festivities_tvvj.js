@@ -16,9 +16,9 @@ export default function ContactPageSVG() {
           x2="0.5"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset="0" stop-color="gray" stop-opacity="0.251" />
-          <stop offset="0.54" stop-color="gray" stop-opacity="0.122" />
-          <stop offset="1" stop-color="gray" stop-opacity="0.102" />
+          <stop offset="0" stopColor="gray" stopOpacity="0.251" />
+          <stop offset="0.54" stopColor="gray" stopOpacity="0.122" />
+          <stop offset="1" stopColor="gray" stopOpacity="0.102" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-2"
@@ -482,8 +482,8 @@ export default function ContactPageSVG() {
           transform="translate(-320.004 -320.267)"
           fill="none"
           stroke="#3f3d56"
-          stroke-miterlimit="10"
-          stroke-width="4"
+          strokeMiterlimit="10"
+          strokeWidth="4"
         />
         <path
           id="Path_268"
@@ -548,8 +548,8 @@ export default function ContactPageSVG() {
           transform="translate(-69.682 -290.721)"
           fill="none"
           stroke="#3f3d56"
-          stroke-miterlimit="10"
-          stroke-width="4"
+          strokeMiterlimit="10"
+          strokeWidth="4"
         />
         <path
           id="Path_277"
@@ -614,8 +614,8 @@ export default function ContactPageSVG() {
           transform="translate(-231.496 -256.927)"
           fill="none"
           stroke="#3f3d56"
-          stroke-miterlimit="10"
-          stroke-width="4"
+          strokeMiterlimit="10"
+          strokeWidth="4"
         />
         <path
           id="Path_286"
@@ -922,8 +922,8 @@ export default function ContactPageSVG() {
           transform="translate(-363.634 -344.995)"
           fill="none"
           stroke="#000"
-          stroke-miterlimit="10"
-          stroke-width="1"
+          strokeMiterlimit="10"
+          strokeWidth="1"
           opacity="0.1"
         />
         <path
@@ -954,8 +954,8 @@ export default function ContactPageSVG() {
           transform="translate(-390.62 -289.128)"
           fill="none"
           stroke="#3f3d56"
-          stroke-miterlimit="10"
-          stroke-width="4"
+          strokeMiterlimit="10"
+          strokeWidth="4"
         />
         <path
           id="Path_330"
@@ -1020,8 +1020,8 @@ export default function ContactPageSVG() {
           transform="translate(-455.868 -351.504)"
           fill="none"
           stroke="#3f3d56"
-          stroke-miterlimit="10"
-          stroke-width="4"
+          strokeMiterlimit="10"
+          strokeWidth="4"
         />
         <path
           id="Path_339"
