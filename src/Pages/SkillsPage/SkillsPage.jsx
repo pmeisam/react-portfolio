@@ -5,113 +5,261 @@ import "./SkillsPage.scss";
 const SkillsPage = () => {
   useEffect(() => {
     document.title = "Meisam Poorzand | Skills";
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   });
   return (
     <React.Fragment>
       <Fade top>
         <div className="skills_parent">
-          <div className="skill_item">
-            <i className="devicon-nodejs-plain colored skillSize"></i>
-            <span className="skillSearch">nodejs</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+                <i className="devicon-nodejs-plain colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>Node.js</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-express-original skillSize"></i>
-            <span className="skillSearch">express</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+                <i className="devicon-express-original"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>EXPRESS</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-mongodb-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">MongoDB</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+                <i className="devicon-mongodb-plain-wordmark colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>MongoDB</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-angularjs-plain colored skillSize"></i>
-            <span className="skillSearch">Angular</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-angularjs-plain colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>Angular</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-react-original-wordmark colored skillSize"></i>
-            <span className="skillSearch">React</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-react-original-wordmark colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>React</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i class="devicon-vuejs-plain colored skillSize"></i>
-            <span className="skillSearch">Vue</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-vuejs-plain colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>Vue.js</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-python-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">Python</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-python-plain-wordmark colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>Python</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-django-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">Django</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-django-plain-wordmark"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>Django</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-java-plain-wordmark colored skillSizeplain"></i>
-            <span className="skillSearch">java</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-java-plain-wordmark colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>Java</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-postgresql-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">PostgreSQL</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-postgresql-plain-wordmark colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h4>PostgreSQL</h4>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-mysql-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">mysql</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-mysql-plain-wordmark"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>MySQL</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-typescript-plain colored skillSize"></i>
-            <span className="skillSearch">Typescript</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-typescript-plain colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h4>TypeScript</h4>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-javascript-plain colored skillSize"></i>
-            <span className="skillSearch">JavaScript</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-javascript-plain colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h4>JavaScript</h4>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-jquery-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">jquery</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-jquery-plain-wordmark colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>jQuery</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-c-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">C</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-c-plain-wordmark  colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>C</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-cplusplus-plain colored skillSize"></i>
-            <span className="skillSearch">Cplusplus</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-cplusplus-plain colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>C++</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-github-plain-wordmark skillSize"></i>
-            <span className="skillSearch">git</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-github-plain-wordmark"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>GitHub</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-html5-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">HTML5</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-html5-plain-wordmark colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>HTML</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-css3-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">CSS</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-css3-plain-wordmark colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>CSS</h3>
+              </div>
+            </div>
           </div>
-
-          <div className="skill_item">
-            <i className="devicon-sass-original colored skillSize"></i>
-            <span className="skillSearch">sass scss</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-sass-original colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>SASS</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-wordpress-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">wordpress</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-wordpress-plain-wordmark"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>wordpress</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-amazonwebservices-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">Amazon Web Service</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-amazonwebservices-plain-wordmark colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>AWS</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-bootstrap-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">Bootstrap</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-bootstrap-plain-wordmark colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>Bootstrap</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-git-plain colored skillSize"></i>
-            <span className="skillSearch">github</span>
-            <span className="skillSearch">git</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-git-plain colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>Git</h3>
+              </div>
+            </div>
           </div>
-          <div className="skill_item">
-            <i className="devicon-heroku-plain-wordmark colored skillSize"></i>
-            <span className="skillSearch">heroku</span>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <i className="devicon-heroku-plain-wordmark colored"></i>
+              </div>
+              <div className="flip-card-back">
+                <h3>Heroku</h3>
+              </div>
+            </div>
           </div>
         </div>
       </Fade>

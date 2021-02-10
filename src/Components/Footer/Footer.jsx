@@ -42,7 +42,7 @@ const Footer = () => {
   `;
   return (
     <FooterWrapper>
-      <p>Ⓒ2020 Meisam Poorzand. All Rights Reserved.</p>
+      <p>Ⓒ2021 Meisam Poorzand. All Rights Reserved.</p>
     </FooterWrapper>
   );
 };

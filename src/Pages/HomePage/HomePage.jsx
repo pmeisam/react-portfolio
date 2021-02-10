@@ -78,6 +78,7 @@ const HomePage = () => {
       flex-direction: column;
       width: 77%;
       & > .projectLink {
+        z-index: 999;
         cursor: pointer;
         & > .projectButton {
           position: absolute;

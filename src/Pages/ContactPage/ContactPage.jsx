@@ -8,6 +8,11 @@ import emailjs from "emailjs-com";
 
 const ContactPage = () => {
   const { theme } = useContext(ThemeContext);
+  const [message, setMessage] = useState(false);
+  const [email, setEmail] = useState(false);
+  const [name, setName] = useState(false);
+  const [subject, setSubject] = useState(false);
+  const isEnabled = message.length > 0 && email.length > 0 && name.length > 0 && subject.length > 0;
 
   const Contact = styled.div`
     svg {
@@ -86,7 +91,6 @@ const ContactPage = () => {
       border-radius: 10px;
     }
     .btn_sent_mesaege {
-      cursor: pointer;
       width: 50%;
       margin: 20px 0;
       padding: 15px 10px;
@@ -100,11 +104,17 @@ const ContactPage = () => {
       font-size: 13px;
       color: white;
     }
-    .btn_sent_mesaege:hover {
-      // background: white;
+    .btn_sent_mesaege:hover:enabled {
       box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
+      curoser: pointer;
     }
-
+    button:disabled,
+    button[disabled] {
+      border: 1px solid #999999;
+      background: #cccccc;
+      color: #666666;
+      cursoer: none;
+    }
     .contact_social {
       margin-left: 0;
     }
@@ -186,7 +196,6 @@ const ContactPage = () => {
   function sendEmail(evt) {
     // Email Function
     evt.preventDefault();
-    console.log(evt.target);
     emailjs
       .sendForm(
         "service_pljat46",
@@ -205,9 +214,23 @@ const ContactPage = () => {
     evt.target.reset();
   }
 
+  const handleChange = (e) => {
+    console.log(e.target.value)
+    if (e.target.name == "name") setName(e.target.value);
+    if (e.target.name == "subject") setSubject(e.target.value);
+    if (e.target.name == "message") setMessage(e.target.value);
+    if (e.target.name == "email") setEmail(e.target.value);
+  };
+
+  // const handleSubmitValidation = () => {
+  //   if (nameValidated && subjectValidated && messageValidated && emailValidated)
+  //     setSubmitValidated(true);
+  // };
+
   useEffect(() => {
     document.title = "Meisam Poorzand | Contact";
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0);
+    // console.log("useEffect called")
   });
 
   return (
@@ -281,68 +304,39 @@ const ContactPage = () => {
                 placeholder="Name *"
                 required
                 name="name"
-                id=""
+                onChange={handleChange}
               />
               <input
                 type="email"
                 placeholder="Email *"
                 required
                 name="email"
-                id=""
+                onChange={handleChange}
               />
               <input
                 type="text"
                 placeholder="Subject *"
                 required
                 name="subject"
-                id=""
+                onChange={handleChange}
               />
               <textarea
                 name="message"
-                id=""
                 cols="30"
                 rows="6"
+                onChange={handleChange}
                 placeholder="Message *"
               ></textarea>
-              <button className="btn_sent_mesaege">
+              <button
+                className="btn_sent_mesaege"
+                disabled={!isEnabled}
+              >
                 Send Message
               </button>
             </form>
           </div>
         </div>
       </main>
-      {/* <a className="title" href="https://www.meisam.org">
-        <h1>MEISAM</h1>
-        <h1>POORZAND</h1>
-      </a>
-      <a className="email" href="mailto: info@meisam.org">
-        <h4>info@meisam.org</h4>
-      </a>
-      <div className="icons">
-        <a _blank className="icon" href="https://www.linkedin.com/in/pmeisam">
-          <i className="fab fa-linkedin"></i>
-        </a>
-
-        <a _blank className="icon" href="https://www.facebook.com/pmeisam">
-          <i className="fab fa-facebook-square"></i>
-        </a>
-
-        <a _blank className="icon" href="https://www.twitter.com/pmeisam">
-          <i className="fab fa-twitter-square"></i>
-        </a>
-
-        <a _blank className="icon" href="https://www.instagram.com/me.i.sam/">
-          <i className="fab fa-instagram"></i>
-        </a>
-
-        <a _blank className="icon" href="https://www.github.com/pmeisam">
-          <i className="fab fa-github"></i>
-        </a>
-
-        <a _blank className="icon" href="mailto: info@meisam.org">
-          <i className="fas fa-envelope-open-text"></i>
-        </a>
-      </div> */}
     </Contact>
   );
 };
