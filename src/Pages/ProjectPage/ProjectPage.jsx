@@ -4,11 +4,32 @@ import { FullPage, Slide } from "react-full-page";
 
 
 const ProjectPage = () => {
+
+  const [arcadiaCars] = useState({
+    img: "images/arcadiacars.png",
+    name: "Arcadia Automotive",
+    description:
+      "Arcadia Automotive is a dealership web-app. The admin can login and upload a vehicle images along with its details to the inventory. In addition clients can view the inventory, filter and search through the inventory, calculate payments on a specific vehicle and contact the delarship regarding a vehicle they have in mind to purchase.",
+    toolsUsed: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "Email.js",
+      "Passport.js",
+      "Token Based Auth",
+      "AWS EC2",
+      "AWS S3",
+    ],
+    link: "http://www.arcadiacars.com/",
+    gitHubLink: "https://github.com/pmeisam/arcadia_automobile",
+  });
   const [devSpot] = useState({
     img: "images/devspot.png",
     name: "devSpot",
     description:
-      "devSpot is a web app where developers can share their projects through iframes. In addition, users can chat with each other through the app. The posted projects are live, meaning users can interact with them as they would if they were to visit the project.",
+      "devSpot is a web-app where developers can share their projects through iframes. In addition, users can chat with each other through the app. The posted projects are live, meaning users can interact with them as they would if they were to visit the project.",
     toolsUsed: [
       "React.js",
       "Node.js",
@@ -24,7 +45,6 @@ const ProjectPage = () => {
     link: "http://dev-spot.herokuapp.com/",
     gitHubLink: "https://github.com/pmeisam/devSpot",
   });
-
   const [memesagram] = useState({
     img: "images/memesagram.png",
     name: "MEMESAGRAM",
@@ -43,7 +63,6 @@ const ProjectPage = () => {
     link: "http://memesagram.herokuapp.com/",
     gitHubLink: "https://github.com/pmeisam/instagram",
   });
-
   const [triplaner] = useState({
     img: "images/triplaner.png",
     name: "TRIPLANER",
@@ -60,7 +79,6 @@ const ProjectPage = () => {
     link: "http://triplaner.herokuapp.com/",
     gitHubLink: "https://github.com/pmeisam/trip-planner",
   });
-
   const [minesweeper] = useState({
     img: "images/minesweeper.png",
     name: "MINESWEEPER",
@@ -79,6 +97,9 @@ const ProjectPage = () => {
   return (
     <div>
       <FullPage>
+        <Slide>
+          <ProjectComponent project={arcadiaCars} />
+        </Slide>
         <Slide>
           <ProjectComponent project={devSpot} />
         </Slide>

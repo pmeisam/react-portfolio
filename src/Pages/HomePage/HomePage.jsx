@@ -30,7 +30,7 @@ const HomePage = () => {
     biography.split("").forEach((letter, idx) => {
       setTimeout(() => {
         setBio((bio) => bio + letter);
-      }, 55 * idx);
+      }, 5 * idx);
     });
     // setInterval(() => {
     //     if (this.state.cursor) {
@@ -109,6 +109,7 @@ const HomePage = () => {
         text-align: justify;
         & > .blinking {
           animation: blinkingText 0.8s infinite;
+          font-weight: 900;
         }
         @keyframes blinkingText {
           0% {
@@ -133,7 +134,7 @@ const HomePage = () => {
       position: fixed;
       right: 0;
       bottom: 0;
-      width: 41vw;
+      width: 38vw;
     }
 
     @media screen and (max-width: 900px) {
@@ -188,7 +189,7 @@ const HomePage = () => {
         </Tada>
         <p>
           {bio ? bio.toUpperCase() : null}
-          <span className="blinking">|</span>
+          <span className="blinking">_</span>
         </p>
         <Link className="projectLink" to="/projects">
           <button className="projectButton">

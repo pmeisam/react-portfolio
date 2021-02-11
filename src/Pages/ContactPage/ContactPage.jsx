@@ -187,6 +187,21 @@ const ContactPage = () => {
         margin: 20px auto;
         justify-content: center;
       }
+
+      .txt_social_contact {
+        font-size: 18px;
+      }
+
+      .icon_social {
+        margin-right: 10px;
+        margin-top: 10px;
+      }
+      .icon_social > i {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        border-radius: 5px;
+      }
     }
   `;
 
