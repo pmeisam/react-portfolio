@@ -112,28 +112,28 @@ const ProjectPage = () => {
     document.title = "Meisam Poorzand | Projects";
     window.scrollTo(0, 0);
     AOS.init({
-      duration: 1200,
+      duration: 2000,
     });
   });
 
   return (
     <ProjectsWrapper>
-      <div className="project_container">
+      <div data-aos="fade-up" className="project_container">
         <ProjectComponent project={nateLimo} />
       </div>
-      <div className="project_container">
+      <div data-aos="fade-down" className="project_container">
         <ProjectComponent project={arcadiaCars} />
       </div>
-      <div className="project_container">
+      <div data-aos="zoom-in" className="project_container">
         <ProjectComponent project={devSpot} />
       </div>
-      <div className="project_container">
+      <div data-aos="zoom-out" className="project_container">
         <ProjectComponent project={triplaner} />
       </div>
-      <div className="project_container">
+      <div data-aos="flip-up" className="project_container">
         <ProjectComponent project={memesagram} />
       </div>
-      <div className="project_container">
+      <div data-aos="slide-up" className="project_container">
         <ProjectComponent project={minesweeper} />
       </div>
     </ProjectsWrapper>
@@ -143,19 +143,28 @@ const ProjectPage = () => {
 export default ProjectPage;
 
 const ProjectsWrapper = styled.div`
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  .project_container {
+    margin: 15% 0;
+  }
+  @media screen and (max-width: 600px) {
+    // margin: 300px 0;
+    .project_container {
+      margin: 35% 0;
+    }
+  }
+  // height: 100vh;
+  // overflow-y: scroll;
+  // scroll-snap-type: y mandatory;
 
-  .project_container {
-    height: 100vh;
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-  }
-  .project_container {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }
+  // .project_container {
+  //   height: 100vh;
+  //   flex: 0 0 100%;
+  //   scroll-snap-align: center;
+  // }
+  // .project_container {
+  //   display: flex;
+  //   height: 100vh;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
 `;

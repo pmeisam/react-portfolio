@@ -96,7 +96,6 @@ const ProjectComponent = (props) => {
       width: 100%;
       justify-content: center;
       align-items: center;
-      height: 100%;
 
       & > img {
         width: 440px;

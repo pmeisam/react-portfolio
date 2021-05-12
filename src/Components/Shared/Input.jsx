@@ -44,12 +44,15 @@ const Input = (props) => {
       height: 12px;
     }
     @media screen and (max-width: 600px) {
+      .input-container input {
+        width: 100%;
+      }
       .input-container label {
-        left: 30px;
+        left: 15px;
       }
       .input-container input:focus ~ label,
       .input-container input:valid ~ label {
-        left: 25px;
+        left: 10px;
       }
     }
   `;

@@ -45,12 +45,15 @@ const TextArea = (props) => {
     }
 
     @media screen and (max-width: 600px) {
+      .input-container textarea {
+        width: 100%;
+      }
       .input-container label {
-        left: 30px;
+        left: 15px;
       }
       .input-container textarea:focus ~ label,
       .input-container textarea:valid ~ label {
-        left: 25px;
+        left: 10px;
       }
     }
   `;

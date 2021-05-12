@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import styled, { keyframes } from "styled-components";
 import { tada } from "react-animations";
-import "./HomePage.scss";
-import HomePageSvg from "./undraw_festivities_tvvj";
-import { Link } from "react-router-dom";
 import { ThemeContext } from "../../Context/ThemeContext";
+import HomePageSvg from "./undraw_festivities_tvvj";
+import "./HomePage.scss";
+import AOS from "aos";
+import "aos/dist/aos.css";
 // import slideInLeft from 'react-animations/lib/slide-in-left';
 // import Tada from 'react-reveal/Tada';
 
@@ -28,23 +29,14 @@ const HomePage = () => {
     //   this.setState({ theText: biography });
 
     setBio(biography);
-    // biography.split("").forEach((letter, idx) => {
-    //   setTimeout(() => {
-    //     setBio((bio) => bio + letter);
-    //   }, 5 * idx);
-    // });
-    // setInterval(() => {
-    //     if (this.state.cursor) {
-    //         this.setState({cursor: false});
-    //     } else {
-    //         this.setState({cursor: true});
-    //     }
-    // },300);
+    AOS.init({
+      duration: 2000,
+    });
   }, []);
 
   const Tada = styled.div`
-    animation: 3s ${keyframes`${tada}`} 1;
-    animation-delay: 0.5s;
+    // animation: 3s ${keyframes`${tada}`} 1;
+    // animation-delay: 0.5s;
     margin-top: 100px;
     & > h1 {
       font-family: "Saira Stencil One", cursive;
@@ -144,9 +136,11 @@ const HomePage = () => {
       flex-direction: column;
       align-items: center;
       width: 90%;
+
       & > svg {
-        width: 100%;
+        width: 99vw;
         height: 50%;
+        left: 0;
       }
       & > div {
         & > p {
@@ -159,11 +153,11 @@ const HomePage = () => {
         }
         & > svg {
           z-index: -1;
+         
         }
       }
     }
     @media screen and (max-width: 600px) {
-      
       & > div {
         width: 98%;
         grid-template-rows: auto auto auto;
@@ -191,6 +185,7 @@ const HomePage = () => {
         }
         & > svg {
           z-index: -1;
+          
         }
       }
     }
@@ -200,17 +195,17 @@ const HomePage = () => {
     <Intro>
       <div>
         <Tada>
-          <h1>{intro}</h1>
+          <h1 data-aos="zoom-in">{intro}</h1>
         </Tada>
-        <p>
+        <p data-aos="zoom-out">
           {bio ? bio.toUpperCase() : null}
           <span className="blinking">_</span>
         </p>
-        <Link className="projectLink" to="/projects">
+        {/* <Link className="projectLink" to="/projects">
           <button className="projectButton">
             Projects&nbsp;&nbsp;<i className="fas fa-chevron-right"></i>
           </button>
-        </Link>
+        </Link> */}
       </div>
       <HomePageSvg />
     </Intro>

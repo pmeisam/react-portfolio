@@ -6,8 +6,8 @@ import emailjs from "emailjs-com";
 import SubmitPopup from "../../Components/SubmitPopup/SubmitPopup";
 import Input from "../../Components/Shared/Input";
 import TextArea from "../../Components/Shared/Textarea";
-// import slideInUp from 'react-animations/lib/slide-in-up';
-// import { slideInUp } from "react-animations";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ContactPage = () => {
   const { theme } = useContext(ThemeContext);
@@ -30,6 +30,7 @@ const ContactPage = () => {
       direction: rtl;
       display: flex;
       flex-wrap: wrap;
+      overflow-y: hidden;
     }
 
     .txt_social_contact {
@@ -227,19 +228,18 @@ const ContactPage = () => {
 
     setPopup(true);
     evt.target.reset();
-    // setTimeout(() => {
-    //   setBio((bio) => bio + letter);
-    // }, 5);
   }
 
   useEffect(() => {
     document.title = "Meisam Poorzand | Contact";
     window.scrollTo(0, 0);
-    // console.log("useEffect called")
+    AOS.init({
+      duration: 2000,
+    });
   }, []);
 
   return (
-    <Contact>
+    <Contact data-aos="slide-left">
       {popup ? <SubmitPopup closePopup={closePopup} /> : null}
       <main className="  m_w90_m-auto content ">
         <div className="parent_contact">
@@ -247,7 +247,7 @@ const ContactPage = () => {
             <div className="contact_bg_img">
               <ContactPageSVG className="contact_svg" />
             </div>
-            <div>
+            <div data-aos="zoom-in">
               <a href="mailto: info@meisam.org" className="txt_social_contact">
                 <p>info@meisam.org</p>
               </a>
@@ -304,7 +304,7 @@ const ContactPage = () => {
             </div>
           </div>
           <div className="parent_form t_w90_m-auto">
-            <form onSubmit={sendEmail}>
+            <form data-aos="zoom-out" onSubmit={sendEmail}>
               <Input
                 placeholder="Name"
                 name="name"
