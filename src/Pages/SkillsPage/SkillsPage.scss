@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .flip-card-inner {
@@ -18,15 +17,15 @@
   transition: transform 0.6s;
   transform-style: preserve-3d;
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +42,11 @@
 }
 
 .flip-card-back {
-  background-image: linear-gradient( to bottom, rgb(117,101,236), rgb(122,42,196) ) !important;;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(117, 101, 236),
+    rgb(122, 42, 196)
+  ) !important;
   color: white;
   transform: rotateY(180deg);
 }
@@ -56,10 +59,9 @@
   flex-wrap: wrap;
   justify-content: center;
   max-height: 80vh;
-  margin-top: 8vh;
+  margin-top: 10vh;
+  align-items: center;
 }
-
-
 
 @media screen and (max-width: 900px) {
   .flip-card {
@@ -84,7 +86,6 @@
   }
 }
 
-
 @media screen and (max-width: 600px) {
   .flip-card {
     margin-top: 30px;
@@ -93,9 +94,7 @@
   }
   .skills_parent {
     max-height: 80vh;
-    margin-top: 8vh;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10vh auto;
     width: 95vw;
   }
 

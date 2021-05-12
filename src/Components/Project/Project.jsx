@@ -6,16 +6,19 @@ import { ThemeContext } from "../../Context/ThemeContext";
 const ProjectComponent = (props) => {
   const { theme } = useContext(ThemeContext);
   const Project = styled.div`
+
     display: flex;
     width: 80%;
     margin: 0 auto;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 100%;
+
+
+    
     & > img {
       width: 720px;
-      height: 460px;
+      height: 430px;
     }
     & > div {
       display: flex;
@@ -64,7 +67,6 @@ const ProjectComponent = (props) => {
               rgb(122, 42, 196)
             ) !important;
             box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
-
           }
         }
       }
@@ -174,7 +176,6 @@ const ProjectComponent = (props) => {
 
   return props.project ? (
     <Project>
-      <Fade center>
         <img src={props.project.img} alt="" />
 
         <div>
@@ -193,7 +194,8 @@ const ProjectComponent = (props) => {
               target="_blank"
               href={props.project.link}
             >
-              <i className="fas fa-link"></i>
+              {/* <i className="fas fa-link"></i> */}
+              <i class="fas fa-globe-americas"></i>
             </a>
             <a
               rel="noopener noreferrer"
@@ -204,7 +206,6 @@ const ProjectComponent = (props) => {
             </a>
           </div>
         </div>
-      </Fade>
     </Project>
   ) : (
     <p>loading...</p>

@@ -1,10 +1,29 @@
 import React, { useState, useEffect } from "react";
 import ProjectComponent from "../../Components/Project/Project";
 import { FullPage, Slide } from "react-full-page";
-
+import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ProjectPage = () => {
-
+  const [nateLimo] = useState({
+    img: "images/nateLimo.png",
+    name: "Nate Limo Services",
+    description:
+      "Nate Limo Services is a web-app designed for a limosine company. Users can search through origin and destination address through google maps places API, see the distance on a map through google maps destinations API, get a quote based on the distance and duration and book an appointment. Admins can also view appointments on the admin page and edit the status of an appointment.",
+    toolsUsed: [
+      "React.js",
+      "Node.js",
+      "Firestore Database",
+      "Firebase Functions",
+      "Firebase Hosting",
+      "Email.js",
+      "Express.js",
+      "Google Maps API",
+    ],
+    link: "https://natelimoservices.firebaseapp.com/",
+    gitHubLink: "https://github.com/adibfazli/nate-limo-service",
+  });
   const [arcadiaCars] = useState({
     img: "images/arcadiacars.png",
     name: "Arcadia Automotive",
@@ -91,32 +110,52 @@ const ProjectPage = () => {
 
   useEffect(() => {
     document.title = "Meisam Poorzand | Projects";
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+    AOS.init({
+      duration: 1200,
+    });
   });
 
   return (
-    <div>
-      <FullPage>
-        <Slide>
-          <ProjectComponent project={arcadiaCars} />
-        </Slide>
-        <Slide>
-          <ProjectComponent project={devSpot} />
-        </Slide>
-        <Slide>
-          <ProjectComponent project={triplaner} />
-        </Slide>
-
-        <Slide>
-          <ProjectComponent project={memesagram} />
-        </Slide>
-
-        <Slide>
-          <ProjectComponent project={minesweeper} />
-        </Slide>
-      </FullPage>
-    </div>
+    <ProjectsWrapper>
+      <div className="project_container">
+        <ProjectComponent project={nateLimo} />
+      </div>
+      <div className="project_container">
+        <ProjectComponent project={arcadiaCars} />
+      </div>
+      <div className="project_container">
+        <ProjectComponent project={devSpot} />
+      </div>
+      <div className="project_container">
+        <ProjectComponent project={triplaner} />
+      </div>
+      <div className="project_container">
+        <ProjectComponent project={memesagram} />
+      </div>
+      <div className="project_container">
+        <ProjectComponent project={minesweeper} />
+      </div>
+    </ProjectsWrapper>
   );
 };
 
 export default ProjectPage;
+
+const ProjectsWrapper = styled.div`
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+
+  .project_container {
+    height: 100vh;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+  }
+  .project_container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+`;

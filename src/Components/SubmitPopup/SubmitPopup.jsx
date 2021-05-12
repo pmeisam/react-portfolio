@@ -11,7 +11,15 @@ function SubmitPopup(props) {
           </button>
         </div>
         <div className="img_container">
-          <img alt="message sent" src="images/deliveredmessage.gif" />
+          {/* <img alt="message sent" src="images/deliveredmessage.gif" /> */}
+          <h1>Message Sent</h1>
+          <div>
+            <br />
+            <p>Thank you for taking the time to view my portfolio. I received your message and I will contact you as soon as possible. </p>
+            <br />
+            <p>Best,</p>
+            <p>Meisam Poorzand</p>
+          </div>
         </div>
       </div>
     </PopupWrapper>
@@ -66,8 +74,12 @@ const PopupWrapper = styled.div`
   .img_container {
     max-height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  .img_container div {
+    width: 90%;
   }
 
   @media only screen and (max-width: 930px) {

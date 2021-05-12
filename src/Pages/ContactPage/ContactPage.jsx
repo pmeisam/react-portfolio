@@ -4,12 +4,14 @@ import { ThemeContext } from "../../Context/ThemeContext";
 import ContactPageSVG from "./undraw_festivities_tvvj";
 import emailjs from "emailjs-com";
 import SubmitPopup from "../../Components/SubmitPopup/SubmitPopup";
+import Input from "../../Components/Shared/Input";
+import TextArea from "../../Components/Shared/Textarea";
 // import slideInUp from 'react-animations/lib/slide-in-up';
 // import { slideInUp } from "react-animations";
 
 const ContactPage = () => {
   const { theme } = useContext(ThemeContext);
-  const [popup, setPopup] = useState(false);
+  const [popup, setPopup] = useState(true);
   // const [form, setForm] = useState({});
   const Contact = styled.div`
     svg {
@@ -84,11 +86,9 @@ const ContactPage = () => {
       border-bottom: 1px solid ${theme.fontColor};
     }
     .parent_form textarea {
-      border: 1px solid ${theme.fontColor};
-      border-radius: 10px;
     }
     .btn_sent_mesaege {
-      width: 50%;
+      width: 70%;
       margin: 20px 0;
       padding: 15px 10px;
       border-radius: 35px;
@@ -121,15 +121,12 @@ const ContactPage = () => {
 
     .social {
       display: flex;
-      justify-content: flex-start;
-      margin-left: 5%;
-      margin-top: 40px;
+      justify-content: center;
+      margin: 30px auto;
       flex-wrap: wrap;
+      width: 50%;
     }
 
-    .contact_social {
-      margin-left: 0;
-    }
     .contact_social i {
       border-radius: 0;
     }
@@ -207,13 +204,7 @@ const ContactPage = () => {
 
   const closePopup = () => {
     setPopup(false);
-    // setDisplayNone(false);
   };
-  // const onChange = (e) => {
-  //   console.log(e.target.name + "   " + e.target.value);
-  //   setForm({ ...form, [e.target.name]: e.target.value });
-  //   console.log(form)
-  // };
 
   function sendEmail(evt) {
     // Email Function
@@ -260,7 +251,7 @@ const ContactPage = () => {
               <a href="mailto: info@meisam.org" className="txt_social_contact">
                 <p>info@meisam.org</p>
               </a>
-              <div className="social contact_social m_w90_m-auto">
+              <div className="social contact_social">
                 <a
                   _blank="true"
                   href="https://www.instagram.com/me.i.sam/"
@@ -314,35 +305,38 @@ const ContactPage = () => {
           </div>
           <div className="parent_form t_w90_m-auto">
             <form onSubmit={sendEmail}>
-              <input
-                type="text"
-                placeholder="Name *"
+              <Input
+                placeholder="Name"
                 name="name"
-                // onChange={onChange}
-                required
+                type="text"
+                required={true}
+                onChange={null}
               />
-              <input
+              <Input
                 type="email"
-                placeholder="Email *"
+                placeholder="Email"
                 name="email"
                 // onChange={onChange}
-                required
+                required={true}
+                onChange={null}
               />
-              <input
+              <Input
                 type="text"
-                placeholder="Subject *"
+                placeholder="Subject "
                 name="subject"
                 // onChange={onChange}
-                required
+                required={true}
+                onChange={null}
               />
-              <textarea
+              <TextArea
                 name="message"
                 cols="30"
                 rows="6"
                 // onChange={onChange}
-                placeholder="Message *"
-                required
-              ></textarea>
+                placeholder="Message"
+                required={true}
+                onChange={null}
+              ></TextArea>
               <button
                 className="btn_sent_mesaege"
                 type="submit"

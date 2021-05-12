@@ -15,7 +15,7 @@ const HomePage = () => {
 
   useEffect(() => {
     document.title = "Meisam Poorzand";
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     let intro = "HI THERE, I'M MEISAM";
     let biography =
       "I'm a full-stack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
@@ -27,11 +27,12 @@ const HomePage = () => {
     //     "I'm a full-stack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
     //   this.setState({ theText: biography });
 
-    biography.split("").forEach((letter, idx) => {
-      setTimeout(() => {
-        setBio((bio) => bio + letter);
-      }, 5 * idx);
-    });
+    setBio(biography);
+    // biography.split("").forEach((letter, idx) => {
+    //   setTimeout(() => {
+    //     setBio((bio) => bio + letter);
+    //   }, 5 * idx);
+    // });
     // setInterval(() => {
     //     if (this.state.cursor) {
     //         this.setState({cursor: false});
@@ -74,15 +75,15 @@ const HomePage = () => {
       margin: 30px 0;
     }
     & > div {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-rows: 1fr 2fr 1fr;
       width: 77%;
       & > .projectLink {
         z-index: 999;
         cursor: pointer;
         & > .projectButton {
-          position: absolute;
-          top: 55%;
+          // position: absolute;
+          // top: 55%;
           background-image: linear-gradient(
             to right,
             rgb(117, 101, 236),
@@ -153,7 +154,7 @@ const HomePage = () => {
         }
         & > .projectLink {
           & > .projectButton {
-           top: 47%;
+            //  top: 47%;
           }
         }
         & > svg {
@@ -162,8 +163,10 @@ const HomePage = () => {
       }
     }
     @media screen and (max-width: 600px) {
+      
       & > div {
         width: 98%;
+        grid-template-rows: auto auto auto;
         & > p {
           margin-top: -15px;
           font-size: 12px;
@@ -171,7 +174,19 @@ const HomePage = () => {
         & > .projectLink {
           z-index: 999;
           & > .projectButton {
-           top: 46%;
+            /background-image: linear-gradient(
+              to right,
+              rgb(117, 101, 236),
+              rgb(122, 42, 196)
+            ) !important;
+            width: 170px;
+            height: 40px;
+            border-radius: 60px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 13px;
+            margin-top: 0;
           }
         }
         & > svg {

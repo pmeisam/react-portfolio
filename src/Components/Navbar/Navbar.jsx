@@ -10,7 +10,6 @@ function Navbar() {
   const [projects, setProjects] = useState(null);
   const [contact, setContact] = useState(null);
   const [setting, setSetting] = useState(null);
-  
 
   useEffect(() => {
     let home = <i className="fas fa-home"></i>;
@@ -36,11 +35,11 @@ function Navbar() {
 
     & > div:before {
       content: "";
-      height: 50%;
+      height: 52%;
       width: 3px;
       background-color: rgb(244, 244, 244);
       position: fixed;
-      top: 15.5vh;
+      top: 15vh;
       z-index: -1;
       left: 80px;
     }
@@ -48,11 +47,11 @@ function Navbar() {
     & > div {
       background-color: transparent;
       position: fixed;
-      top: 17vh;
+      top: 15vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 50%;
+      height: 52%;
       align-items: center;
       z-index: 999;
       width: 160px;
@@ -65,31 +64,31 @@ function Navbar() {
         align-items: center;
         & > .setting {
           display: none;
-          color: rgb(48, 32, 66);
-          text-decoration: none;
-          background-color: rgb(244, 244, 244);
-          border-radius: 100px;
-          padding: 14px 0px;
-          width: 46px;
-          text-align: center;
+          
         }
       }
-      & > .divLinks {
-        & > .link {
-          color: rgb(48, 32, 66);
-          text-decoration: none;
+      & > .link {
+        & > .divLinks {
+          width: 45px;
+          height: 45px;
           background-color: rgb(244, 244, 244);
-          border-radius: 100px;
-          padding: 14px 1px;
-          text-align: center;
-          & > i {
-            width: 45px;
-            height: 45px;
-            font-size: 15px;
-          }
+          color: rgb(48, 32, 66);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
-
-        & > .link:hover {
+        & > .divLinks:hover {
+          color: rgb(255, 255, 255);
+          background-image: linear-gradient(
+            to bottom,
+            rgb(117, 101, 236),
+            rgb(122, 42, 196)
+          ) !important;
+        }
+      }
+      & > .isActive {
+        & > .divLinks {
           color: rgb(255, 255, 255);
           background-image: linear-gradient(
             to bottom,
@@ -98,21 +97,14 @@ function Navbar() {
           ) !important;
           box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
         }
-        & > .isActive {
-          color: rgb(255, 255, 255);
-          background-image: linear-gradient(
-            to bottom,
-            rgb(117, 101, 236),
-            rgb(122, 42, 196)
-          ) !important;
-          box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
-          padding: 16px 3px;
-          & > i {
-            width: 45px;
-            height: 45px;
-            font-size: 19px;
-          }
-        }
+      }
+      & > .divLinks:hover {
+        color: rgb(255, 255, 255);
+        background-image: linear-gradient(
+          to bottom,
+          rgb(117, 101, 236),
+          rgb(122, 42, 196)
+        ) !important;
       }
     }
 
@@ -139,51 +131,42 @@ function Navbar() {
         align-items: center;
         position: fixed;
         background-color: transparent;
-        top: 7px;
+        top: 0px;
         left: 10vw;
         height: 60px;
         width: 80vw;
         z-index: 999;
         & > .settingContent {
-          margin-top: 40px;
+          margin-top: 50px;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: flex-end;
           & > .setting {
-            display: block;
+            display: flex;
             color: rgb(48, 32, 66);
-            text-decoration: none;
             background-color: rgb(244, 244, 244);
-            border-radius: 100px;
-            padding: 6px 0px;
-            width: 29px;
-            text-align: center;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
           }
           & > .setting:after {
             content: "";
             width: 2px;
             height: 50px;
-            // background-color: black;
             background-color: rgb(244, 244, 244);
             position: fixed;
             top: 30px;
-            margin-left: -8px;
             z-index: -1;
           }
         }
-        & > .divLinks {
-          & > .link {
-            padding: 3px 2px 7px 2px;
-
-            & > i {
-              width: 25px;
-              height: 25px;
-              font-size: 12px;
-            }
-          }
-          & > .isActive {
-            padding: 8px 6px 11px 6px;
+        & .link {
+          & .divLinks {
+            width: 40px;
+            height: 40px;
+            font-size: 15px;
           }
         }
       }
@@ -194,7 +177,7 @@ function Navbar() {
         width: 75vw;
         background-color: rgb(244, 244, 244);
         position: fixed;
-        top: 25px;
+        top: 28px;
         left: 10vw;
         height: 1px;
         z-index: -1;
@@ -203,14 +186,22 @@ function Navbar() {
         position: fixed;
         top: 0;
         left: 10vw;
+        & .link {
+          & .divLinks {
+            width: 30px;
+            height: 30px;
+            font-size: 12px;
+          }
+        }
         & > .settingContent {
-          
+          margin-top: 30px;
           & > .setting:after {
-            width: 1px;
-            height: 25px;
+            // width: 1px;
+            height: 30px;
           }
           & > .setting {
-            margin-top: -20px;
+            width: 30px;
+            height: 30px;
           }
           & > div {
             margin-top: 10px;
@@ -223,71 +214,64 @@ function Navbar() {
   return (
     <NavWrapper>
       <div>
-        <div className="divLinks">
-          <NavLink
-            activeClassName="isActive"
-            className="link"
-            to="/"
-            exact={true}
-            // onMouseEnter={
-            //   isMobile ? false : () => this.onMouseEnterHandler("home")
-            // }
-            // onMouseLeave={
-            //   isMobile ? false : () => this.onMouseLeaveHandler("home")
-            // }
-          >
-            {home}
-          </NavLink>
-        </div>
-        <div className="divLinks">
-          <NavLink
-            activeClassName="isActive"
-            className="link"
-            to="/skills"
-            exact={true}
-            // onMouseEnter={
-            //   isMobile ? false : () => this.onMouseEnterHandler("skills")
-            // }
-            // onMouseLeave={
-            //   isMobile ? false : () => this.onMouseLeaveHandler("skills")
-            // }
-          >
-            {skills}
-          </NavLink>
-        </div>
+        <NavLink
+          activeClassName="isActive"
+          className="link"
+          to="/"
+          exact={true}
+          // onMouseEnter={
+          //   isMobile ? false : () => this.onMouseEnterHandler("home")
+          // }
+          // onMouseLeave={
+          //   isMobile ? false : () => this.onMouseLeaveHandler("home")
+          // }
+        >
+          <div className="divLinks">{home}</div>
+        </NavLink>
 
-        <div className="divLinks">
-          <NavLink
-            activeClassName="isActive"
-            className="link"
-            to="/projects"
-            exact={true}
-            // onMouseEnter={
-            //   isMobile ? false : () => this.onMouseEnterHandler("projects")
-            // }
-            // onMouseLeave={
-            //   isMobile ? false : () => this.onMouseLeaveHandler("projects")
-            // }
-          >
-            {projects}
-          </NavLink>
-        </div>
-        <div className="divLinks">
-          <NavLink
-            activeClassName="isActive"
-            className="link"
-            to="/contact"
-            exact={true}
-            // onMouseEnter={
-            //   isMobile ? false : () => this.onMouseEnterHandler("contact")
-            // }
-            // onMouseLeave={
-            //   isMobile ? false : () => this.onMouseLeaveHandler("contact")
-            // }
-          >
-            {contact}
-          </NavLink>
-        </div>
+        <NavLink
+          activeClassName="isActive"
+          className="link"
+          to="/skills"
+          exact={true}
+          // onMouseEnter={
+          //   isMobile ? false : () => this.onMouseEnterHandler("skills")
+          // }
+          // onMouseLeave={
+          //   isMobile ? false : () => this.onMouseLeaveHandler("skills")
+          // }
+        >
+          <div className="divLinks">{skills}</div>
+        </NavLink>
+
+        <NavLink
+          activeClassName="isActive"
+          className="link"
+          to="/projects"
+          exact={true}
+          // onMouseEnter={
+          //   isMobile ? false : () => this.onMouseEnterHandler("projects")
+          // }
+          // onMouseLeave={
+          //   isMobile ? false : () => this.onMouseLeaveHandler("projects")
+          // }
+        >
+          <div className="divLinks">{projects}</div>
+        </NavLink>
+        <NavLink
+          activeClassName="isActive"
+          className="link"
+          to="/contact"
+          exact={true}
+          // onMouseEnter={
+          //   isMobile ? false : () => this.onMouseEnterHandler("contact")
+          // }
+          // onMouseLeave={
+          //   isMobile ? false : () => this.onMouseLeaveHandler("contact")
+          // }
+        >
+          <div className="divLinks">{contact}</div>
+        </NavLink>
         {/* <div className="divLinks">
           <NavLink
             activeClassName="isActive"
