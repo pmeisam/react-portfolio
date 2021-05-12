@@ -11,7 +11,7 @@ import TextArea from "../../Components/Shared/Textarea";
 
 const ContactPage = () => {
   const { theme } = useContext(ThemeContext);
-  const [popup, setPopup] = useState(true);
+  const [popup, setPopup] = useState(false);
   // const [form, setForm] = useState({});
   const Contact = styled.div`
     svg {
