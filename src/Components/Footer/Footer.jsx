@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { ThemeContext } from "../../Context/ThemeContext";
 
 const Footer = () => {
-  const {theme} = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
+  const [year, setYear] = useState("");
   const FooterWrapper = styled.div`
     position: fixed;
     left: 0;
@@ -40,9 +41,15 @@ const Footer = () => {
       }
     }
   `;
+
+  useEffect(() => {
+    const date = new Date();
+    setYear(date.getFullYear());
+  }, []);
+
   return (
     <FooterWrapper>
-      <p>Ⓒ2021 Meisam Poorzand. All Rights Reserved.</p>
+      <p>Ⓒ{year && year} Meisam Poorzand. All Rights Reserved.</p>
     </FooterWrapper>
   );
 };

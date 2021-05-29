@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ProjectComponent from "../../Components/Project/Project";
-import { FullPage, Slide } from "react-full-page";
 import styled from "styled-components";
 import AOS from "aos";
 import "aos/dist/aos.css";
+// import { FullPage, Slide } from "react-full-page";
 
 const ProjectPage = () => {
   const [nateLimo] = useState({

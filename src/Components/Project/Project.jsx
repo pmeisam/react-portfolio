@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import Fade from "react-reveal/Zoom";
 import { ThemeContext } from "../../Context/ThemeContext";
+// import Fade from "react-reveal/Zoom";
 
 const ProjectComponent = (props) => {
   const { theme } = useContext(ThemeContext);
   const Project = styled.div`
-
     display: flex;
     width: 80%;
     margin: 0 auto;
@@ -14,8 +13,6 @@ const ProjectComponent = (props) => {
     justify-content: center;
     align-items: center;
 
-
-    
     & > img {
       width: 720px;
       height: 430px;
@@ -175,36 +172,36 @@ const ProjectComponent = (props) => {
 
   return props.project ? (
     <Project>
-        <img src={props.project.img} alt="" />
+      <img src={props.project.img} alt="" />
 
-        <div>
-          <h1>{props.project.name}</h1>
-          <p>{props.project.description}</p>
+      <div>
+        <h1>{props.project.name}</h1>
+        <p>{props.project.description}</p>
 
-          <div className="techs">
-            {props.project.toolsUsed.map((t, index) => (
-              <p key={index}>{t}</p>
-            ))}
-          </div>
-
-          <div className="links">
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href={props.project.link}
-            >
-              {/* <i className="fas fa-link"></i> */}
-              <i class="fas fa-globe-americas"></i>
-            </a>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href={props.project.gitHubLink}
-            >
-              <i className="fab fa-github"></i>
-            </a>
-          </div>
+        <div className="techs">
+          {props.project.toolsUsed.map((t, index) => (
+            <p key={index}>{t}</p>
+          ))}
         </div>
+
+        <div className="links">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={props.project.link}
+          >
+            {/* <i className="fas fa-link"></i> */}
+            <i class="fas fa-globe-americas"></i>
+          </a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={props.project.gitHubLink}
+          >
+            <i className="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
     </Project>
   ) : (
     <p>loading...</p>

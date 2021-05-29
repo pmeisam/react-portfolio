@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import Fade from "react-reveal/Fade";
 import "./SkillsPage.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
+// import Fade from "react-reveal/Fade";
 
 const SkillsPage = () => {
   useEffect(() => {
