@@ -25,3 +25,8 @@ function App() {
 }
 
 export default App;
+
+
+// Deploying with SSL Certificate to AWS s3, using cloudfront, route 53, Certificate Management
+// https://www.youtube.com/watch?v=lB4DTqMEumY&t=1261s&ab_channel=EsterlingAccime
+// https://jsfiddle.net/9y5ax0t6/

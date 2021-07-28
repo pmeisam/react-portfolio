@@ -130,10 +130,10 @@ const ProjectPage = () => {
       <div data-aos="zoom-out" className="project_container">
         <ProjectComponent project={triplaner} />
       </div>
-      <div data-aos="flip-up" className="project_container">
+      <div data-aos="zoom-in" className="project_container">
         <ProjectComponent project={memesagram} />
       </div>
-      <div data-aos="slide-up" className="project_container">
+      <div data-aos="zoom-out" className="project_container">
         <ProjectComponent project={minesweeper} />
       </div>
     </ProjectsWrapper>

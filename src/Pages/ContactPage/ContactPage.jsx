@@ -239,7 +239,7 @@ const ContactPage = () => {
   }, []);
 
   return (
-    <Contact data-aos="slide-left">
+    <Contact>
       {popup ? <SubmitPopup closePopup={closePopup} /> : null}
       <main className="  m_w90_m-auto content ">
         <div className="parent_contact">
@@ -247,7 +247,7 @@ const ContactPage = () => {
             <div className="contact_bg_img">
               <ContactPageSVG className="contact_svg" />
             </div>
-            <div data-aos="zoom-in">
+            <div>
               <a href="mailto: info@meisam.org" className="txt_social_contact">
                 <p>info@meisam.org</p>
               </a>
@@ -304,7 +304,7 @@ const ContactPage = () => {
             </div>
           </div>
           <div className="parent_form t_w90_m-auto">
-            <form data-aos="zoom-out" onSubmit={sendEmail}>
+            <form onSubmit={sendEmail}>
               <Input
                 placeholder="Name"
                 name="name"

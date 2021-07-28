@@ -19,7 +19,7 @@ const HomePage = () => {
     window.scrollTo(0, 0);
     let intro = "HI THERE, I'M MEISAM";
     let biography =
-      "I'm a full-stack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
+      "I'm a backend developer at Lightstorm Entertainment and a fullstack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
     biography = biography.toUpperCase();
     intro = intro.toUpperCase();
     setIntro(intro);
@@ -153,39 +153,46 @@ const HomePage = () => {
         }
         & > svg {
           z-index: -1;
-         
         }
       }
     }
     @media screen and (max-width: 600px) {
+      & > svg {
+        width: 86vw;
+        height: 50%;
+        left: 7vw;
+        bottom: -5vh;
+      }
       & > div {
         width: 98%;
         grid-template-rows: auto auto auto;
         & > p {
           margin-top: -15px;
-          font-size: 12px;
+          font-size: 16px;
+          text-align: left;
         }
         & > .projectLink {
           z-index: 999;
           & > .projectButton {
-            /background-image: linear-gradient(
+            background-image: linear-gradient(
               to right,
               rgb(117, 101, 236),
               rgb(122, 42, 196)
             ) !important;
-            width: 170px;
-            height: 40px;
+            width: 200px;
+            height: 45px;
             border-radius: 60px;
             border: none;
             color: white;
             cursor: pointer;
-            font-size: 13px;
+            font-size: 12px;
             margin-top: 0;
+            // margin-left: auto;
+            margin-right: auto;
           }
         }
         & > svg {
           z-index: -1;
-          
         }
       }
     }
@@ -201,11 +208,16 @@ const HomePage = () => {
           {bio ? bio.toUpperCase() : null}
           <span className="blinking">_</span>
         </p>
-        {/* <Link className="projectLink" to="/projects">
-          <button className="projectButton">
-            Projects&nbsp;&nbsp;<i className="fas fa-chevron-right"></i>
+        <a
+          className="projectLink"
+          href="./pdf/Meisam_Poorzand_Resume.pdf"
+          download="Meisam_Poorzand_Resume.pdf"
+        >
+          <button data-aos="zoom-out" className="projectButton">
+            Download my resume&nbsp;&nbsp;
+            <i className="fas fa-download"></i>
           </button>
-        </Link> */}
+        </a>
       </div>
       <HomePageSvg />
     </Intro>

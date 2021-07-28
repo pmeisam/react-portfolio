@@ -127,6 +127,7 @@ const ProjectComponent = (props) => {
     }
 
     @media screen and (max-width: 600px) {
+      margin-top: -5px;
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -145,7 +146,8 @@ const ProjectComponent = (props) => {
           margin: 0;
         }
         & > p {
-          font-size: 12px;
+          font-size: 16px;
+          color: rgb(138, 138, 138);
         }
         & > .techs {
           display: grid;

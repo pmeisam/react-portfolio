@@ -4,24 +4,12 @@ import styled from "styled-components";
 function SubmitPopup(props) {
   return (
     <PopupWrapper>
-      <div className="popup_inner">
-        <div className="buttons_container">
-          <button className="close_button" onClick={props.closePopup}>
-            <i className="fas fa-times"></i>
-          </button>
-        </div>
-        <div className="img_container">
-          {/* <img alt="message sent" src="images/deliveredmessage.gif" /> */}
-          <h1>Message Sent</h1>
-          <div>
-            <br />
-            <p>Thank you for taking the time to view my portfolio. I received your message and I will contact you as soon as possible. </p>
-            <br />
-            <p>Best,</p>
-            <p>Meisam Poorzand</p>
-          </div>
-        </div>
-      </div>
+      <h1>Message Sent</h1>
+      <p>Thank you for your time</p>
+
+      <button className="close_button" onClick={props.closePopup}>
+        Go Back
+      </button>
     </PopupWrapper>
   );
 }
@@ -36,66 +24,37 @@ const PopupWrapper = styled.div`
   right: 0;
   bottom: 0;
   margin: auto;
-  background-color: rgb(0, 0, 0, 0.7);
+  background-color: rgb(0, 0, 0, 0.8);
   z-index: 999;
-  .buttons_container {
-    display: flex;
-    justify-content: space-between;
-  }
-  i {
-    font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+  h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
   }
   .close_button {
     display: block;
     background-color: transparent;
-    margin: 20px 0 0 20px;
-    // margin-top: 100px;
+    margin: 0 auto;
+    border: 1px dotted white;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 40px;
   }
   .close_button:hover {
     cursor: pointer;
     background: lightgray;
     box-shadow: 0px 0px 15px 1px #1565c063;
-  }
-
-  img {
-    width: 100%;
-  }
-  .popup_inner {
-    overflow: auto;
-    position: absolute;
-    left: 35%;
-    right: 35%;
-    top: 20%;
-    bottom: 45%;
-    margin: auto;
-    border-radius: 4px;
-    background-color: white;
-  }
-  .img_container {
-    max-height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .img_container div {
-    width: 90%;
+    color: black;
   }
 
   @media only screen and (max-width: 930px) {
-    .popup_inner {
-      left: 25%;
-      right: 25%;
-      top: 10%;
-      bottom: 10%;
-    }
   }
   @media only screen and (max-width: 630px) {
-    .popup_inner {
-      left: 5%;
-      right: 5%;
-      top: 7%;
-      bottom: 5%;
-    }
   }
 `;
