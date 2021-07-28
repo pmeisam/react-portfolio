@@ -73,6 +73,7 @@ const HomePage = () => {
       & > .projectLink {
         z-index: 999;
         cursor: pointer;
+        margin-top: -50px;
         & > .projectButton {
           // position: absolute;
           // top: 55%;
@@ -87,7 +88,6 @@ const HomePage = () => {
           border: none;
           color: white;
           cursor: pointer;
-          margin-top: 20px;
         }
         & > .projectButton:hover {
           box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
@@ -146,11 +146,6 @@ const HomePage = () => {
         & > p {
           margin: -30px 0 20px 0;
         }
-        & > .projectLink {
-          & > .projectButton {
-            //  top: 47%;
-          }
-        }
         & > svg {
           z-index: -1;
         }
@@ -169,10 +164,10 @@ const HomePage = () => {
         & > p {
           margin-top: -15px;
           font-size: 16px;
-          text-align: left;
         }
         & > .projectLink {
           z-index: 999;
+          margin-top: 7px;
           & > .projectButton {
             background-image: linear-gradient(
               to right,
@@ -186,9 +181,6 @@ const HomePage = () => {
             color: white;
             cursor: pointer;
             font-size: 12px;
-            margin-top: 0;
-            // margin-left: auto;
-            margin-right: auto;
           }
         }
         & > svg {
