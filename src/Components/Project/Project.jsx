@@ -193,7 +193,7 @@ const ProjectComponent = (props) => {
             href={props.project.link}
           >
             {/* <i className="fas fa-link"></i> */}
-            <i class="fas fa-globe-americas"></i>
+            <i className="fas fa-globe-americas"></i>
           </a>
           <a
             rel="noopener noreferrer"

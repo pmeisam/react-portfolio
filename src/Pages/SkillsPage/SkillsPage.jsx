@@ -239,7 +239,7 @@ const SkillsPage = () => {
         <div data-aos="fade-down" className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-              <i class="devicon-firebase-plain-wordmark colored"></i>
+              <i className="devicon-firebase-plain-wordmark colored"></i>
             </div>
             <div className="flip-card-back">
               <h3>Firebase</h3>
@@ -249,7 +249,7 @@ const SkillsPage = () => {
         <div data-aos="fade-up" className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-              <i class="devicon-jenkins-plain colored"></i>
+              <i className="devicon-jenkins-plain colored"></i>
             </div>
             <div className="flip-card-back">
               <h3>Jenkins</h3>
@@ -259,7 +259,7 @@ const SkillsPage = () => {
         <div data-aos="fade-down" className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-              <i class="devicon-nginx-original colored"></i>
+              <i className="devicon-nginx-original colored"></i>
             </div>
             <div className="flip-card-back">
               <h3>nginx</h3>
