@@ -99,7 +99,7 @@ const HomePage = () => {
         color: rgb(138, 138, 138);
         font-size: 19px;
         font-weight: 100;
-        text-align: justify;
+        text-align: left;
         & > .blinking {
           animation: blinkingText 0.8s infinite;
           font-weight: 900;
