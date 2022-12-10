@@ -162,6 +162,7 @@ function Navbar() {
         justify-content: space-around;
         align-items: center;
         ::before {
+          display: none;
           content: "";
           height: 3px;
           width: 21px;

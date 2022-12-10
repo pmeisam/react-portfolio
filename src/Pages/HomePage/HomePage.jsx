@@ -2,7 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import styled, { keyframes } from "styled-components";
 import { tada } from "react-animations";
 import { ThemeContext } from "../../Context/ThemeContext";
-import HomePageSvg from "./undraw_festivities_tvvj";
+import HomePageSvg from "./a.js";
+// import HomePageSvg from "./undraw_festivities_tvvj";
 import "./HomePage.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -68,12 +69,13 @@ const HomePage = () => {
     }
     & > div {
       display: grid;
-      grid-template-rows: 1fr 2fr 1fr;
+      grid-template-rows: 1fr 1.2fr 1fr;
       width: 77%;
       & > .projectLink {
         z-index: 999;
         cursor: pointer;
-        margin-top: -50px;
+        // margin-top: -50px;
+        width: 200px;
         & > .projectButton {
           // position: absolute;
           // top: 55%;
@@ -125,12 +127,12 @@ const HomePage = () => {
     }
     & > svg {
       position: fixed;
-      right: 0;
+      right: 70px;
       bottom: 0;
-      width: 38vw;
+      width: 28vw;
     }
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width:1060px) {
       margin-top: 0;
       display: flex;
       flex-direction: column;
@@ -139,12 +141,23 @@ const HomePage = () => {
 
       & > svg {
         width: 99vw;
-        height: 50%;
+        height: 33%;
         left: 0;
+        bottom: 40px;
       }
       & > div {
+          display: flex;
+          flex-direction: column;
         & > p {
-          margin: -30px 0 20px 0;
+          // height: 70%;
+          margin: -30px 0 0 0;
+
+        }
+        .projectLink {
+          z-index: 999;
+          cursor: pointer;
+          margin: 15px 0;
+          // margin-top: -120px;
         }
         & > svg {
           z-index: -1;
@@ -163,11 +176,11 @@ const HomePage = () => {
         grid-template-rows: auto auto auto;
         & > p {
           margin-top: -15px;
-          font-size: 16px;
+          font-size: 15px;
         }
         & > .projectLink {
           z-index: 999;
-          margin-top: 7px;
+          margin-top: 17px;
           & > .projectButton {
             background-image: linear-gradient(
               to right,
