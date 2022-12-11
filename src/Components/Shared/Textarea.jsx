@@ -63,6 +63,7 @@ const TextArea = (props) => {
       }
       .input-container label {
         left: 15px;
+        font-size: 12px;
       }
       .input-container textarea:focus ~ label,
       .input-container textarea:valid ~ label {

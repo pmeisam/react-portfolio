@@ -63,6 +63,7 @@ const Input = (props) => {
       }
       .input-container label {
         left: 15px;
+        font-size: 12px;
       }
       .input-container input:focus ~ label,
       .input-container input:valid ~ label {

@@ -111,6 +111,7 @@ const Switch = () => {
     localStorage.setItem("theme", isDark);
     document.body.style.backgroundColor = newTheme.backgroundColor;
     document.body.style.color = newTheme.fontColor;
+    // document.html.style.backgroundColor = newTheme.backgroundColor;
     setTheme(newTheme);
     setIsDark(isDark);
   };

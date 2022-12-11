@@ -146,7 +146,7 @@ const ProjectComponent = (props) => {
           margin: 0;
         }
         & > p {
-          font-size: 16px;
+          font-size: 13px;
           color: rgb(138, 138, 138);
         }
         & > .techs {

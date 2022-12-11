@@ -325,7 +325,8 @@ function Navbar() {
             top: 44px;
           }
           ::after {
-            font-size: 12px;
+            font-size: 9px;
+            margin-top: 10px;
           }
         }
         & > .settingContent {

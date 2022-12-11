@@ -132,7 +132,7 @@ const HomePage = () => {
       width: 28vw;
     }
 
-    @media screen and (max-width:1060px) {
+    @media screen and (max-width: 1060px) {
       margin-top: 0;
       display: flex;
       flex-direction: column;
@@ -146,12 +146,11 @@ const HomePage = () => {
         bottom: 40px;
       }
       & > div {
-          display: flex;
-          flex-direction: column;
+        display: flex;
+        flex-direction: column;
         & > p {
           // height: 70%;
           margin: -30px 0 0 0;
-
         }
         .projectLink {
           z-index: 999;
@@ -166,17 +165,17 @@ const HomePage = () => {
     }
     @media screen and (max-width: 600px) {
       & > svg {
-        width: 86vw;
+        width: 80vw;
         height: 50%;
-        left: 7vw;
-        bottom: -5vh;
+        left: 10vw;
+        bottom: 0vh;
       }
       & > div {
         width: 98%;
         grid-template-rows: auto auto auto;
         & > p {
           margin-top: -15px;
-          font-size: 15px;
+          font-size: 13px;
         }
         & > .projectLink {
           z-index: 999;

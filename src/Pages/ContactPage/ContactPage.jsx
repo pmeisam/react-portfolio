@@ -14,6 +14,9 @@ const ContactPage = () => {
   const [popup, setPopup] = useState(false);
   // const [form, setForm] = useState({});
   const Contact = styled.div`
+    .header {
+      display: none;
+    }
     svg {
       width: 100%;
     }
@@ -27,7 +30,7 @@ const ContactPage = () => {
     }
 
     .parent_contact {
-      direction: rtl;
+      direction: unset;
       display: flex;
       flex-wrap: wrap;
       overflow-y: hidden;
@@ -35,9 +38,10 @@ const ContactPage = () => {
 
     .txt_social_contact {
       font-size: 45px;
+      font-family: "Roboto",sans-serif;
+      font-weight: 100;
       color: ${theme.fontColor};
       text-align: center;
-      /* margin: 20px; */
       margin-bottom: 50px;
       margin-top: 30px;
     }
@@ -152,9 +156,17 @@ const ContactPage = () => {
     }
 
     @media only screen and (max-width: 1300px) {
+      .header {
+        display: block;
+        font-family: "Saira Stencil One", cursive;
+        font-size: 70px;
+      }
+      .content {
+        margin-top: 10vh;
+      }
       .t_w90_m-auto {
         width: 90%;
-        margin: 20px auto;
+        margin: 0 auto;
       }
       .contact_bg_img {
         position: relative;
@@ -167,8 +179,11 @@ const ContactPage = () => {
       }
       .parent_form {
         border-right: none;
-        border-top: 1px solid rgba(253, 253, 253, 0.247);
-        padding-top: 20px;
+        border-bottom: 1px solid rgba(253, 253, 253, 0.247);
+        padding-bottom: 20px;
+      }
+      svg {
+        margin-top: 30px;
       }
     }
 
@@ -177,9 +192,17 @@ const ContactPage = () => {
         width: 90% !important;
         margin: 20px auto;
       }
+      .header {
+        margin-top: 90px;
+      }
     }
 
     @media only screen and (max-width: 601px) {
+      .header {
+        margin-top: 70px;
+        font-size: 35px;
+        text-align: left;
+      }
       .m_w90_m-auto {
         width: 90% !important;
         margin: 20px auto;
@@ -199,6 +222,14 @@ const ContactPage = () => {
         height: 40px;
         font-size: 18px;
         border-radius: 5px;
+      }
+      svg {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+      }
+      .t_w90_m-auto {
+        margin-top: 0;
       }
     }
   `;
@@ -243,6 +274,50 @@ const ContactPage = () => {
       {popup ? <SubmitPopup closePopup={closePopup} /> : null}
       <main className="  m_w90_m-auto content ">
         <div className="parent_contact">
+          <div className="parent_form t_w90_m-auto">
+            <form onSubmit={sendEmail}>
+              <h1 className="header">Contact me</h1>
+              <Input
+                placeholder="Name"
+                name="name"
+                type="text"
+                required={true}
+                onChange={null}
+              />
+              <Input
+                type="email"
+                placeholder="Email"
+                name="email"
+                // onChange={onChange}
+                required={true}
+                onChange={null}
+              />
+              <Input
+                type="text"
+                placeholder="Subject "
+                name="subject"
+                // onChange={onChange}
+                required={true}
+                onChange={null}
+              />
+              <TextArea
+                name="message"
+                cols="30"
+                rows="6"
+                // onChange={onChange}
+                placeholder="Message"
+                required={true}
+                onChange={null}
+              ></TextArea>
+              <button
+                className="btn_sent_mesaege"
+                type="submit"
+                // disabled={!isEnabled}
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
           <div className="info t_w90_m-auto">
             <div className="contact_bg_img">
               <ContactPageSVG className="contact_svg" />
@@ -302,49 +377,6 @@ const ContactPage = () => {
                 </a>
               </div>
             </div>
-          </div>
-          <div className="parent_form t_w90_m-auto">
-            <form onSubmit={sendEmail}>
-              <Input
-                placeholder="Name"
-                name="name"
-                type="text"
-                required={true}
-                onChange={null}
-              />
-              <Input
-                type="email"
-                placeholder="Email"
-                name="email"
-                // onChange={onChange}
-                required={true}
-                onChange={null}
-              />
-              <Input
-                type="text"
-                placeholder="Subject "
-                name="subject"
-                // onChange={onChange}
-                required={true}
-                onChange={null}
-              />
-              <TextArea
-                name="message"
-                cols="30"
-                rows="6"
-                // onChange={onChange}
-                placeholder="Message"
-                required={true}
-                onChange={null}
-              ></TextArea>
-              <button
-                className="btn_sent_mesaege"
-                type="submit"
-                // disabled={!isEnabled}
-              >
-                Send Message
-              </button>
-            </form>
           </div>
         </div>
       </main>
