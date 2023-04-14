@@ -47,3 +47,13 @@ textarea{
   border-radius: 0;
   -webkit-appearance: none;
 }
+
+::-moz-selection { /* Code for Firefox */
+  /* color: transparent; */
+  background: transparent;
+}
+
+::selection {
+  /* color: transparent; */
+  background: transparent;
+}

@@ -6,6 +6,9 @@ import { ThemeContext } from "../../Context/ThemeContext";
 const ProjectComponent = (props) => {
   const { theme } = useContext(ThemeContext);
   const Project = styled.div`
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
     display: flex;
     width: 80%;
     margin: 0 auto;
@@ -16,6 +19,7 @@ const ProjectComponent = (props) => {
     & > img {
       width: 720px;
       height: 430px;
+      
     }
     & > div {
       display: flex;
@@ -192,7 +196,6 @@ const ProjectComponent = (props) => {
             target="_blank"
             href={props.project.link}
           >
-            {/* <i className="fas fa-link"></i> */}
             <i className="fas fa-globe-americas"></i>
           </a>
           <a

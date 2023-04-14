@@ -10,7 +10,7 @@ const ProjectPage = () => {
     img: "images/nateLimo.png",
     name: "Nate Limo Services",
     description:
-      "Nate Limo Services is a web-app designed for a limosine company. Users can search through origin and destination address through google maps places API, see the distance on a map through google maps destinations API, get a quote based on the distance and duration and book an appointment. Admins can also view appointments on the admin page and edit the status of an appointment.",
+      "Nate Limo Services is a web-app designed for a limousine company. Users can search through the origin and destination address through google maps places API, see the distance on a map through google maps destinations API, get a quote based on the distance and duration and book an appointment. Admins can also view appointments on the admin page and edit the status of an appointment.",
     toolsUsed: [
       "React.js",
       "Node.js",
@@ -28,7 +28,7 @@ const ProjectPage = () => {
     img: "images/arcadiacars.png",
     name: "Arcadia Automotive",
     description:
-      "Arcadia Automotive is a dealership web-app. The admin can login and upload a vehicle images along with its details to the inventory. In addition clients can view the inventory, filter and search through the inventory, calculate payments on a specific vehicle and contact the delarship regarding a vehicle they have in mind to purchase.",
+      "Arcadia Automotive is a dealership web-app. The admin can log in and upload vehicle images along with their details to the inventory. In addition, clients can view the inventory, filter and search through the inventory, calculate payments on a specific vehicle and contact the dealership regarding a vehicle they have in mind to purchase.",
     toolsUsed: [
       "React.js",
       "Node.js",
@@ -118,22 +118,34 @@ const ProjectPage = () => {
 
   return (
     <ProjectsWrapper>
-      <div data-aos="fade-up" className="project_container">
+      <div
+        className="project_container"
+      >
         <ProjectComponent project={nateLimo} />
       </div>
-      <div data-aos="fade-down" className="project_container">
+      <div
+        className="project_container"
+      >
         <ProjectComponent project={arcadiaCars} />
       </div>
-      <div data-aos="zoom-in" className="project_container">
+      <div
+        className="project_container"
+      >
         <ProjectComponent project={devSpot} />
       </div>
-      <div data-aos="zoom-out" className="project_container">
+      <div
+        className="project_container"
+      >
         <ProjectComponent project={triplaner} />
       </div>
-      <div data-aos="zoom-in" className="project_container">
+      <div
+        className="project_container"
+      >
         <ProjectComponent project={memesagram} />
       </div>
-      <div data-aos="zoom-out" className="project_container">
+      <div
+        className="project_container"
+      >
         <ProjectComponent project={minesweeper} />
       </div>
     </ProjectsWrapper>
@@ -143,7 +155,15 @@ const ProjectPage = () => {
 export default ProjectPage;
 
 const ProjectsWrapper = styled.div`
+  overflow: auto;
+  height: 100vh;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+  position: relative;
   .project_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 15% 0;
   }
   @media screen and (max-width: 600px) {
