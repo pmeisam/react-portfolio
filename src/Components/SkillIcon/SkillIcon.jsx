@@ -15,7 +15,8 @@ const SkillIcon = ({ name, icon }) => {
         <div className="flip-card-inner">
           <div className="flip-card-front">{icon}</div>
           <div className="flip-card-back">
-            <h3>{name}</h3>
+            {/* <h3>{name}</h3> */}
+            <div className="flip-card-front">{icon}</div>
           </div>
         </div>
       </div>
@@ -26,6 +27,10 @@ const SkillIcon = ({ name, icon }) => {
 export default SkillIcon;
 
 let SkillIconWrapper = styled.div`
+  z-index: 10;
+  h3 {
+    font-size: 12px;
+  }
   .flip-card {
     background-color: transparent;
     width: 100px;
@@ -67,6 +72,7 @@ let SkillIconWrapper = styled.div`
 
   .flip-card-front {
     font-size: 35px;
+    // background-color: rgb(39, 50, 56);
   }
 
   .flip-card-back {
@@ -90,7 +96,7 @@ let SkillIconWrapper = styled.div`
       margin-right: auto;
       width: 95vw;
     }
-  
+
     .flip-card-front {
       font-size: 4vh;
     }
@@ -101,7 +107,7 @@ let SkillIconWrapper = styled.div`
       font-size: 11px;
     }
   }
-  
+
   @media screen and (max-width: 600px) {
     .flip-card {
       margin: auto auto;
@@ -113,11 +119,11 @@ let SkillIconWrapper = styled.div`
       margin: 10vh auto;
       width: 95vw;
     }
-  
+
     .flip-card-front {
       font-size: 3vh;
     }
-  
+
     .flip-card-back h3 {
       font-size: 11px;
     }

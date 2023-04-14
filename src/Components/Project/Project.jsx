@@ -137,7 +137,7 @@ const ProjectComponent = (props) => {
       width: 100%;
       justify-content: center;
       align-items: center;
-      height: 100%;
+      height: 100vh;
       & > img {
         width: 325px;
         height: 180px;

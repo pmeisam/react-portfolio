@@ -6,6 +6,7 @@ const Footer = () => {
   const { theme } = useContext(ThemeContext);
   const [year, setYear] = useState("");
   const FooterWrapper = styled.div`
+    z-index: 10;
     position: fixed;
     left: 0;
     top: 0;

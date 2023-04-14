@@ -28,7 +28,7 @@ export default ({ children }) => {
     let savedTheme;
     if (isDark) {
       if (isDark.charAt(0) === '"' && isDark.charAt(isDark.length - 1) === '"')
-        isDark = isDark.substr(1, isDark.length - 2);
+      isDark = isDark.substr(1, isDark.length - 2);
       if (isDark === "true") {
         isDark = true;
         savedTheme = darkTheme;
@@ -45,6 +45,7 @@ export default ({ children }) => {
     setIsDark(isDark);
     document.body.style.backgroundColor = savedTheme.backgroundColor;
     document.body.style.color = savedTheme.fontColor;
+    document.getElementsByTagName("META")[2].content = savedTheme.backgroundColor;
   }, []);
 
   return (

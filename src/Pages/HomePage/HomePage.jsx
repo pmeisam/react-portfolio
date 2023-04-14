@@ -20,7 +20,7 @@ const HomePage = () => {
     window.scrollTo(0, 0);
     let intro = "HI THERE, I'M MEISAM";
     let biography =
-      "I'm a backend developer at Lightstorm Entertainment and a fullstack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
+      "Full-stack software engineer with a background in computer science. I am a motivated self-starter with a persistent drive to succeed. I am currently seeking new opportunities to learn and develop new skills in the field. My passion lies in utilizing development as a means of making positive social change by teaching others the value and potential of technology. With a focus on building intuitive, user-friendly applications, my ultimate goal is to improve the overall user experience.";
     biography = biography.toUpperCase();
     intro = intro.toUpperCase();
     setIntro(intro);

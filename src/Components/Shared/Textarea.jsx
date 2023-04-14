@@ -85,7 +85,7 @@ const TextArea = (props) => {
           placeholder=""
           //   onChange={onChange}
         />
-        <label>&nbsp;{props.placeholder}&nbsp;</label>
+        <label for={props.id}>&nbsp;{props.placeholder}&nbsp;</label>
       </div>
     </InputComponent>
   );

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProjectComponent from "../../Components/Project/Project";
 import styled from "styled-components";
-import AOS from "aos";
-import "aos/dist/aos.css";
-// import { FullPage, Slide } from "react-full-page";
+import Fade from 'react-reveal/Fade';
 
 const ProjectPage = () => {
   const [nateLimo] = useState({
@@ -111,43 +109,40 @@ const ProjectPage = () => {
   useEffect(() => {
     document.title = "Meisam Poorzand | Projects";
     window.scrollTo(0, 0);
-    AOS.init({
-      duration: 2000,
-    });
   });
 
   return (
     <ProjectsWrapper>
-      <div
-        className="project_container"
-      >
-        <ProjectComponent project={nateLimo} />
-      </div>
-      <div
-        className="project_container"
-      >
-        <ProjectComponent project={arcadiaCars} />
-      </div>
-      <div
-        className="project_container"
-      >
-        <ProjectComponent project={devSpot} />
-      </div>
-      <div
-        className="project_container"
-      >
-        <ProjectComponent project={triplaner} />
-      </div>
-      <div
-        className="project_container"
-      >
-        <ProjectComponent project={memesagram} />
-      </div>
-      <div
-        className="project_container"
-      >
-        <ProjectComponent project={minesweeper} />
-      </div>
+       <Fade big>
+        <div className="project_container">
+          <ProjectComponent project={nateLimo} />
+        </div>
+      </Fade>
+       <Fade big>
+        <div className="project_container">
+          <ProjectComponent project={arcadiaCars} />
+        </div>
+      </Fade>
+       <Fade big>
+        <div className="project_container">
+          <ProjectComponent project={devSpot} />
+        </div>
+      </Fade>
+       <Fade big>
+        <div className="project_container">
+          <ProjectComponent project={triplaner} />
+        </div>
+      </Fade>
+       <Fade big>
+        <div className="project_container">
+          <ProjectComponent project={memesagram} />
+        </div>
+      </Fade>
+       <Fade big>
+        <div className="project_container">
+          <ProjectComponent project={minesweeper} />
+        </div>
+      </Fade>
     </ProjectsWrapper>
   );
 };

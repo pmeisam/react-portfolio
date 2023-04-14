@@ -1,24 +1,21 @@
 import React, { useEffect } from "react";
-import "./SkillsPage.scss";
+import "./SkillsListView.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import SkillIcon from "../../Components/SkillIcon/SkillIcon";
+import SkillIcon from "../SkillIcon/SkillIcon";
 // import Fade from "react-reveal/Fade";
 
-const SkillsPage = () => {
+const SkillsListView = () => {
   useEffect(() => {
     document.title = "Meisam Poorzand | Skills";
     window.scrollTo(0, 0);
-    AOS.init({
-      duration: 2000,
-    });
   });
   return (
     <div>
       {/* <Fade top> */}
 
       <div className="skills_parent">
-        <div data-aos="fade-up" className="skills_card">
+        <div className="skills_card">
           <h1 className="skills_card_title">Backend</h1>
           <div className="skills_card_container">
             <SkillIcon
@@ -62,7 +59,7 @@ const SkillsPage = () => {
           </div>
         </div>
 
-        <div data-aos="fade-down" className="skills_card">
+        <div className="skills_card">
           <h1 className="skills_card_title">Frontend</h1>
           <div className="skills_card_container">
             <SkillIcon
@@ -118,7 +115,7 @@ const SkillsPage = () => {
           </div>
         </div>
 
-        <div data-aos="fade-up" className="skills_card">
+        <div className="skills_card">
           <h1 className="skills_card_title">Databases</h1>
           <div className="skills_card_container">
             <SkillIcon
@@ -142,6 +139,12 @@ const SkillsPage = () => {
           <h1 className="skills_card_title">Others</h1>
           <div className="skills_card_container">
             <SkillIcon
+              name={"AWS"}
+              icon={
+                <i className="devicon-amazonwebservices-plain-wordmark colored"></i>
+              }
+            />
+            <SkillIcon
               name={"GitHub"}
               icon={<i className="devicon-github-plain-wordmark"></i>}
             />
@@ -149,12 +152,7 @@ const SkillsPage = () => {
               name={"Git"}
               icon={<i className="devicon-git-plain colored"></i>}
             />
-            <SkillIcon
-              name={"AWS"}
-              icon={
-                <i className="devicon-amazonwebservices-plain-wordmark colored"></i>
-              }
-            />
+
             <SkillIcon
               name={"Heroku"}
               icon={<i className="devicon-heroku-plain-wordmark colored"></i>}
@@ -163,7 +161,6 @@ const SkillsPage = () => {
               name={"Jenkins"}
               icon={<i className="devicon-jenkins-plain colored"></i>}
             />
-
             <SkillIcon
               name={"nginx"}
               icon={<i className="devicon-nginx-plain-wordmark colored"></i>}
@@ -243,4 +240,4 @@ const SkillsPage = () => {
   );
 };
 
-export default SkillsPage;
+export default SkillsListView;

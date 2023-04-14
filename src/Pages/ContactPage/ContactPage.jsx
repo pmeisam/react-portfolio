@@ -38,7 +38,7 @@ const ContactPage = () => {
 
     .txt_social_contact {
       font-size: 45px;
-      font-family: "Roboto",sans-serif;
+      font-family: "Roboto", sans-serif;
       font-weight: 100;
       color: ${theme.fontColor};
       text-align: center;
@@ -283,6 +283,7 @@ const ContactPage = () => {
                 type="text"
                 required={true}
                 onChange={null}
+                id="name"
               />
               <Input
                 type="email"
@@ -291,6 +292,7 @@ const ContactPage = () => {
                 // onChange={onChange}
                 required={true}
                 onChange={null}
+                id="email"
               />
               <Input
                 type="text"
@@ -299,6 +301,7 @@ const ContactPage = () => {
                 // onChange={onChange}
                 required={true}
                 onChange={null}
+                id="subject"
               />
               <TextArea
                 name="message"
@@ -308,6 +311,7 @@ const ContactPage = () => {
                 placeholder="Message"
                 required={true}
                 onChange={null}
+                id="message"
               ></TextArea>
               <button
                 className="btn_sent_mesaege"
@@ -323,8 +327,11 @@ const ContactPage = () => {
               <ContactPageSVG className="contact_svg" />
             </div>
             <div>
-              <a href="mailto: info@meisam.org" className="txt_social_contact">
-                <p>info@meisam.org</p>
+              <a
+                href="mailto: meisam.poorzand@gmail.com"
+                className="txt_social_contact"
+              >
+                <p>meisam.poorzand@gmail.com</p>
               </a>
               <div className="social contact_social">
                 <a
@@ -369,7 +376,7 @@ const ContactPage = () => {
                 </a>
                 <a
                   _blank="true"
-                  href="mailto: info@meisam.org"
+                  href="mailto: meisam.poorzand@gmail.com"
                   className="icon_social"
                 >
                   <i className="far fa-envelope"></i>
