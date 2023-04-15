@@ -74,22 +74,21 @@ const HomePage = () => {
       & > .projectLink {
         z-index: 999;
         cursor: pointer;
-        // margin-top: -50px;
         width: 200px;
         & > .projectButton {
-          // position: absolute;
-          // top: 55%;
           background-image: linear-gradient(
-            to right,
+            to bottom,
             rgb(117, 101, 236),
             rgb(122, 42, 196)
           ) !important;
-          width: 200px;
+          box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
+          width: 240px;
           height: 50px;
-          border-radius: 60px;
+          border-radius: 5px;
           border: none;
           color: white;
           cursor: pointer;
+          font-size: 16px;
         }
         & > .projectButton:hover {
           box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
@@ -175,7 +174,8 @@ const HomePage = () => {
         grid-template-rows: auto auto auto;
         & > p {
           margin-top: -15px;
-          font-size: 13px;
+          font-size: 15px;
+          letter-spacing: 0;
         }
         & > .projectLink {
           z-index: 999;
@@ -209,7 +209,7 @@ const HomePage = () => {
           <h1 data-aos="zoom-in">{intro}</h1>
         </Tada>
         <p data-aos="zoom-out">
-          {bio ? bio: null}
+          {bio ? bio : null}
           <span className="blinking">_</span>
         </p>
         <a

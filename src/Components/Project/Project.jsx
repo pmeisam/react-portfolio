@@ -11,7 +11,7 @@ const ProjectComponent = (props) => {
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-    align-items:
+    align-items: center;
     height: 100vh;
     & > .project-container {
       height: 80vh;

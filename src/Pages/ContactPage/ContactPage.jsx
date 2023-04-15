@@ -93,17 +93,23 @@ const ContactPage = () => {
     .parent_form textarea {
     }
     .btn_sent_mesaege {
-      width: 200px;
+      width: 220px;
       margin: 20px 0;
       padding: 15px 10px;
-      border-radius: 35px;
+      border-radius: 5px;
       background: linear-gradient(
         90deg,
         rgba(112, 112, 238, 1) 0%,
         rgba(125, 68, 241, 1) 49%,
         rgba(120, 16, 188, 1) 100%
       );
-      font-size: 13px;
+      background-image: linear-gradient(
+        to bottom,
+        rgb(117, 101, 236),
+        rgb(122, 42, 196)
+      ) !important;
+      box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
+      font-size: 16px;
       color: white;
     }
     .btn_sent_mesaege:hover:enabled {
@@ -139,14 +145,18 @@ const ContactPage = () => {
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: rgb(184, 179, 179);
+      color: #fff;
       margin-right: 20px;
       margin-top: 20px;
     }
     .icon_social > i {
       font-size: 35px;
-      /* padding: 10px  ; */
-      background: #4e585d;
+      background-image: linear-gradient(
+        to bottom,
+        rgb(117, 101, 236),
+        rgb(122, 42, 196)
+      ) !important;
+      // box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
       border-radius: 10px;
       width: 60px;
       height: 60px;

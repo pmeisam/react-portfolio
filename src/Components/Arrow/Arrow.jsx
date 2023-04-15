@@ -8,6 +8,9 @@ export default function ({ upRef, downRef, down, up }) {
   const EmptySpace = styled.div`
     height: 10vh;
     width: 100%;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
   `;
 
   const DownArrow = styled.div`
@@ -24,11 +27,11 @@ export default function ({ upRef, downRef, down, up }) {
 
     @keyframes animate {
       0% {
-        border-color: ${theme.fontColor};;
+        border-color: ${theme.fontColor};
         transform: translate(0, 0);
       }
       20% {
-        border-color: ${theme.fontColor};;
+        border-color: ${theme.fontColor};
         transform: translate(0px, 10px);
       }
       20.1%,
@@ -48,7 +51,11 @@ export default function ({ upRef, downRef, down, up }) {
 
     .arrow {
       transform: translateY(39px) rotate(45deg);
-      border-color: ${theme.fontColor};;
+      border-color: ${theme.fontColor};
+    }
+
+    @media screen and (max-width: 600px) {
+      display: none;
     }
   `;
 
@@ -90,6 +97,9 @@ export default function ({ upRef, downRef, down, up }) {
     .arrow {
       transform: translateY(39px) rotate(315deg);
       border-color: ${theme.fontColor};
+    }
+    @media screen and (max-width: 600px) {
+      display: none;
     }
   `;
 
