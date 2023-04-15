@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./SkillsListView.scss";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import SkillIcon from "../SkillIcon/SkillIcon";
 // import Fade from "react-reveal/Fade";

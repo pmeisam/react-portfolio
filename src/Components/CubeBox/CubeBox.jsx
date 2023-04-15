@@ -199,11 +199,11 @@ const CubeBox = () => {
         <CubeFace face="right" color="rgba(142,148,151, 1)">
           <SkillIcon
             name={"Bootstrap"}
-            icon={<i class="devicon-bootstrap-plain"></i>}
+            icon={<i className="devicon-bootstrap-plain"></i>}
           />
           <SkillIcon
             name={"Material UI"}
-            icon={<i class="devicon-materialui-plain"></i>}
+            icon={<i className="devicon-materialui-plain"></i>}
           />
           <SkillIcon
             name={"MongoDB"}
@@ -221,7 +221,7 @@ const CubeBox = () => {
         <CubeFace face="top" color="rgba(203,205,206, 1)">
           <SkillIcon
             name={"Spring"}
-            icon={<i class="devicon-spring-plain-wordmark colored"></i>}
+            icon={<i className="devicon-spring-plain-wordmark colored"></i>}
           />
           <SkillIcon
             name={"C"}

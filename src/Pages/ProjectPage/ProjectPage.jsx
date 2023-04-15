@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from "react";
-import ProjectComponent from "../../Components/Project/Project";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import Fade from 'react-reveal/Fade';
+import Fade from "react-reveal/Fade";
+import ProjectComponent from "../../Components/Project/Project";
 
 const ProjectPage = () => {
+  const firstDownRef = useRef(null);
+  const secondDownRef = useRef(null);
+  const thirdDownRef = useRef(null);
+  const fourthDownRef = useRef(null);
+  const fifthDownRef = useRef(null);
+  const sixthDownRef = useRef(null);
+
   const [nateLimo] = useState({
     img: "images/nateLimo.png",
     name: "Nate Limo Services",
@@ -113,34 +120,95 @@ const ProjectPage = () => {
 
   return (
     <ProjectsWrapper>
-       <Fade big>
-        <div className="project_container">
-          <ProjectComponent project={nateLimo} />
+      <Fade big>
+        <div className="project_container" ref={(el) => {
+            firstDownRef.current = el;
+          }}>
+          <ProjectComponent
+            project={nateLimo}
+            downRef={secondDownRef}
+            down={true}
+          />
         </div>
       </Fade>
-       <Fade big>
-        <div className="project_container">
-          <ProjectComponent project={arcadiaCars} />
+
+      <Fade big>
+        <div
+          className="project_container"
+          ref={(el) => {
+            secondDownRef.current = el;
+          }}
+        >
+          <ProjectComponent
+            project={arcadiaCars}
+            downRef={thirdDownRef}
+            down={true}
+            upRef={firstDownRef}
+            up={true}
+          />
         </div>
       </Fade>
-       <Fade big>
-        <div className="project_container">
-          <ProjectComponent project={devSpot} />
+
+      <Fade big>
+        <div
+          className="project_container"
+          ref={(el) => {
+            thirdDownRef.current = el;
+          }}
+        >
+          <ProjectComponent
+            project={devSpot}
+            downRef={fourthDownRef}
+            down={true}
+            upRef={secondDownRef}
+            up={true}
+          />
         </div>
       </Fade>
-       <Fade big>
-        <div className="project_container">
-          <ProjectComponent project={triplaner} />
+      <Fade big>
+        <div
+          className="project_container"
+          ref={(el) => {
+            fourthDownRef.current = el;
+          }}
+        >
+          <ProjectComponent
+            project={triplaner}
+            downRef={fifthDownRef}
+            down={true}
+            upRef={thirdDownRef}
+            up={true}
+          />
         </div>
       </Fade>
-       <Fade big>
-        <div className="project_container">
-          <ProjectComponent project={memesagram} />
+      <Fade big>
+        <div
+          className="project_container"
+          ref={(el) => {
+            fifthDownRef.current = el;
+          }}
+        >
+          <ProjectComponent
+            project={memesagram}
+            downRef={sixthDownRef}
+            down={true}
+            upRef={fourthDownRef}
+            up={true}
+          />
         </div>
       </Fade>
-       <Fade big>
-        <div className="project_container">
-          <ProjectComponent project={minesweeper} />
+      <Fade big>
+        <div
+          className="project_container"
+          ref={(el) => {
+            sixthDownRef.current = el;
+          }}
+        >
+          <ProjectComponent
+            project={minesweeper}
+            upRef={fifthDownRef}
+            up={true}
+          />
         </div>
       </Fade>
     </ProjectsWrapper>
@@ -161,6 +229,7 @@ const ProjectsWrapper = styled.div`
     align-items: center;
     margin: 15% 0;
   }
+
   @media screen and (max-width: 600px) {
     // margin: 300px 0;
     .project_container {

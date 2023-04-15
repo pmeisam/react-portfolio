@@ -31,6 +31,7 @@ const SkillsPageWrapper = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    cursor: pointer;
   }
   .active {
     color: rgb(255, 255, 255);

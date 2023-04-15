@@ -93,7 +93,7 @@ const ContactPage = () => {
     .parent_form textarea {
     }
     .btn_sent_mesaege {
-      width: 70%;
+      width: 200px;
       margin: 20px 0;
       padding: 15px 10px;
       border-radius: 35px;

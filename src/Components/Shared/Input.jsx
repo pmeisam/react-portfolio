@@ -85,7 +85,7 @@ const Input = (props) => {
           placeholder=""
           //   onChange={onChange}
         />
-        <label for={props.id}>&nbsp;{props.placeholder}&nbsp;</label>
+        <label htmlFor={props.id}>&nbsp;{props.placeholder}&nbsp;</label>
       </div>
     </InputComponent>
   );
