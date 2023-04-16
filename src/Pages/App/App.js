@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" render={() => <HomePage />} />
-        <Route path="/skills" render={() => <SkillsPage />} />
+        <Route path="/experiences" render={() => <SkillsPage />} />
         <Route path="/projects" render={() => <ProjectPage />} />
         <Route path="/contact" render={() => <ContactPage />} />
         <Route path="/profile" render={() => <ProfilePage />} />

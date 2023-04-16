@@ -345,7 +345,7 @@ const ContactPage = () => {
               </a>
               <div className="social contact_social">
                 <a
-                  _blank="true"
+                  target="_blank"
                   href="https://www.instagram.com/me.i.sam/"
                   className="icon_social"
                 >
@@ -353,7 +353,7 @@ const ContactPage = () => {
                   {/* <p>Instagram</p> */}
                 </a>
                 <a
-                  _blank="true"
+                  target="_blank"
                   href="https://www.facebook.com/pmeisam"
                   className="icon_social"
                 >
@@ -361,7 +361,7 @@ const ContactPage = () => {
                   {/* <p>Facebook</p> */}
                 </a>
                 <a
-                  _blank="true"
+                  target="_blank"
                   href="https://www.twitter.com/pmeisam"
                   className="icon_social"
                 >
@@ -369,7 +369,7 @@ const ContactPage = () => {
                   {/* <p>Twitter</p> */}
                 </a>
                 <a
-                  _blank="true"
+                  target="_blank"
                   href="https://www.github.com/pmeisam"
                   className="icon_social"
                 >
@@ -377,7 +377,7 @@ const ContactPage = () => {
                   {/* <p>GitHub</p> */}
                 </a>
                 <a
-                  _blank="true"
+                  target="_blank"
                   href="https://www.linkedin.com/in/pmeisam"
                   className="icon_social"
                 >
@@ -385,7 +385,7 @@ const ContactPage = () => {
                   {/* <p>LinkedIn</p> */}
                 </a>
                 <a
-                  _blank="true"
+                  target="_blank"
                   href="mailto: meisam.poorzand@gmail.com"
                   className="icon_social"
                 >

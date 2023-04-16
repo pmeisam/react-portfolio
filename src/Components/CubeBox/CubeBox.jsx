@@ -4,9 +4,9 @@ import SkillIcon from "../../Components/SkillIcon/SkillIcon.jsx";
 
 const CubeWrapper = styled.div`
   position: relative;
-  width: 400px;
-  height: 400px;
-  margin: 19vh auto;
+  width: 300px;
+  height: 300px;
+  margin: 80px auto;
   perspective: 1000px;
 `;
 
@@ -20,8 +20,8 @@ const Cube = styled.div`
 
 const CubeFace = styled.div`
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border: 1px solid transparent;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   display: flex;
@@ -33,6 +33,12 @@ const CubeFace = styled.div`
   color: white;
   backface-visibility: hidden;
   transform-style: preserve-3d;
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+
+  :active {
+    cursor: grabbing;
+  }
 
   /* Set the background color of each face */
   ${(props) => css`
@@ -44,32 +50,32 @@ const CubeFace = styled.div`
     switch (props.face) {
       case "front":
         return css`
-          transform: translateZ(200px);
+          transform: translateZ(150px);
           z-index: 1;
         `;
       case "back":
         return css`
-          transform: rotateY(180deg) translateZ(200px);
+          transform: rotateY(180deg) translateZ(150px);
           z-index: 2;
         `;
       case "left":
         return css`
-          transform: rotateY(-90deg) translateZ(200px);
+          transform: rotateY(-90deg) translateZ(150px);
           z-index: 3;
         `;
       case "right":
         return css`
-          transform: rotateY(90deg) translateZ(200px);
+          transform: rotateY(90deg) translateZ(150px);
           z-index: 4;
         `;
       case "top":
         return css`
-          transform: rotateX(90deg) translateZ(200px);
+          transform: rotateX(90deg) translateZ(150px);
           z-index: 5;
         `;
       case "bottom":
         return css`
-          transform: rotateX(-90deg) translateZ(200px);
+          transform: rotateX(-90deg) translateZ(150px);
           z-index: 6;
         `;
       default:

@@ -35,8 +35,8 @@ function Navbar() {
     if (pathname === "/") {
       setText("HOME");
     }
-    if (pathname === "/skills") {
-      setText("SKILLS");
+    if (pathname === "/experiences") {
+      setText("EXPERIENCES");
     }
     if (pathname === "/projects") {
       setText("PROJECTS");
@@ -368,7 +368,7 @@ function Navbar() {
         <NavLink
           activeClassName="isActive"
           className="link"
-          to="/skills"
+          to="/experiences"
           exact={true}
           // onMouseEnter={
           //   isMobile ? false : () => this.onMouseEnterHandler("skills")
