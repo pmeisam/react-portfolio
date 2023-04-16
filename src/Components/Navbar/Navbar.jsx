@@ -154,6 +154,35 @@ function Navbar() {
             rgb(117, 101, 236),
             rgb(122, 42, 196)
           ) !important;
+          // ::before {
+          //   display: none;
+          //   content: "";
+          //   height: 3px;
+          //   width: 21px;
+          //   background-color: rgb(244, 244, 244);
+          //   position: fixed;
+          //   z-index: -1;
+          //   left: 70px;
+          //   border-radius: 10px;
+          //   animation: fadeIn linear 4s;
+          //   -webkit-animation: fadeIn linear 4s;
+          //   -moz-animation: fadeIn linear 4s;
+          //   -o-animation: fadeIn linear 4s;
+          //   -ms-animation: fadeIn linear 4s;
+          //   box-shadow: 1px 1px 4px rgb(244, 244, 244, 0.5);
+          // }
+          // ::after {
+          //   content: "${text}";
+          //   color: ${theme.fonColor};
+          //   text-shadow: 0 0 10px ${theme.fonColor};
+          //   margin-left: 15px;
+          //   font-weight: 600;
+          //   animation: fadeIn linear 4s;
+          //   -webkit-animation: fadeIn linear 4s;
+          //   -moz-animation: fadeIn linear 4s;
+          //   -o-animation: fadeIn linear 4s;
+          //   -ms-animation: fadeIn linear 4s;
+          // }
         }
       }
       & > .isActive {
@@ -351,8 +380,7 @@ function Navbar() {
     <NavWrapper>
       <div>
         <NavLink
-          activeClassName="isActive"
-          className="link"
+          className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/"
           exact={true}
           // onMouseEnter={
@@ -366,8 +394,7 @@ function Navbar() {
         </NavLink>
 
         <NavLink
-          activeClassName="isActive"
-          className="link"
+          className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/experiences"
           exact={true}
           // onMouseEnter={
@@ -381,8 +408,7 @@ function Navbar() {
         </NavLink>
 
         <NavLink
-          activeClassName="isActive"
-          className="link"
+          className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/projects"
           exact={true}
           // onMouseEnter={
@@ -395,8 +421,7 @@ function Navbar() {
           <div className="divLinks">{projects}</div>
         </NavLink>
         <NavLink
-          activeClassName="isActive"
-          className="link"
+          className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/contact"
           exact={true}
           // onMouseEnter={

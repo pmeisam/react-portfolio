@@ -1,15 +1,177 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import CubeBox from "../../Components/CubeBox/CubeBox";
-import SkillsListView from "../../Components/SkillsListView/SkillsListView";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { ThemeContext } from "../../Context/ThemeContext";
+import { Link } from "react-router-dom";
 
 export default function SkillsPage() {
-  const [listView, setListView] = useState(false);
+  const { theme } = useContext(ThemeContext);
 
-  if (window.innerWidth < 900) {
-    return <SkillsListView />;
-  }
+  const SkillsPageWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    h1 {
+      font-family: "Saira Stencil One", cursive;
+      font-size: 26px;
+    }
+
+    .experience_card {
+      width: 60vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .experience {
+      width: 80%;
+      margin-left: 250px;
+    }
+    .position-location {
+      background-color: ${theme.fontColor};
+      color: ${theme.backgroundColor};
+      width: 300px;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      width: 40vw;
+      height: 50%;
+      margin-top: 20%;
+    }
+
+    li {
+      list-style-type: square;
+      margin-left: 20px;
+      font-family: "Roboto", sans-serif;
+    }
+
+    .view-button {
+      margin: 0 auto 0 auto;
+      width: 200px;
+      border: none;
+      border-radius: 5px;
+      height: 40px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      cursor: pointer;
+    }
+    .active {
+      color: rgb(255, 255, 255);
+      background-image: linear-gradient(
+        to bottom,
+        rgb(117, 101, 236),
+        rgb(122, 42, 196)
+      ) !important;
+      box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
+    }
+    span {
+      width: 100%;
+      height: 100%;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(244, 244, 244);
+      color: rgb(48, 32, 66);
+    }
+
+    .imdb-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #f5c518;
+      color: #000;
+      background-color: #f5c518;
+      border-radius: 5px;
+      width: 110px;
+      height: 40px;
+      margin-top: 20px;
+    }
+
+    .imdb-icon {
+      font-size: 15px;
+    }
+
+    .imdb-logo {
+      width: 60px;
+    }
+
+    .project-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(
+        to bottom,
+        rgb(117, 101, 236),
+        rgb(122, 42, 196)
+      ) !important;
+      box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
+      width: 110px;
+      height: 40px;
+      border-radius: 5px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+    .project-button:hover {
+      box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
+    }
+    @media screen and (max-width: 1450px) {
+      .skills-container {
+        display: none;
+      }
+      .experience_card {
+        width: 60vw;
+      }
+      .experience {
+        // width: 100%;
+        margin: 0;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .experience_card {
+        width: 90vw;
+      }
+      .experience {
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      margin-top: 10vh;
+      align-items: baseline;
+      min-height: 100vh;
+      margin-bottom: 15vh;
+      h1 {
+        font-size: 20px;
+      }
+      li {
+        font-size: 14px;
+      }
+    }
+    @media screen and (max-width: 430px) {
+      margin-top: 100px;
+      margin-bottom: 30vh;
+      
+    }
+  `;
+
+  // if (window.innerWidth < 900) {
+  //   return <SkillsListView />;
+  // }
   return (
     <SkillsPageWrapper>
       <div data-aos="fade-left" className="experience_card">
@@ -112,123 +274,3 @@ export default function SkillsPage() {
     </SkillsPageWrapper>
   );
 }
-
-const SkillsPageWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-
-  h1 {
-    font-family: "Saira Stencil One", cursive;
-    font-size: 26px;
-  }
-
-  .experience_card {
-    width: 60vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .experience {
-    width: 80%;
-    margin-left: 250px;
-  }
-  .position-location {
-    width: 300px;
-  }
-
-  .skills-container {
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
-    height: 50%;
-    margin-top: 20%;
-  }
-
-  li {
-    list-style-type: square;
-    margin-left: 20px;
-    font-family: "Roboto", sans-serif;
-  }
-
-  .view-button {
-    margin: 0 auto 0 auto;
-    width: 200px;
-    border: none;
-    border-radius: 5px;
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    cursor: pointer;
-  }
-  .active {
-    color: rgb(255, 255, 255);
-    background-image: linear-gradient(
-      to bottom,
-      rgb(117, 101, 236),
-      rgb(122, 42, 196)
-    ) !important;
-    box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
-  }
-  span {
-    width: 100%;
-    height: 100%;
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(244, 244, 244);
-    color: rgb(48, 32, 66);
-  }
-
-  .imdb-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #f5c518;
-    color: #000;
-    background-color: #f5c518;
-    border-radius: 5px;
-    width: 110px;
-    height: 40px;
-    margin-top: 20px;
-  }
-
-  .imdb-icon {
-    font-size: 15px;
-  }
-
-  .imdb-logo {
-    width: 60px;
-  }
-
-  .project-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(
-      to bottom,
-      rgb(117, 101, 236),
-      rgb(122, 42, 196)
-    ) !important;
-    box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
-    width: 110px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 15px;
-    margin-top: 20px;
-  }
-  .project-button:hover {
-    box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
-  }
-`;

@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, memo } from "react";
 import styled, { css } from "styled-components";
 import SkillIcon from "../../Components/SkillIcon/SkillIcon.jsx";
 
 const CubeWrapper = styled.div`
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   margin: 80px auto;
   perspective: 1000px;
 `;
@@ -20,8 +20,8 @@ const Cube = styled.div`
 
 const CubeFace = styled.div`
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border: 1px solid transparent;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   display: flex;
@@ -50,32 +50,32 @@ const CubeFace = styled.div`
     switch (props.face) {
       case "front":
         return css`
-          transform: translateZ(150px);
+          transform: translateZ(100px);
           z-index: 1;
         `;
       case "back":
         return css`
-          transform: rotateY(180deg) translateZ(150px);
+          transform: rotateY(180deg) translateZ(100px);
           z-index: 2;
         `;
       case "left":
         return css`
-          transform: rotateY(-90deg) translateZ(150px);
+          transform: rotateY(-90deg) translateZ(100px);
           z-index: 3;
         `;
       case "right":
         return css`
-          transform: rotateY(90deg) translateZ(150px);
+          transform: rotateY(90deg) translateZ(100px);
           z-index: 4;
         `;
       case "top":
         return css`
-          transform: rotateX(90deg) translateZ(150px);
+          transform: rotateX(90deg) translateZ(100px);
           z-index: 5;
         `;
       case "bottom":
         return css`
-          transform: rotateX(-90deg) translateZ(150px);
+          transform: rotateX(-90deg) translateZ(100px);
           z-index: 6;
         `;
       default:
@@ -84,7 +84,7 @@ const CubeFace = styled.div`
   }}
 `;
 
-const CubeBox = () => {
+const CubeBox = memo(() => {
   const [rotation, setRotation] = useState({ x: -20, y: 45 });
   const [isDragging, setIsDragging] = useState(false);
   const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
@@ -273,6 +273,6 @@ const CubeBox = () => {
       </Cube>
     </CubeWrapper>
   );
-};
+});
 
 export default CubeBox;

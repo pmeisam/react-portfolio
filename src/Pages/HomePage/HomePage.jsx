@@ -11,25 +11,11 @@ import "aos/dist/aos.css";
 // import Tada from 'react-reveal/Tada';
 
 const HomePage = () => {
-  const [intro, setIntro] = useState(null);
-  const [bio, setBio] = useState("");
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     document.title = "Meisam Poorzand";
     window.scrollTo(0, 0);
-    let intro = "HI THERE, I'M MEISAM";
-    let biography =
-      "Full-stack software engineer with a background in computer science. I am a motivated self-starter with a persistent drive to succeed. I am currently seeking new opportunities to learn and develop new skills in the field. My passion lies in utilizing development as a means of making positive social change by teaching others the value and potential of technology. With a focus on building intuitive, user-friendly applications, my ultimate goal is to improve the overall user experience.";
-    // biography = biography.toUpperCase();
-    intro = intro.toUpperCase();
-    setIntro(intro);
-    // setBio(biography);
-    //   let biography =
-    //     "I'm a full-stack software engineer with an education in computer science. Soccer fan and motivated self-starter with a persistent drive to succeed, and I am always looking for opportunities to learn and develop new skills. Passionate about development as the vehicle for making positive social-change through teaching others the love of technology. I’m focused on building intuitive, user-friendly applications, to ultimately improve the user experience.";
-    //   this.setState({ theText: biography });
-
-    setBio(biography);
     AOS.init({
       duration: 2000,
     });
@@ -41,7 +27,7 @@ const HomePage = () => {
     margin-top: 100px;
     & > h1 {
       font-family: "Saira Stencil One", cursive;
-      font-size: 4.9vw;
+      font-size: 4vw;
     }
     @media screen and (max-width: 900px) {
       margin-top: 10%;
@@ -206,10 +192,17 @@ const HomePage = () => {
     <Intro>
       <div>
         <Tada>
-          <h1 data-aos="zoom-in">{intro}</h1>
+          <h1 data-aos="zoom-in">HI THERE, I'M MEISAM.</h1>
         </Tada>
         <p data-aos="zoom-out">
-          {bio ? bio : null}
+          Full-stack software engineer with a background in computer science. I
+          am a motivated self-starter with a persistent drive to succeed. I am
+          currently seeking new opportunities to learn and develop new skills in
+          the field. My passion lies in utilizing development as a means of
+          making positive social change by teaching others the value and
+          potential of technology. With a focus on building intuitive,
+          user-friendly applications, my ultimate goal is to improve the overall
+          user experience.
           <span className="blinking">_</span>
         </p>
         <a

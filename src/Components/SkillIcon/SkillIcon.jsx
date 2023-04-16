@@ -44,8 +44,8 @@ let SkillIconWrapper = styled.div`
 
   .flip-card-inner {
     position: relative;
-    width: 75%;
-    height: 75%;
+    width: 60%;
+    height: 60%;
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
@@ -71,7 +71,7 @@ let SkillIconWrapper = styled.div`
   }
 
   .flip-card-front {
-    font-size: 35px;
+    font-size: 50px;
     // background-color: rgb(39, 50, 56);
   }
 
