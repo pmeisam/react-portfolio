@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CubeBox from "../../Components/CubeBox/CubeBox";
 import { ThemeContext } from "../../Context/ThemeContext";
 import { Link } from "react-router-dom";
+import SkillIconAndName from "../../Components/SkillIcon/SkillIconAndName";
 
 export default function SkillsPage() {
   const { theme } = useContext(ThemeContext);
@@ -46,11 +47,18 @@ export default function SkillsPage() {
       // height: 50%;
       // margin-top: 20%;
     }
+    .skills_list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
 
     li {
       list-style-type: square;
       margin-left: 20px;
       font-family: "Roboto", sans-serif;
+      color: rgb(138, 138, 138);
     }
 
     .view-button {
@@ -124,16 +132,24 @@ export default function SkillsPage() {
       cursor: pointer;
       font-size: 15px;
       margin-top: 20px;
+      font-weight: 300;
     }
     .project-button:hover {
       box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
     }
-    @media screen and (max-width: 1450px) {
-      .skills-container {
-        display: none;
-      }
+
+    @media screen and (max-width: 1670px) {
+      margin-top: 30px;
       .experience_card {
-        width: 60vw;
+        justify-content: start;
+      }
+      width: 95vw;
+    }
+
+    @media screen and (max-width: 1450px) {
+      margin-left: auto;
+      .experience_card {
+        width: 80vw;
       }
       .experience {
         // width: 100%;
@@ -141,9 +157,17 @@ export default function SkillsPage() {
       }
     }
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1250px) {
+      margin-top: 50px;
+      .imdb-link {
+        margin-bottom: 50px;
+      }
+    }
+
+    @media screen and (max-width: 1050px) {
       .experience_card {
-        width: 90vw;
+        width: 70vw;
+        margin-top: 20vh;
       }
       .experience {
         width: 100%;
@@ -151,22 +175,38 @@ export default function SkillsPage() {
       }
     }
 
+    @media screen and (max-width: 900px) {
+      margin: 0 auto;
+      margin-top: 10vh;
+      .experience_card {
+        width: 95vw;
+      }
+      li {
+        font-size: 15px;
+      }
+    }
+
     @media screen and (max-width: 700px) {
       margin-top: 10vh;
-      align-items: baseline;
-      min-height: 100vh;
-      margin-bottom: 15vh;
+
       h1 {
         font-size: 20px;
       }
       li {
         font-size: 14px;
       }
+      .project-button {
+        font-size: 12px;
+      }
     }
+
+    @media screen and (max-width: 530px) {
+      margin-top: 15vh;
+    }
+
     @media screen and (max-width: 430px) {
-      margin-top: 100px;
+      margin-top: 22vh;
       margin-bottom: 30vh;
-      
     }
   `;
 
@@ -205,11 +245,114 @@ export default function SkillsPage() {
               user search functionality.
             </li>
           </ul>
+          <div className="skills_list">
+            <SkillIconAndName
+              name={"React.js"}
+              icon={<i className="devicon-react-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Node.js"}
+              icon={<i className="devicon-nodejs-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Express"}
+              icon={<i className="devicon-express-original"></i>}
+            />
+            <SkillIconAndName
+              name={"Python"}
+              icon={<i className="devicon-python-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Django"}
+              icon={<i className="devicon-django-plain-wordmark"></i>}
+            />
+            <SkillIconAndName
+              name={"MongoDB"}
+              icon={<i className="devicon-mongodb-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"PostgreSQL"}
+              icon={
+                <i className="devicon-postgresql-plain-wordmark colored"></i>
+              }
+            />
+            <SkillIconAndName
+              name={"MySQL"}
+              icon={<i className="devicon-mysql-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"JavaScript"}
+              icon={<i className="devicon-javascript-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"TypeScript"}
+              icon={<i className="devicon-typescript-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"jQuery"}
+              icon={<i className="devicon-jquery-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"HTML"}
+              icon={<i className="devicon-html5-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"CSS"}
+              icon={<i className="devicon-css3-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"SASS"}
+              icon={<i className="devicon-sass-original colored"></i>}
+            />
+            <SkillIconAndName
+              name={"wordpress"}
+              icon={<i className="devicon-wordpress-plain-wordmark"></i>}
+            />
+            <SkillIconAndName
+              name={"Firebase"}
+              icon={<i className="devicon-firebase-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"AWS"}
+              icon={<i className="devicon-amazonwebservices-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Bootstrap"}
+              icon={<i className="devicon-bootstrap-plain"></i>}
+            />
+            <SkillIconAndName
+              name={"Material UI"}
+              icon={<i className="devicon-materialui-plain"></i>}
+            />
+            <SkillIconAndName
+              name={"Figma"}
+              icon={<i className="devicon-figma-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Redux"}
+              icon={<i className="devicon-redux-original colored"></i>}
+            />
+            <SkillIconAndName
+              name={"GitHub"}
+              icon={<i className="devicon-github-plain-wordmark"></i>}
+            />
+            <SkillIconAndName
+              name={"Git"}
+              icon={<i className="devicon-git-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Heroku"}
+              icon={<i className="devicon-heroku-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"nginx"}
+              icon={<i className="devicon-nginx-plain-wordmark colored"></i>}
+            />
+          </div>
           <Link to="/projects" className="project-button">
             <i className="fas fa-layer-group"></i>&nbsp;Projects
           </Link>
         </div>
-        <br />
         <br />
         <br />
         <div className="experience">
@@ -254,7 +397,66 @@ export default function SkillsPage() {
               best practices.
             </li>
           </ul>
-
+          <div className="skills_list">
+            <SkillIconAndName
+              name={"Java"}
+              icon={<i className="devicon-java-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Spring"}
+              icon={<i className="devicon-spring-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Python"}
+              icon={<i className="devicon-python-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"PostgreSQL"}
+              icon={
+                <i className="devicon-postgresql-plain-wordmark colored"></i>
+              }
+            />
+            <SkillIconAndName
+              name={"MySQL"}
+              icon={<i className="devicon-mysql-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"JavaScript"}
+              icon={<i className="devicon-javascript-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"GitLab"}
+              icon={<i className="devicon-gitlab-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Git"}
+              icon={<i className="devicon-git-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Jenkins"}
+              icon={<i className="devicon-jenkins-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"nginx"}
+              icon={<i className="devicon-nginx-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"AWS"}
+              icon={<i className="devicon-amazonwebservices-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Vim"}
+              icon={<i className="devicon-vim-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"ElasticSearch"}
+              icon={<img src="./images/elasticsearch (1).png" />}
+            />
+            <SkillIconAndName
+              name={"ImageMagick"}
+              icon={<img src="./images/imagemagick.png" />}
+            />
+          </div>
           <a
             href="https://www.imdb.com/name/nm14548800/"
             target="_blank"

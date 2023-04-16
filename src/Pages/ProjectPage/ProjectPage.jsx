@@ -15,7 +15,7 @@ const ProjectPage = () => {
     img: "images/nateLimo.png",
     name: "Nate Limo Services",
     description:
-      "Nate Limo Services is a web-app designed for a limousine company. Users can search through the origin and destination address through google maps places API, see the distance on a map through google maps destinations API, get a quote based on the distance and duration and book an appointment. Admins can also view appointments on the admin page and edit the status of an appointment.",
+      "Nate Limo Services is a professional web app for a premium limousine company, featuring a user-friendly search function powered by Google Maps Places API, a visual representation of the distance and route between selected locations, a quote generator based on distance and duration, and easy appointment booking. Administrators can manage appointments and edit their status on the secure admin page.",
     toolsUsed: [
       "React.js",
       "Node.js",
@@ -33,7 +33,7 @@ const ProjectPage = () => {
     img: "images/arcadiacars.png",
     name: "Arcadia Automotive",
     description:
-      "Arcadia Automotive is a dealership web-app. The admin can log in and upload vehicle images along with their details to the inventory. In addition, clients can view the inventory, filter and search through the inventory, calculate payments on a specific vehicle and contact the dealership regarding a vehicle they have in mind to purchase.",
+      "Arcadia Automotive is a professional dealership web app that allows admins to upload and manage vehicle details and images. Clients can easily view, filter, and calculate payments on vehicles, as well as contact the dealership directly through the app.",
     toolsUsed: [
       "React.js",
       "Node.js",
@@ -53,7 +53,7 @@ const ProjectPage = () => {
     img: "images/devspot.png",
     name: "devSpot",
     description:
-      "devSpot is a web-app where developers can share their projects through iframes. In addition, users can chat with each other through the app. The posted projects are live, meaning users can interact with them as they would if they were to visit the project.",
+      "DevSpot is a cutting-edge web app that allows developers to share their projects through interactive iframes. Users can chat seamlessly with each other, and what sets it apart is the live shared projects, creating an immersive experience that inspires developers of all levels.",
     toolsUsed: [
       "React.js",
       "Node.js",
@@ -73,7 +73,7 @@ const ProjectPage = () => {
     img: "images/memesagram.png",
     name: "MEMESAGRAM",
     description:
-      "Memesagram is a social media platform where users can login with their Google account and upload photos, especially memes. Users can also comment, like, and update their profiles with photos and custom usernames. In addition, users can edit or delete their comments and captions.",
+      "Memesagram is a user-friendly social media platform for meme lovers, featuring easy photo uploads, commenting, liking, and profile updates. With powerful editing tools, users can effortlessly edit or delete their comments and captions, ensuring a seamless and enjoyable experience.",
     toolsUsed: [
       "Node.js",
       "Express.js",
@@ -91,7 +91,7 @@ const ProjectPage = () => {
     img: "images/triplaner.png",
     name: "TRIPLANER",
     description:
-      "A full-service travel planning app that matches you with flights and hotels based on your travel budget. Whethere you're planning a romantic getaway, a family vacation, or just need a weekend escape.",
+      "A full-service travel planning app that offers a personalized travel experience that caters to your budget. Whether you're looking for a romantic getaway, a family vacation, or a weekend escape, we'll match you with the best flights and hotels to suit your preferences.",
     toolsUsed: [
       "Python",
       "django",
@@ -107,7 +107,7 @@ const ProjectPage = () => {
     img: "images/minesweeper.png",
     name: "MINESWEEPER",
     description:
-      "The game is about finding the hidden mines. Each box you click on will either show a number of mines around each box or a mine. If there is no number it means that there is no mine around it. You can put a flag by right-clicking anywhere you think there is a mine. If you click all the boxes without clicking a mine, you will win.",
+      "This game is a thrilling challenge that involves finding hidden mines. Each box you click reveals a number of nearby mines or a mine itself. By using flags, you can mark suspected mine locations. The goal is to click on all boxes without uncovering a mine. Be careful and strategic, as the stakes are high.",
     toolsUsed: ["JavaScript", "jQuery", "HTML", "CSS"],
     link: "https://pmeisam.github.io/minesweeper/",
     gitHubLink: "https://github.com/pmeisam/minesweeper",
@@ -121,9 +121,12 @@ const ProjectPage = () => {
   return (
     <ProjectsWrapper>
       <Fade big>
-        <div className="project_container" ref={(el) => {
+        <div
+          className="project_container"
+          ref={(el) => {
             firstDownRef.current = el;
-          }}>
+          }}
+        >
           <ProjectComponent
             project={nateLimo}
             downRef={secondDownRef}

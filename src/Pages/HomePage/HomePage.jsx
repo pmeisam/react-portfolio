@@ -75,6 +75,7 @@ const HomePage = () => {
           color: white;
           cursor: pointer;
           font-size: 16px;
+          font-weight: 300;
         }
         & > .projectButton:hover {
           box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);

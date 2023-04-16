@@ -92,7 +92,7 @@ const ContactPage = () => {
     }
     .parent_form textarea {
     }
-    .btn_sent_mesaege {
+    .btn-send-message {
       width: 220px;
       margin: 20px 0;
       padding: 15px 10px;
@@ -111,8 +111,9 @@ const ContactPage = () => {
       box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
       font-size: 16px;
       color: white;
+      font-weight: 300;
     }
-    .btn_sent_mesaege:hover:enabled {
+    .btn-send-message:hover:enabled {
       box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
       curoser: pointer;
     }
@@ -241,6 +242,9 @@ const ContactPage = () => {
       .t_w90_m-auto {
         margin-top: 0;
       }
+      .btn-send-message {
+        font-size: 12px;
+      }
     }
   `;
 
@@ -324,11 +328,11 @@ const ContactPage = () => {
                 id="message"
               ></TextArea>
               <button
-                className="btn_sent_mesaege"
+                className="btn-send-message"
                 type="submit"
                 // disabled={!isEnabled}
               >
-                Send Message
+                Send
               </button>
             </form>
           </div>
