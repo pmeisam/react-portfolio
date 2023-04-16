@@ -39,11 +39,12 @@ export default function SkillsPage() {
     }
 
     .skills-container {
-      display: flex;
-      flex-direction: column;
-      width: 40vw;
-      height: 50%;
-      margin-top: 20%;
+      display: none;
+      // display: flex;
+      // flex-direction: column;
+      // width: 40vw;
+      // height: 50%;
+      // margin-top: 20%;
     }
 
     li {

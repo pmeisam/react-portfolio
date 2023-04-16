@@ -174,7 +174,7 @@ const HomePage = () => {
             ) !important;
             width: 200px;
             height: 45px;
-            border-radius: 60px;
+            border-radius: 5px;
             border: none;
             color: white;
             cursor: pointer;
