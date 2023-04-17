@@ -30,7 +30,7 @@ export default function SkillsPage() {
     }
 
     .experience {
-      width: 80%;
+      width: 100%;
       margin-left: 250px;
     }
     .position-location {

@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import Switch from "../Switch/Switch";
 import { ThemeContext } from "../../Context/ThemeContext";
-// import { isMobile } from "react-device-detect";
+import Switch from "../Switch/Switch";
 
 function Navbar() {
   const { theme } = useContext(ThemeContext);
@@ -20,14 +19,12 @@ function Navbar() {
     let home = <i className="fas fa-home"></i>;
     let skills = <i className="fas fa-code"></i>;
     let projects = <i className="fas fa-layer-group"></i>;
-    // let profile = <i className="fas fa-user"></i>;
     let contact = <i className="fas fa-phone"></i>;
     let setting = <i className="fas fa-cog"></i>;
 
     setHome(home);
     setSkills(skills);
     setProjects(projects);
-    // setProfile(profile);
     setContact(contact);
     setSetting(setting);
 
@@ -153,35 +150,20 @@ function Navbar() {
             rgb(117, 101, 236),
             rgb(122, 42, 196)
           ) !important;
-          // ::before {
-          //   display: none;
-          //   content: "";
-          //   height: 3px;
-          //   width: 21px;
-          //   background-color: rgb(244, 244, 244);
-          //   position: fixed;
-          //   z-index: -1;
-          //   left: 70px;
-          //   border-radius: 10px;
-          //   animation: fadeIn linear 4s;
-          //   -webkit-animation: fadeIn linear 4s;
-          //   -moz-animation: fadeIn linear 4s;
-          //   -o-animation: fadeIn linear 4s;
-          //   -ms-animation: fadeIn linear 4s;
-          //   box-shadow: 1px 1px 4px rgb(244, 244, 244, 0.5);
-          // }
-          // ::after {
-          //   content: "${text}";
-          //   color: ${theme.fonColor};
-          //   text-shadow: 0 0 10px ${theme.fonColor};
-          //   margin-left: 15px;
-          //   font-weight: 600;
-          //   animation: fadeIn linear 4s;
-          //   -webkit-animation: fadeIn linear 4s;
-          //   -moz-animation: fadeIn linear 4s;
-          //   -o-animation: fadeIn linear 4s;
-          //   -ms-animation: fadeIn linear 4s;
-          // }
+        }
+      }
+      & > .link:hover {
+        ::after {
+          content: attr(title);
+          color: ${theme.fonColor};
+          text-shadow: 0 0 10px ${theme.fonColor};
+          margin-left: 15px;
+          font-weight: 600;
+          animation: fadeIn linear 2s;
+          -webkit-animation: fadeIn linear 2s;
+          -moz-animation: fadeIn linear 2s;
+          -o-animation: fadeIn linear 2s;
+          -ms-animation: fadeIn linear 2s;
         }
       }
       & > .isActive {
@@ -205,18 +187,6 @@ function Navbar() {
           -o-animation: fadeIn linear 4s;
           -ms-animation: fadeIn linear 4s;
           box-shadow: 1px 1px 4px rgb(244, 244, 244, 0.5);
-        }
-        ::after {
-          content: "${text}";
-          color: ${theme.fonColor};
-          text-shadow: 0 0 10px ${theme.fonColor};
-          margin-left: 15px;
-          font-weight: 600;
-          animation: fadeIn linear 4s;
-          -webkit-animation: fadeIn linear 4s;
-          -moz-animation: fadeIn linear 4s;
-          -o-animation: fadeIn linear 4s;
-          -ms-animation: fadeIn linear 4s;
         }
         & > .divLinks {
           color: rgb(255, 255, 255);
@@ -381,13 +351,7 @@ function Navbar() {
         <NavLink
           className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/"
-          
-          // onMouseEnter={
-          //   isMobile ? false : () => this.onMouseEnterHandler("home")
-          // }
-          // onMouseLeave={
-          //   isMobile ? false : () => this.onMouseLeaveHandler("home")
-          // }
+          title="Home"
         >
           <div className="divLinks">{home}</div>
         </NavLink>
@@ -395,13 +359,7 @@ function Navbar() {
         <NavLink
           className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/experiences"
-          
-          // onMouseEnter={
-          //   isMobile ? false : () => this.onMouseEnterHandler("skills")
-          // }
-          // onMouseLeave={
-          //   isMobile ? false : () => this.onMouseLeaveHandler("skills")
-          // }
+          title="Experiences"
         >
           <div className="divLinks">{skills}</div>
         </NavLink>
@@ -409,39 +367,17 @@ function Navbar() {
         <NavLink
           className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/projects"
-          
-          // onMouseEnter={
-          //   isMobile ? false : () => this.onMouseEnterHandler("projects")
-          // }
-          // onMouseLeave={
-          //   isMobile ? false : () => this.onMouseLeaveHandler("projects")
-          // }
+          title="Projects"
         >
           <div className="divLinks">{projects}</div>
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/contact"
-          
-          // onMouseEnter={
-          //   isMobile ? false : () => this.onMouseEnterHandler("contact")
-          // }
-          // onMouseLeave={
-          //   isMobile ? false : () => this.onMouseLeaveHandler("contact")
-          // }
+          title="Contact"
         >
           <div className="divLinks">{contact}</div>
         </NavLink>
-        {/* <div className="divLinks">
-          <NavLink
-            activeClassName="isActive"
-            className="link"
-            to="/profile"
-            
-          >
-            {profile}
-          </NavLink>
-        </div> */}
         <div className="settingContent">
           <p className="setting">{setting}</p>
           <Switch className="themes" />
