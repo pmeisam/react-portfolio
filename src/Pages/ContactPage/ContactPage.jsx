@@ -93,7 +93,8 @@ const ContactPage = () => {
     .parent_form textarea {
     }
     .btn-send-message {
-      width: 220px;
+      width: 240px;
+      height: 50px;
       margin: 20px 0;
       padding: 15px 10px;
       border-radius: 5px;
@@ -108,21 +109,20 @@ const ContactPage = () => {
         rgb(117, 101, 236),
         rgb(122, 42, 196)
       ) !important;
-      box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
       font-size: 16px;
       color: white;
       font-weight: 300;
     }
-    .btn-send-message:hover:enabled {
+    .btn-send-message:hover {
       box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
-      curoser: pointer;
+      cursor: pointer;
     }
-    button:disabled,
-    button[disabled] {
+    .btn-send-message:disabled,
+    .btn-send-message[disabled] {
       border: 1px solid #999999;
       background: #cccccc;
       color: #666666;
-      cursoer: none;
+      cursor: none;
     }
     .contact_social {
       margin-left: 0;
@@ -146,19 +146,20 @@ const ContactPage = () => {
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: #fff;
+      color: ${theme.backgroundColor};
       margin-right: 20px;
       margin-top: 20px;
     }
     .icon_social > i {
       font-size: 35px;
-      background-image: linear-gradient(
-        to bottom,
-        rgb(117, 101, 236),
-        rgb(122, 42, 196)
-      ) !important;
-      // box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
-      border-radius: 10px;
+      // background-image: linear-gradient(
+      //   to bottom,
+      //   rgb(117, 101, 236),
+      //   rgb(122, 42, 196)
+      // ) !important;
+      box-shadow: 0px 0px 26px 4px gray;
+      background-color: ${theme.fontColor};
+      border-radius: 5px;
       width: 60px;
       height: 60px;
       display: flex;
@@ -171,6 +172,7 @@ const ContactPage = () => {
         display: block;
         font-family: "Saira Stencil One", cursive;
         font-size: 70px;
+        text-shadow: 0 0 3px ${theme.fonColor};
       }
       .content {
         margin-top: 10vh;

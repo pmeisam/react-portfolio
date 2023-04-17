@@ -36,6 +36,7 @@ const ProjectComponent = (props) => {
         & > h1 {
           font-family: "Saira Stencil One", cursive;
           margin: 0;
+          text-shadow: 0 0 3px ${theme.fonColor};
         }
         & > p {
           margin-bottom: 10px;
@@ -72,6 +73,8 @@ const ProjectComponent = (props) => {
                 rgb(117, 101, 236),
                 rgb(122, 42, 196)
               ) !important;
+            }
+            & > i:hover {
               box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
             }
           }

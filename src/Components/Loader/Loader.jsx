@@ -34,6 +34,7 @@ const LoaderWrapper = styled.div`
     font-size: 150px;
     font-weight: bold;
     color: rgb(122, 42, 196);
+    text-shadow: 0 0 10px rgb(122, 42, 196);
     animation: loader-bar-left 3s infinite;
     margin-right: 10px;
   }
@@ -42,6 +43,7 @@ const LoaderWrapper = styled.div`
     font-size: 150px;
     font-weight: bold;
     color: rgb(117, 101, 236);
+    text-shadow: 0 0 10px rgb(117, 101, 236);
     animation: loader-bar-right 3s infinite;
     margin-left: 10px;
   }
@@ -50,6 +52,7 @@ const LoaderWrapper = styled.div`
     font-size: 150px;
     font-weight: bold;
     color: rgb(119, 60, 208);
+    text-shadow: 0 0 10px rgb(119, 60, 208);
   }
 
   @keyframes loader-bar-left {
@@ -75,6 +78,8 @@ const LoaderWrapper = styled.div`
       transform: translateX(0);
     }
   }
+
+  
 
   @media screen and (max-width: 700px) {
     .loader-left,

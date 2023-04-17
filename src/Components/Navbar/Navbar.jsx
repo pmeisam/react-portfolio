@@ -1,46 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { ThemeContext } from "../../Context/ThemeContext";
 import Switch from "../Switch/Switch";
 
 function Navbar() {
   const { theme } = useContext(ThemeContext);
-  const [home, setHome] = useState(null);
-  const [skills, setSkills] = useState(null);
-  const [projects, setProjects] = useState(null);
-  const [contact, setContact] = useState(null);
-  const [setting, setSetting] = useState(null);
-  const [text, setText] = useState("");
-  const location = useLocation();
-
-  useEffect(() => {
-    const pathname = location.pathname;
-    let home = <i className="fas fa-home"></i>;
-    let skills = <i className="fas fa-code"></i>;
-    let projects = <i className="fas fa-layer-group"></i>;
-    let contact = <i className="fas fa-phone"></i>;
-    let setting = <i className="fas fa-cog"></i>;
-
-    setHome(home);
-    setSkills(skills);
-    setProjects(projects);
-    setContact(contact);
-    setSetting(setting);
-
-    if (pathname === "/") {
-      setText("HOME");
-    }
-    if (pathname === "/experiences") {
-      setText("EXPERIENCES");
-    }
-    if (pathname === "/projects") {
-      setText("PROJECTS");
-    }
-    if (pathname === "/contact") {
-      setText("CONTACT");
-    }
-  }, [location.pathname]);
 
   const NavWrapper = styled.nav`
     @keyframes fadeIn {
@@ -353,7 +318,7 @@ function Navbar() {
           to="/"
           title="Home"
         >
-          <div className="divLinks">{home}</div>
+          <div className="divLinks"><i className="fas fa-home"></i></div>
         </NavLink>
 
         <NavLink
@@ -361,7 +326,7 @@ function Navbar() {
           to="/experiences"
           title="Experiences"
         >
-          <div className="divLinks">{skills}</div>
+          <div className="divLinks"><i className="fas fa-code"></i></div>
         </NavLink>
 
         <NavLink
@@ -369,19 +334,22 @@ function Navbar() {
           to="/projects"
           title="Projects"
         >
-          <div className="divLinks">{projects}</div>
+          <div className="divLinks"><i className="fas fa-layer-group"></i></div>
         </NavLink>
+
         <NavLink
           className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/contact"
           title="Contact"
         >
-          <div className="divLinks">{contact}</div>
+          <div className="divLinks"><i className="fas fa-phone"></i></div>
         </NavLink>
+
         <div className="settingContent">
-          <p className="setting">{setting}</p>
+          <p className="setting"><i className="fas fa-cog"></i></p>
           <Switch className="themes" />
         </div>
+        
       </div>
     </NavWrapper>
   );

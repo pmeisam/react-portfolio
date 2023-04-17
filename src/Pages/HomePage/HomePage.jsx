@@ -52,6 +52,7 @@ const HomePage = () => {
     margin-top: 0vh;
     h1 {
       margin: 30px 0;
+      text-shadow: 0 0 10px ${theme.fonColor};
     }
     & > div {
       display: grid;
@@ -67,7 +68,6 @@ const HomePage = () => {
             rgb(117, 101, 236),
             rgb(122, 42, 196)
           ) !important;
-          box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
           width: 240px;
           height: 50px;
           border-radius: 5px;
