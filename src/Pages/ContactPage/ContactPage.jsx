@@ -344,6 +344,7 @@ const ContactPage = () => {
               <a
                 href="mailto: meisam.poorzand@gmail.com"
                 className="txt_social_contact"
+                rel="noopener noreferrer"
               >
                 <p>meisam.poorzand@gmail.com</p>
               </a>
@@ -352,6 +353,7 @@ const ContactPage = () => {
                   target="_blank"
                   href="https://www.instagram.com/me.i.sam/"
                   className="icon_social"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-instagram"></i>
                   {/* <p>Instagram</p> */}
@@ -360,6 +362,7 @@ const ContactPage = () => {
                   target="_blank"
                   href="https://www.facebook.com/pmeisam"
                   className="icon_social"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-facebook-f"></i>
                   {/* <p>Facebook</p> */}
@@ -368,6 +371,7 @@ const ContactPage = () => {
                   target="_blank"
                   href="https://www.twitter.com/pmeisam"
                   className="icon_social"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-twitter"></i>
                   {/* <p>Twitter</p> */}
@@ -376,6 +380,7 @@ const ContactPage = () => {
                   target="_blank"
                   href="https://www.github.com/pmeisam"
                   className="icon_social"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-github"></i>
                   {/* <p>GitHub</p> */}
@@ -384,6 +389,7 @@ const ContactPage = () => {
                   target="_blank"
                   href="https://www.linkedin.com/in/pmeisam"
                   className="icon_social"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-linkedin"></i>
                   {/* <p>LinkedIn</p> */}
@@ -392,6 +398,7 @@ const ContactPage = () => {
                   target="_blank"
                   href="mailto: meisam.poorzand@gmail.com"
                   className="icon_social"
+                  rel="noopener noreferrer"
                 >
                   <i className="far fa-envelope"></i>
                   {/* <p>E-mail</p> */}

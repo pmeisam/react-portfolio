@@ -88,7 +88,7 @@ const CubeBox = memo(() => {
   const [rotation, setRotation] = useState({ x: -20, y: 45 });
   const [isDragging, setIsDragging] = useState(false);
   const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
-  const [currentPosition, setCurrentPosition] = useState({ x: 0, y: 0 });
+  const [setCurrentPosition] = useState({ x: 0, y: 0 });
   const cubeRef = useRef(null);
 
   useEffect(() => {
@@ -118,8 +118,6 @@ const CubeBox = memo(() => {
       document.removeEventListener("mouseup", handleMouseUp);
     };
   }, [isDragging, startPosition, rotation]);
-
-  const size = 100;
 
   const handleMouseDown = (event) => {
     setIsDragging(true);

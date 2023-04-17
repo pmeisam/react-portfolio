@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import CubeBox from "../../Components/CubeBox/CubeBox";
 import { ThemeContext } from "../../Context/ThemeContext";
@@ -450,19 +450,20 @@ export default function SkillsPage() {
             />
             <SkillIconAndName
               name={"ElasticSearch"}
-              icon={<img src="./images/elasticsearch (1).png" />}
+              icon={<img alt="elasticsearch" src="./images/elasticsearch (1).png" />}
             />
             <SkillIconAndName
               name={"ImageMagick"}
-              icon={<img src="./images/imagemagick.png" />}
+              icon={<img alt="imagemagick" src="./images/imagemagick.png" />}
             />
           </div>
           <a
             href="https://www.imdb.com/name/nm14548800/"
             target="_blank"
             className="imdb-link"
+            rel="noopener noreferrer"
           >
-            <img src="./images/imdb-icon.png" className="imdb-logo"></img>
+            <img src="./images/imdb-icon.png" alt="imdb-logo" className="imdb-logo"></img>
           </a>
         </div>
       </div>

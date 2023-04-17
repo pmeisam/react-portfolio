@@ -30,7 +30,6 @@ function Navbar() {
     // setProfile(profile);
     setContact(contact);
     setSetting(setting);
-    console.log("pathname: " + pathname);
 
     if (pathname === "/") {
       setText("HOME");
@@ -382,7 +381,7 @@ function Navbar() {
         <NavLink
           className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/"
-          exact={true}
+          
           // onMouseEnter={
           //   isMobile ? false : () => this.onMouseEnterHandler("home")
           // }
@@ -396,7 +395,7 @@ function Navbar() {
         <NavLink
           className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/experiences"
-          exact={true}
+          
           // onMouseEnter={
           //   isMobile ? false : () => this.onMouseEnterHandler("skills")
           // }
@@ -410,7 +409,7 @@ function Navbar() {
         <NavLink
           className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/projects"
-          exact={true}
+          
           // onMouseEnter={
           //   isMobile ? false : () => this.onMouseEnterHandler("projects")
           // }
@@ -423,7 +422,7 @@ function Navbar() {
         <NavLink
           className={({ isActive }) => (isActive ? "link isActive" : "link")}
           to="/contact"
-          exact={true}
+          
           // onMouseEnter={
           //   isMobile ? false : () => this.onMouseEnterHandler("contact")
           // }
@@ -438,7 +437,7 @@ function Navbar() {
             activeClassName="isActive"
             className="link"
             to="/profile"
-            exact={true}
+            
           >
             {profile}
           </NavLink>

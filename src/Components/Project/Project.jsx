@@ -58,7 +58,7 @@ const ProjectComponent = (props) => {
           display: flex;
           align-items: center;
           justify-content: space-evenly;
-          width: 80%;
+          width: 60%;
           & > a {
             margin-top: 10px;
             // font-size: 20px;

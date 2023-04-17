@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import styled, { keyframes } from "styled-components";
 import { tada } from "react-animations";
 import { ThemeContext } from "../../Context/ThemeContext";
 import HomePageSvg from "./a.js";
-// import HomePageSvg from "./undraw_festivities_tvvj";
 import "./HomePage.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
+// import HomePageSvg from "./undraw_festivities_tvvj";
 // import slideInLeft from 'react-animations/lib/slide-in-left';
 // import Tada from 'react-reveal/Tada';
 

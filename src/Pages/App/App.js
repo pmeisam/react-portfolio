@@ -14,7 +14,7 @@ function App() {
 
   setTimeout(() => {
     setShowLoader(false);
-  }, 0);
+  }, 3000);
 
   return showLoader ? (
     <Loader />

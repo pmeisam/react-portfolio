@@ -1,15 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./Pages/App/App";
+import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";
-import ThemeProvider from "./Context/ThemeContext";
 
-ReactDOM.render(
+import App from "./Pages/App/App";
+import ThemeProvider from "./Context/ThemeContext";
+import "./index.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <HashRouter>
     <ThemeProvider>
       <App />
     </ThemeProvider>
-  </HashRouter>,
-  document.getElementById("root")
+  </HashRouter>
 );
