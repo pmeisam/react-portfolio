@@ -9,31 +9,26 @@ export default function SkillsPage() {
   const { theme } = useContext(ThemeContext);
 
   const SkillsPageWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-
+    
+    .experience {
+      width: 100%;
+    }
+    
     h1 {
       font-family: "Saira Stencil One", cursive;
       font-size: 26px;
-      text-shadow: 0 0 3px ${theme.fonColor};
     }
 
     .experience_card {
-      width: 60vw;
+      width: 70%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin: 100px auto;
     }
 
-    .experience {
-      width: 100%;
-      margin-left: 250px;
-    }
+    
     .position-location {
       background-color: ${theme.fontColor};
       color: ${theme.backgroundColor};
@@ -46,13 +41,11 @@ export default function SkillsPage() {
       // flex-direction: column;
       // width: 40vw;
       // height: 50%;
-      // margin-top: 20%;
     }
     .skills_list {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      margin-top: 20px;
     }
 
     li {
@@ -63,7 +56,7 @@ export default function SkillsPage() {
     }
 
     .view-button {
-      margin: 0 auto 0 auto;
+      margin: 0 auto;
       width: 200px;
       border: none;
       border-radius: 5px;
@@ -134,63 +127,23 @@ export default function SkillsPage() {
       color: white;
       cursor: pointer;
       font-size: 15px;
-      margin-top: 20px;
       font-weight: 300;
+      margin: 20px 0 30px 0;
     }
     .project-button:hover {
       box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
     }
 
-    @media screen and (max-width: 1670px) {
-      margin-top: 30px;
-      .experience_card {
-        justify-content: start;
-      }
-      width: 95vw;
-    }
 
-    @media screen and (max-width: 1450px) {
-      margin-left: auto;
-      .experience_card {
-        width: 80vw;
-      }
-      .experience {
-        // width: 100%;
-        margin: 0;
-      }
-    }
-
-    @media screen and (max-width: 1250px) {
-      margin-top: 50px;
-      .imdb-link {
-        margin-bottom: 50px;
-      }
-    }
-
-    @media screen and (max-width: 1050px) {
-      .experience_card {
-        width: 70vw;
-        margin-top: 20vh;
-      }
-      .experience {
-        width: 100%;
-        margin: 0;
-      }
-    }
 
     @media screen and (max-width: 900px) {
-      margin: 0 auto;
-      margin-top: 10vh;
-      .experience_card {
-        width: 95vw;
-      }
+      
       li {
         font-size: 15px;
       }
     }
 
     @media screen and (max-width: 700px) {
-      margin-top: 10vh;
 
       h1 {
         font-size: 20px;
@@ -199,17 +152,13 @@ export default function SkillsPage() {
         font-size: 14px;
       }
       .project-button {
+        
         font-size: 12px;
       }
-    }
-
-    @media screen and (max-width: 530px) {
-      margin-top: 15vh;
-    }
-
-    @media screen and (max-width: 430px) {
-      margin-top: 22vh;
-      margin-bottom: 30vh;
+      .experience_card {
+        width: 80%;
+        margin-top: 80px;
+      }
     }
   `;
 
@@ -218,8 +167,8 @@ export default function SkillsPage() {
   // }
   return (
     <SkillsPageWrapper>
-      <div data-aos="fade-left" className="experience_card">
-        <div className="experience">
+      <div className="experience_card">
+        <div className="experience" data-aos="fade-left">
           <h1>
             Freelance Full-Stack Developer
             <span className="position-location">
@@ -356,9 +305,7 @@ export default function SkillsPage() {
             <i className="fas fa-layer-group"></i>&nbsp;Projects
           </Link>
         </div>
-        <br />
-        <br />
-        <div className="experience">
+        <div className="experience" data-aos="fade-right">
           <h1>
             Back-End Developer at Lightstorm Entertainment
             <span className="position-location">

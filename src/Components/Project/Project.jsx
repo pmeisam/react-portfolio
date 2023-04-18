@@ -36,10 +36,11 @@ const ProjectComponent = (props) => {
         & > h1 {
           font-family: "Saira Stencil One", cursive;
           margin: 0;
-          text-shadow: 0 0 3px ${theme.fonColor};
         }
         & > p {
+          font-size: 16px;
           margin-bottom: 10px;
+          color: rgb(138, 138, 138);
         }
         & > .techs {
           display: grid;
@@ -83,6 +84,7 @@ const ProjectComponent = (props) => {
     }
 
     @media screen and (max-width: 1324px) {
+      
       & > .project-container {
         & > img {
           width: 670px;
@@ -168,7 +170,6 @@ const ProjectComponent = (props) => {
           }
           & > p {
             font-size: 13px;
-            color: rgb(138, 138, 138);
           }
           & > .techs {
             display: grid;

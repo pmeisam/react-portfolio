@@ -124,7 +124,10 @@ const HomePage = () => {
       flex-direction: column;
       align-items: center;
       width: 90%;
-
+      
+      h1 {
+        text-shadow: none;
+      }
       & > svg {
         width: 99vw;
         height: 33%;

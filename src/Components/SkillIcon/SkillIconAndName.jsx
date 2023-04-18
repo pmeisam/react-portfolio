@@ -51,7 +51,7 @@ let SkillIconWrapper = styled.div`
       height: 22px;
     }
     p {
-      font-size: 10px;
+      display: none;
     }
   }
 `;

@@ -172,7 +172,6 @@ const ContactPage = () => {
         display: block;
         font-family: "Saira Stencil One", cursive;
         font-size: 70px;
-        text-shadow: 0 0 3px ${theme.fonColor};
       }
       .content {
         margin-top: 10vh;

@@ -243,6 +243,12 @@ function Navbar() {
             font-size: 15px;
           }
         }
+        & > .link:hover {
+          ::after {
+            content: none;
+          }
+
+        }
         & .isActive {
           flex-direction: column;
           justify-content: center;
