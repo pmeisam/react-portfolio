@@ -146,25 +146,23 @@ const ContactPage = () => {
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: ${theme.backgroundColor};
-      margin-right: 20px;
+      justify-content: center;
+      background-image: linear-gradient( to bottom, rgb(117,101,236), rgb(122,42,196) ) !important;
+      color: #fff;
       margin-top: 20px;
-    }
-    .icon_social > i {
-      font-size: 35px;
-      // background-image: linear-gradient(
-      //   to bottom,
-      //   rgb(117, 101, 236),
-      //   rgb(122, 42, 196)
-      // ) !important;
-      box-shadow: 0px 0px 26px 4px gray;
-      background-color: ${theme.fontColor};
-      border-radius: 5px;
+      margin-right: 20px;
       width: 60px;
       height: 60px;
+      border-radius: 50%;
+    }
+    .icon_social > i {
+      font-size: 25px;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    .icon_social:hover {
+      box-shadow: 0px 0px 26px 4px rgb(117,101,236);
     }
 
     @media only screen and (max-width: 1300px) {

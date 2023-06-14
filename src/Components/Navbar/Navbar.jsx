@@ -120,8 +120,8 @@ function Navbar() {
       & > .link:hover {
         ::after {
           content: attr(title);
-          color: ${theme.fonColor};
-          text-shadow: 0 0 10px ${theme.fonColor};
+          color: ${theme.fontColor};
+          text-shadow: 0 0 10px ${theme.fontColor};
           margin-left: 15px;
           font-weight: 600;
           animation: fadeIn linear 2s;

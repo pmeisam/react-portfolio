@@ -215,8 +215,9 @@ const HomePage = () => {
           download="Meisam_Poorzand_Resume.pdf"
         >
           <button data-aos="zoom-out" className="projectButton">
-            Download my resume&nbsp;&nbsp;
             <i className="fas fa-download"></i>
+            &nbsp;&nbsp;
+            Download my resume
           </button>
         </a>
       </div>

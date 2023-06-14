@@ -6,6 +6,9 @@ const TextArea = (props) => {
   const { theme } = useContext(ThemeContext);
   const InputComponent = styled.div`
     margin-top: 10px;
+    label:hover {
+      cursor: text;
+    }
     .input-container {
       position: relative;
     }

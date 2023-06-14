@@ -7,15 +7,17 @@ import {
   Location,
   UnorderedList,
   Image,
-} from "./Experience.style.js";
+} from "./Experience.styles.js";
 
 const Experience = ({ Skills, Links, props }) => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <ExperienceContainer data-aos="fade-left">
+    <ExperienceContainer
+    // data-aos="fade"
+    >
       <ExperienceCard>
-        <div>
+        <div style={{width: "100%"}}>
           <Title>
             {props.companyName}
             <Location theme={theme}>{props.companyLocationAndDate}</Location>
@@ -26,10 +28,11 @@ const Experience = ({ Skills, Links, props }) => {
             })}
           </UnorderedList>
         </div>
-
-        <picture>
-          <Image alt={props.image.alt} src={props.image.src} />
-        </picture>
+        {props.image && (
+          <picture>
+            <Image alt={props.image.alt} src={props.image.src} />
+          </picture>
+        )}
       </ExperienceCard>
       <Skills />
       <Links />

@@ -1,21 +1,15 @@
 import React, { useEffect, useContext, useState } from "react";
-import {
-  ExperiencesContainer,
-  SkillsContainer,
-  LinkContainer,
-  AvtrLinkContainer
-} from "./styles.js";
-import styled from "styled-components";
-import CubeBox from "../../Components/CubeBox/CubeBox";
-import { ThemeContext } from "../../Context/ThemeContext";
-import { Link } from "react-router-dom";
 import SkillIconAndName from "../../Components/SkillIcon/SkillIconAndName";
 import Experience from "../../Components/Experience/Experience";
+import { ThemeContext } from "../../Context/ThemeContext";
+import { Link } from "react-router-dom";
+import * as Styles from "./ExperiencePage.styles.js";
 
 export default function ExperiencePage() {
   const { theme } = useContext(ThemeContext);
   const [ampas] = useState({
-    companyName: "The Academy of Motion Picture Arts and Sciences",
+    companyName:
+      "Full-Stack Developer at The Academy of Motion Picture Arts and Sciences",
     companyLocationAndDate: "Los Angeles, CA - Remote / May 2023 – Present",
     tasks: [
       "Develop and enhance the aframe.oscars.org website and nominee portal for the Academy of Motion Picture Arts and Sciences, ensuring visually appealing and user-friendly interfaces.",
@@ -57,49 +51,48 @@ export default function ExperiencePage() {
       src: "./images/avatar.png",
     },
   });
+  const [freelancer] = useState({
+    companyName: "Freelance Full-Stack Developer",
+    companyLocationAndDate:
+      "Los Angeles, CA - Remote / August 2018 – July 2019",
+    tasks: [
+      "Designed and developed web models and prototypes that encompassed interface, logic, and data models to meet project goals and user needs.",
+      "Produced website maps, application models, image templates, or page templates to optimize the user experience and adhere to industry standards.",
+      "Developed cross-compatible databases to support web applications and sites, ensuring accessibility across various browsers and devices.",
+      "Established searchable indices for webpage content to optimize user search functionality.",
+    ],
+  });
 
   const setAmpasSkills = () => {
     return (
-      <SkillsContainer>
+      <Styles.SkillsContainer>
         <SkillIconAndName
-          name={"Java"}
-          icon={<i className="devicon-java-plain-wordmark colored"></i>}
+          name={"Node.js"}
+          icon={<i className="devicon-nodejs-plain colored"></i>}
         />
         <SkillIconAndName
-          name={"Spring"}
-          icon={<i className="devicon-spring-plain-wordmark colored"></i>}
+          name={"Express"}
+          icon={<i className="devicon-express-original"></i>}
         />
         <SkillIconAndName
-          name={"Python"}
-          icon={<i className="devicon-python-plain-wordmark colored"></i>}
+          name={"React.js"}
+          icon={<i className="devicon-react-plain-wordmark colored"></i>}
         />
         <SkillIconAndName
-          name={"PostgreSQL"}
-          icon={<i className="devicon-postgresql-plain-wordmark colored"></i>}
-        />
-        <SkillIconAndName
-          name={"MySQL"}
-          icon={<i className="devicon-mysql-plain colored"></i>}
+          name={"Redux"}
+          icon={<i className="devicon-redux-original colored"></i>}
         />
         <SkillIconAndName
           name={"JavaScript"}
           icon={<i className="devicon-javascript-plain colored"></i>}
         />
         <SkillIconAndName
-          name={"GitLab"}
-          icon={<i className="devicon-gitlab-plain-wordmark colored"></i>}
+          name={"TypeScript"}
+          icon={<i className="devicon-typescript-plain colored"></i>}
         />
         <SkillIconAndName
-          name={"Git"}
-          icon={<i className="devicon-git-plain colored"></i>}
-        />
-        <SkillIconAndName
-          name={"Jenkins"}
-          icon={<i className="devicon-jenkins-plain colored"></i>}
-        />
-        <SkillIconAndName
-          name={"nginx"}
-          icon={<i className="devicon-nginx-plain-wordmark colored"></i>}
+          name={"Contentful"}
+          icon={<img alt="Contentful" src="./images/contentful-logo.png" />}
         />
         <SkillIconAndName
           name={"AWS"}
@@ -110,37 +103,59 @@ export default function ExperiencePage() {
           icon={<i className="devicon-vim-plain colored"></i>}
         />
         <SkillIconAndName
-          name={"ElasticSearch"}
-          icon={
-            <img alt="elasticsearch" src="./images/elasticsearch (1).png" />
-          }
+          name={"HTML"}
+          icon={<i className="devicon-html5-plain-wordmark colored"></i>}
         />
         <SkillIconAndName
-          name={"ImageMagick"}
-          icon={<img alt="imagemagick" src="./images/imagemagick.png" />}
+          name={"CSS"}
+          icon={<i className="devicon-css3-plain-wordmark colored"></i>}
         />
-      </SkillsContainer>
+        <SkillIconAndName
+          name={"SASS"}
+          icon={<i className="devicon-sass-original colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Bootstrap"}
+          icon={<i className="devicon-bootstrap-plain"></i>}
+        />
+        <SkillIconAndName
+          name={"Figma"}
+          icon={<i className="devicon-figma-plain colored"></i>}
+        />
+
+        <SkillIconAndName
+          name={"GitHub"}
+          icon={<i className="devicon-github-plain-wordmark"></i>}
+        />
+        <SkillIconAndName
+          name={"Git"}
+          icon={<i className="devicon-git-plain colored"></i>}
+        />
+      </Styles.SkillsContainer>
     );
   };
+
   const setAmpasLinks = () => {
     return (
-      <LinkContainer
+      <Styles.AmpasLinksContainer
         href="https://aframe.oscars.org/"
         target="_blank"
         rel="noopener noreferrer"
+        theme={theme}
       >
         <img
-          src="./images/aframe-icon.png"
+          src="./images/oscar.png"
           alt="A.FRAME"
-          className="aframe-logo"
+          className="oscar-logo"
         ></img>
-      </LinkContainer>
+        A.FRAME
+      </Styles.AmpasLinksContainer>
     );
   };
 
   const setAvtrSkills = () => {
     return (
-      <SkillsContainer>
+      <Styles.SkillsContainer>
         <SkillIconAndName
           name={"Java"}
           icon={<i className="devicon-java-plain-wordmark colored"></i>}
@@ -199,13 +214,13 @@ export default function ExperiencePage() {
           name={"ImageMagick"}
           icon={<img alt="imagemagick" src="./images/imagemagick.png" />}
         />
-      </SkillsContainer>
+      </Styles.SkillsContainer>
     );
   };
 
   const setAvtrLinks = () => {
     return (
-      <AvtrLinkContainer
+      <Styles.AvtrLinkContainer
         href="https://www.imdb.com/name/nm14548800/"
         target="_blank"
         rel="noopener noreferrer"
@@ -215,7 +230,124 @@ export default function ExperiencePage() {
           alt="IMDB"
           className="imdb-logo"
         ></img>
-      </AvtrLinkContainer>
+      </Styles.AvtrLinkContainer>
+    );
+  };
+
+  const setFreelancerLinks = () => {
+    return (
+      <Styles.ProjectsLinkContainer>
+        <Link to="/projects" className="project-button">
+          <i className="fas fa-layer-group"></i>&nbsp;Projects
+        </Link>
+      </Styles.ProjectsLinkContainer>
+    );
+  };
+
+  const setFreelancerSkills = () => {
+    return (
+      <Styles.SkillsContainer>
+        <SkillIconAndName
+          name={"React.js"}
+          icon={<i className="devicon-react-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Node.js"}
+          icon={<i className="devicon-nodejs-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Express"}
+          icon={<i className="devicon-express-original"></i>}
+        />
+        <SkillIconAndName
+          name={"Python"}
+          icon={<i className="devicon-python-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Django"}
+          icon={<i className="devicon-django-plain-wordmark"></i>}
+        />
+        <SkillIconAndName
+          name={"MongoDB"}
+          icon={<i className="devicon-mongodb-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"PostgreSQL"}
+          icon={<i className="devicon-postgresql-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"MySQL"}
+          icon={<i className="devicon-mysql-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"JavaScript"}
+          icon={<i className="devicon-javascript-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"TypeScript"}
+          icon={<i className="devicon-typescript-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"jQuery"}
+          icon={<i className="devicon-jquery-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"HTML"}
+          icon={<i className="devicon-html5-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"CSS"}
+          icon={<i className="devicon-css3-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"SASS"}
+          icon={<i className="devicon-sass-original colored"></i>}
+        />
+        <SkillIconAndName
+          name={"wordpress"}
+          icon={<i className="devicon-wordpress-plain-wordmark"></i>}
+        />
+        <SkillIconAndName
+          name={"Firebase"}
+          icon={<i className="devicon-firebase-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"AWS"}
+          icon={<i className="devicon-amazonwebservices-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Bootstrap"}
+          icon={<i className="devicon-bootstrap-plain"></i>}
+        />
+        <SkillIconAndName
+          name={"Material UI"}
+          icon={<i className="devicon-materialui-plain"></i>}
+        />
+        <SkillIconAndName
+          name={"Figma"}
+          icon={<i className="devicon-figma-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Redux"}
+          icon={<i className="devicon-redux-original colored"></i>}
+        />
+        <SkillIconAndName
+          name={"GitHub"}
+          icon={<i className="devicon-github-plain-wordmark"></i>}
+        />
+        <SkillIconAndName
+          name={"Git"}
+          icon={<i className="devicon-git-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Heroku"}
+          icon={<i className="devicon-heroku-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"nginx"}
+          icon={<i className="devicon-nginx-plain-wordmark colored"></i>}
+        />
+      </Styles.SkillsContainer>
     );
   };
 
@@ -225,9 +357,14 @@ export default function ExperiencePage() {
   }, []);
 
   return (
-    <ExperiencesContainer>
+    <Styles.ExperiencesContainer>
       <Experience props={ampas} Skills={setAmpasSkills} Links={setAmpasLinks} />
       <Experience props={avtr} Skills={setAvtrSkills} Links={setAvtrLinks} />
-    </ExperiencesContainer>
+      <Experience
+        props={freelancer}
+        Skills={setFreelancerSkills}
+        Links={setFreelancerLinks}
+      />
+    </Styles.ExperiencesContainer>
   );
 }
