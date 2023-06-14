@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
 import CubeBox from "../../Components/CubeBox/CubeBox";
 import { ThemeContext } from "../../Context/ThemeContext";
@@ -9,17 +9,16 @@ export default function SkillsPage() {
   const { theme } = useContext(ThemeContext);
 
   const SkillsPageWrapper = styled.div`
-    
     .experience {
       width: 100%;
     }
-    
+
     h1 {
       font-family: "Saira Stencil One", cursive;
       font-size: 26px;
     }
 
-    .experience_card {
+    .experiences_card {
       width: 70%;
       display: flex;
       flex-direction: column;
@@ -28,7 +27,20 @@ export default function SkillsPage() {
       margin: 100px auto;
     }
 
-    
+    .experience-card {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .ampas-logo {
+      width: 150px;
+      margin-left: 40px;
+    }
+
+    .aframe-card {
+      margin-bottom: 100px;
+    }
+
     .position-location {
       background-color: ${theme.fontColor};
       color: ${theme.backgroundColor};
@@ -95,8 +107,8 @@ export default function SkillsPage() {
       color: #000;
       background-color: #f5c518;
       border-radius: 5px;
-      width: 110px;
-      height: 40px;
+      width: 120px;
+      height: 48px;
       margin-top: 20px;
     }
     .imdb-link:hover {
@@ -109,6 +121,25 @@ export default function SkillsPage() {
 
     .imdb-logo {
       width: 60px;
+    }
+
+    .aframe-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid white;
+      color: #000;
+      background-color: white;
+      border-radius: 5px;
+      width: 120px;
+      height: 48px;
+      margin-top: 20px;
+    }
+    .aframe-link:hover {
+      box-shadow: 0px 0px 26px 4px #fff;
+    }
+    .aframe-logo {
+      width: 110px;
     }
 
     .project-button {
@@ -134,17 +165,13 @@ export default function SkillsPage() {
       box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
     }
 
-
-
     @media screen and (max-width: 900px) {
-      
       li {
         font-size: 15px;
       }
     }
 
     @media screen and (max-width: 700px) {
-
       h1 {
         font-size: 20px;
       }
@@ -152,23 +179,162 @@ export default function SkillsPage() {
         font-size: 14px;
       }
       .project-button {
-        
         font-size: 12px;
       }
-      .experience_card {
+      .experiences_card {
         width: 80%;
         margin-top: 80px;
       }
     }
   `;
 
-  // if (window.innerWidth < 900) {
-  //   return <SkillsListView />;
-  // }
+  useEffect(() => {
+    document.title = "Meisam Poorzand | Experiences";
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <SkillsPageWrapper>
-      <div className="experience_card">
-        <div className="experience" data-aos="fade-left">
+      <div className="experiences_card">
+        <div className="experience aframe-card" data-aos="fade-left">
+          <div className="experience-card">
+            <div>
+              <h1>
+                The Academy of Motion Picture Arts and Sciences
+                <span className="position-location">
+                  Los Angeles, CA - Remote / May 2023 – Present
+                </span>
+              </h1>
+              
+            </div>
+
+            <picture>
+              <img
+                alt="AMPAS"
+                className="ampas-logo"
+                src="./images/ampas.png"
+              />
+            </picture>
+          </div>
+
+          <div className="skills_list">
+            <SkillIconAndName
+              name={"React.js"}
+              icon={<i className="devicon-react-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Node.js"}
+              icon={<i className="devicon-nodejs-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Express"}
+              icon={<i className="devicon-express-original"></i>}
+            />
+            <SkillIconAndName
+              name={"Python"}
+              icon={<i className="devicon-python-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Django"}
+              icon={<i className="devicon-django-plain-wordmark"></i>}
+            />
+            <SkillIconAndName
+              name={"MongoDB"}
+              icon={<i className="devicon-mongodb-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"PostgreSQL"}
+              icon={
+                <i className="devicon-postgresql-plain-wordmark colored"></i>
+              }
+            />
+            <SkillIconAndName
+              name={"MySQL"}
+              icon={<i className="devicon-mysql-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"JavaScript"}
+              icon={<i className="devicon-javascript-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"TypeScript"}
+              icon={<i className="devicon-typescript-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"jQuery"}
+              icon={<i className="devicon-jquery-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"HTML"}
+              icon={<i className="devicon-html5-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"CSS"}
+              icon={<i className="devicon-css3-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"SASS"}
+              icon={<i className="devicon-sass-original colored"></i>}
+            />
+            <SkillIconAndName
+              name={"wordpress"}
+              icon={<i className="devicon-wordpress-plain-wordmark"></i>}
+            />
+            <SkillIconAndName
+              name={"Firebase"}
+              icon={<i className="devicon-firebase-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"AWS"}
+              icon={<i className="devicon-amazonwebservices-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Bootstrap"}
+              icon={<i className="devicon-bootstrap-plain"></i>}
+            />
+            <SkillIconAndName
+              name={"Material UI"}
+              icon={<i className="devicon-materialui-plain"></i>}
+            />
+            <SkillIconAndName
+              name={"Figma"}
+              icon={<i className="devicon-figma-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Redux"}
+              icon={<i className="devicon-redux-original colored"></i>}
+            />
+            <SkillIconAndName
+              name={"GitHub"}
+              icon={<i className="devicon-github-plain-wordmark"></i>}
+            />
+            <SkillIconAndName
+              name={"Git"}
+              icon={<i className="devicon-git-plain colored"></i>}
+            />
+            <SkillIconAndName
+              name={"Heroku"}
+              icon={<i className="devicon-heroku-plain-wordmark colored"></i>}
+            />
+            <SkillIconAndName
+              name={"nginx"}
+              icon={<i className="devicon-nginx-plain-wordmark colored"></i>}
+            />
+          </div>
+          <a
+            href="https://aframe.oscars.org/"
+            target="_blank"
+            className="aframe-link"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./images/aframe-icon.png"
+              alt="A.FRAME"
+              className="aframe-logo"
+            ></img>
+          </a>
+        </div>
+        {/* <div className="experience" data-aos="fade-left">
           <h1>
             Freelance Full-Stack Developer
             <span className="position-location">
@@ -304,7 +470,7 @@ export default function SkillsPage() {
           <Link to="/projects" className="project-button">
             <i className="fas fa-layer-group"></i>&nbsp;Projects
           </Link>
-        </div>
+        </div> */}
         <div className="experience" data-aos="fade-right">
           <h1>
             Back-End Developer at Lightstorm Entertainment
@@ -336,6 +502,25 @@ export default function SkillsPage() {
               for inconsistencies.
             </li>
             <li>
+              Conducted endpoint testing by writing scripts or using unit
+              testing frameworks to ensure the functionality and reliability of
+              APIs.
+            </li>
+            <li>
+              Developed scripts to modify data as needed, ensuring data
+              integrity and supporting data manipulation requirements.
+            </li>
+            <li>
+              Developed Java code utilizing software tools for image processing
+              (Imagemagick) and multimedia handling (FFmpeg), to to handle image
+              and video processing and manipulation tasks.
+            </li>
+            <li>
+              Implemented Java application for synchronized binary data and file
+              transfer from Lightstorm Entertainment's servers in Los Angeles to
+              their servers located in New Zealand.
+            </li>
+            <li>
               Provided support to the frontend team on proper access to data
               from our web services.
             </li>
@@ -347,73 +532,18 @@ export default function SkillsPage() {
               best practices.
             </li>
           </ul>
-          <div className="skills_list">
-            <SkillIconAndName
-              name={"Java"}
-              icon={<i className="devicon-java-plain-wordmark colored"></i>}
-            />
-            <SkillIconAndName
-              name={"Spring"}
-              icon={<i className="devicon-spring-plain-wordmark colored"></i>}
-            />
-            <SkillIconAndName
-              name={"Python"}
-              icon={<i className="devicon-python-plain-wordmark colored"></i>}
-            />
-            <SkillIconAndName
-              name={"PostgreSQL"}
-              icon={
-                <i className="devicon-postgresql-plain-wordmark colored"></i>
-              }
-            />
-            <SkillIconAndName
-              name={"MySQL"}
-              icon={<i className="devicon-mysql-plain colored"></i>}
-            />
-            <SkillIconAndName
-              name={"JavaScript"}
-              icon={<i className="devicon-javascript-plain colored"></i>}
-            />
-            <SkillIconAndName
-              name={"GitLab"}
-              icon={<i className="devicon-gitlab-plain-wordmark colored"></i>}
-            />
-            <SkillIconAndName
-              name={"Git"}
-              icon={<i className="devicon-git-plain colored"></i>}
-            />
-            <SkillIconAndName
-              name={"Jenkins"}
-              icon={<i className="devicon-jenkins-plain colored"></i>}
-            />
-            <SkillIconAndName
-              name={"nginx"}
-              icon={<i className="devicon-nginx-plain-wordmark colored"></i>}
-            />
-            <SkillIconAndName
-              name={"AWS"}
-              icon={<i className="devicon-amazonwebservices-plain colored"></i>}
-            />
-            <SkillIconAndName
-              name={"Vim"}
-              icon={<i className="devicon-vim-plain colored"></i>}
-            />
-            <SkillIconAndName
-              name={"ElasticSearch"}
-              icon={<img alt="elasticsearch" src="./images/elasticsearch (1).png" />}
-            />
-            <SkillIconAndName
-              name={"ImageMagick"}
-              icon={<img alt="imagemagick" src="./images/imagemagick.png" />}
-            />
-          </div>
+          
           <a
             href="https://www.imdb.com/name/nm14548800/"
             target="_blank"
             className="imdb-link"
             rel="noopener noreferrer"
           >
-            <img src="./images/imdb-icon.png" alt="imdb-logo" className="imdb-logo"></img>
+            <img
+              src="./images/imdb-icon.png"
+              alt="IMDB"
+              className="imdb-logo"
+            ></img>
           </a>
         </div>
       </div>

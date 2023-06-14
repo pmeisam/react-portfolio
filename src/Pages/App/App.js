@@ -4,10 +4,11 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import Loader from "../../Components/Loader/Loader";
 const HomePage = lazy(() => import("../HomePage/HomePage"));
-const SkillsPage = lazy(() => import("../SkillsPage/SkillsPage"));
+const ExperiencePage = lazy(() => import("../ExperiencePage/ExperiencePage"));
 const ProjectPage = lazy(() => import("../ProjectPage/ProjectPage"));
 const ContactPage = lazy(() => import("../ContactPage/ContactPage"));
 const ProfilePage = lazy(() => import("../ProfilePage/ProfilePage"));
+// const SkillsPage = lazy(() => import("../SkillsPage/SkillsPage"));
 
 function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -25,7 +26,7 @@ function App() {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/experiences" element={<SkillsPage />} />
+          <Route path="/experiences" element={<ExperiencePage />} />
           <Route path="/projects" element={<ProjectPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/profile" element={<ProfilePage />} />

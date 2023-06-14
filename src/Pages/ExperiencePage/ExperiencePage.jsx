@@ -1,0 +1,233 @@
+import React, { useEffect, useContext, useState } from "react";
+import {
+  ExperiencesContainer,
+  SkillsContainer,
+  LinkContainer,
+  AvtrLinkContainer
+} from "./styles.js";
+import styled from "styled-components";
+import CubeBox from "../../Components/CubeBox/CubeBox";
+import { ThemeContext } from "../../Context/ThemeContext";
+import { Link } from "react-router-dom";
+import SkillIconAndName from "../../Components/SkillIcon/SkillIconAndName";
+import Experience from "../../Components/Experience/Experience";
+
+export default function ExperiencePage() {
+  const { theme } = useContext(ThemeContext);
+  const [ampas] = useState({
+    companyName: "The Academy of Motion Picture Arts and Sciences",
+    companyLocationAndDate: "Los Angeles, CA - Remote / May 2023 – Present",
+    tasks: [
+      "Develop and enhance the aframe.oscars.org website and nominee portal for the Academy of Motion Picture Arts and Sciences, ensuring visually appealing and user-friendly interfaces.",
+      "Collaborate with designers and stakeholders to gather requirements and implement intuitive user interfaces, incorporating responsive design techniques for seamless experiences across devices.",
+      "Utilize backend scripts and components, specializing in server-side rendering using Node.js, and employ AWS Lambda and API Gateway for secure and efficient communication channels.",
+      "Retrieve and manage data for the websites using Contentful, optimizing performance through code minification, image optimization, and caching techniques.",
+      "Deploy projects to AWS Elastic Beanstalk, ensuring reliable and scalable hosting, while conducting code reviews and debugging to maintain code quality.",
+      "Implement authentication and authorization mechanisms, integrating third-party APIs and services for enhanced functionality and secure user access.",
+      "Develop and maintain the nominee portal, providing a secure platform for nominees to access information, submit materials.",
+      "Collaborate with cross-functional teams in an agile work environment, delivering high-quality results efficiently and aligning with AMPAS goals and objectives.",
+      "Monitor website analytics, generate reports, and contribute to the documentation of code, processes, and best practices for knowledge sharing.",
+      "Stay updated with the latest web development trends, bringing innovative ideas and solutions to enhance the websites' performance and user experience.",
+      "Provide ongoing support and maintenance for the websites, promptly addressing user inquiries and technical issues while continuously seeking opportunities for improvement.",
+    ],
+    image: {
+      alt: "AMPAS",
+      src: "./images/ampas.png",
+    },
+  });
+  const [avtr] = useState({
+    companyName: "Back-End Developer at Lightstorm Entertainment",
+    companyLocationAndDate: "Manhattan Beach, CA / July 2019 – January 2023",
+    tasks: [
+      "Collaborated with development team to implement essential application for production of Avatar sequels.",
+      "Developed and maintained RESTful APIs, including tweaking previous endpoints, for a browser-based digital asset management and human workflow system.",
+      "Designed mapping schemas using Elasticsearch to improve query performance.",
+      "Managed and maintained MySQL databases using Python and wrote Java code for CRUD operations.",
+      "Troubleshoot network connectivity errors and analyzed server logs for inconsistencies.",
+      "Conducted endpoint testing by writing scripts or using unit testing frameworks to ensure the functionality and reliability of APIs.",
+      "Developed scripts to modify data as needed, ensuring data integrity and supporting data manipulation requirements.",
+      "Developed Java code utilizing software tools for image processing (Imagemagick) and multimedia handling (FFmpeg), to handle image and video processing and manipulation tasks.",
+      "Implemented Java application for synchronized binary data and file transfer from Lightstorm Entertainment's servers in Los Angeles to their servers located in New Zealand.",
+      "Provided support to the frontend team on proper access to data from our web services.",
+      "Resolved reported issues and addressed queries in a timely manner.",
+      "Contributed to improving code quality by implementing recommended best practices.",
+    ],
+    image: {
+      alt: "AVTR",
+      src: "./images/avatar.png",
+    },
+  });
+
+  const setAmpasSkills = () => {
+    return (
+      <SkillsContainer>
+        <SkillIconAndName
+          name={"Java"}
+          icon={<i className="devicon-java-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Spring"}
+          icon={<i className="devicon-spring-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Python"}
+          icon={<i className="devicon-python-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"PostgreSQL"}
+          icon={<i className="devicon-postgresql-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"MySQL"}
+          icon={<i className="devicon-mysql-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"JavaScript"}
+          icon={<i className="devicon-javascript-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"GitLab"}
+          icon={<i className="devicon-gitlab-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Git"}
+          icon={<i className="devicon-git-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Jenkins"}
+          icon={<i className="devicon-jenkins-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"nginx"}
+          icon={<i className="devicon-nginx-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"AWS"}
+          icon={<i className="devicon-amazonwebservices-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Vim"}
+          icon={<i className="devicon-vim-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"ElasticSearch"}
+          icon={
+            <img alt="elasticsearch" src="./images/elasticsearch (1).png" />
+          }
+        />
+        <SkillIconAndName
+          name={"ImageMagick"}
+          icon={<img alt="imagemagick" src="./images/imagemagick.png" />}
+        />
+      </SkillsContainer>
+    );
+  };
+  const setAmpasLinks = () => {
+    return (
+      <LinkContainer
+        href="https://aframe.oscars.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="./images/aframe-icon.png"
+          alt="A.FRAME"
+          className="aframe-logo"
+        ></img>
+      </LinkContainer>
+    );
+  };
+
+  const setAvtrSkills = () => {
+    return (
+      <SkillsContainer>
+        <SkillIconAndName
+          name={"Java"}
+          icon={<i className="devicon-java-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Spring"}
+          icon={<i className="devicon-spring-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Python"}
+          icon={<i className="devicon-python-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"PostgreSQL"}
+          icon={<i className="devicon-postgresql-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"MySQL"}
+          icon={<i className="devicon-mysql-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"JavaScript"}
+          icon={<i className="devicon-javascript-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"GitLab"}
+          icon={<i className="devicon-gitlab-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Git"}
+          icon={<i className="devicon-git-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Jenkins"}
+          icon={<i className="devicon-jenkins-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"nginx"}
+          icon={<i className="devicon-nginx-plain-wordmark colored"></i>}
+        />
+        <SkillIconAndName
+          name={"AWS"}
+          icon={<i className="devicon-amazonwebservices-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"Vim"}
+          icon={<i className="devicon-vim-plain colored"></i>}
+        />
+        <SkillIconAndName
+          name={"ElasticSearch"}
+          icon={
+            <img alt="elasticsearch" src="./images/elasticsearch (1).png" />
+          }
+        />
+        <SkillIconAndName
+          name={"ImageMagick"}
+          icon={<img alt="imagemagick" src="./images/imagemagick.png" />}
+        />
+      </SkillsContainer>
+    );
+  };
+
+  const setAvtrLinks = () => {
+    return (
+      <AvtrLinkContainer
+        href="https://www.imdb.com/name/nm14548800/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="./images/imdb-icon.png"
+          alt="IMDB"
+          className="imdb-logo"
+        ></img>
+      </AvtrLinkContainer>
+    );
+  };
+
+  useEffect(() => {
+    document.title = "Meisam Poorzand | Experiences";
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <ExperiencesContainer>
+      <Experience props={ampas} Skills={setAmpasSkills} Links={setAmpasLinks} />
+      <Experience props={avtr} Skills={setAvtrSkills} Links={setAvtrLinks} />
+    </ExperiencesContainer>
+  );
+}
