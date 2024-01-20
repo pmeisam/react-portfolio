@@ -14,7 +14,6 @@ const Experience = ({ Skills, Links, props }) => {
 
   return (
     <ExperienceContainer
-    // data-aos="fade"
     >
       <ExperienceCard>
         <div style={{width: "100%"}}>

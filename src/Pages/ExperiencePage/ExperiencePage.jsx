@@ -9,16 +9,16 @@ export default function ExperiencePage() {
   const { theme } = useContext(ThemeContext);
   const [ampas] = useState({
     companyName:
-      "Full-Stack Developer at The Academy of Motion Picture Arts and Sciences",
+      "Senior Full-Stack Developer at The Academy of Motion Picture Arts and Sciences",
     companyLocationAndDate: "Los Angeles, CA - Remote / May 2023 – Present",
     tasks: [
-      "Develop and enhance the aframe.oscars.org website and nominee portal for the Academy of Motion Picture Arts and Sciences, ensuring visually appealing and user-friendly interfaces.",
+      "Develop and contribute to the Academy Museum, Nominees Portal, Oscars Official, and AFrame Newsletter websites for the Academy of Motion Picture Arts and Sciences, ensuring visually appealing and user-friendly interfaces.",
       "Collaborate with designers and stakeholders to gather requirements and implement intuitive user interfaces, incorporating responsive design techniques for seamless experiences across devices.",
-      "Utilize backend scripts and components, specializing in server-side rendering using Node.js, and employ AWS Lambda and API Gateway for secure and efficient communication channels.",
+      "Implement server-side rendering using Node.js and utilize AWS Lambda and API Gateway for secure and efficient communication channels.",
       "Retrieve and manage data for the websites using Contentful, optimizing performance through code minification, image optimization, and caching techniques.",
       "Deploy projects to AWS Elastic Beanstalk, ensuring reliable and scalable hosting, while conducting code reviews and debugging to maintain code quality.",
       "Implement authentication and authorization mechanisms, integrating third-party APIs and services for enhanced functionality and secure user access.",
-      "Develop and maintain the nominee portal, providing a secure platform for nominees to access information, submit materials.",
+      "Develop and maintain the Nominee Portal, providing a secure platform for nominees to access information and submit materials.",
       "Collaborate with cross-functional teams in an agile work environment, delivering high-quality results efficiently and aligning with AMPAS goals and objectives.",
       "Monitor website analytics, generate reports, and contribute to the documentation of code, processes, and best practices for knowledge sharing.",
       "Stay updated with the latest web development trends, bringing innovative ideas and solutions to enhance the websites' performance and user experience.",
@@ -66,6 +66,10 @@ export default function ExperiencePage() {
   const setAmpasSkills = () => {
     return (
       <Styles.SkillsContainer>
+        <SkillIconAndName
+          name={"Next.js"}
+          icon={<i className="devicon-nextjs-plain colored"></i>}
+        />
         <SkillIconAndName
           name={"Node.js"}
           icon={<i className="devicon-nodejs-plain colored"></i>}
@@ -137,19 +141,34 @@ export default function ExperiencePage() {
 
   const setAmpasLinks = () => {
     return (
-      <Styles.AmpasLinksContainer
-        href="https://aframe.oscars.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        theme={theme}
-      >
-        <img
-          src="./images/oscar.png"
-          alt="A.FRAME"
-          className="oscar-logo"
-        ></img>
-        A.FRAME
-      </Styles.AmpasLinksContainer>
+      <>
+        {/* <Styles.AmpasLinksContainer
+          href="https://aframe.oscars.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          theme={theme}
+        >
+          <img
+            src="./images/oscar.png"
+            alt="A.FRAME"
+            className="oscar-logo"
+          ></img>
+          A.FRAME
+        </Styles.AmpasLinksContainer>
+        <Styles.AmpasLinksContainer
+          href="https://academymuseum.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          theme={theme}
+        >
+          <img
+            src="./images/oscar.png"
+            alt="Academy Museum"
+            className="oscar-logo"
+          ></img>
+          Academy Museum
+        </Styles.AmpasLinksContainer> */}
+      </>
     );
   };
 

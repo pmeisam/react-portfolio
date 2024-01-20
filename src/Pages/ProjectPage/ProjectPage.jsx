@@ -11,6 +11,36 @@ const ProjectPage = () => {
   const fifthDownRef = useRef(null);
   const sixthDownRef = useRef(null);
 
+  const [nomineesPortal] = useState({
+    img: "images/nomineesPortal.png",
+    name: "Oscars Nominees Portal",
+    description:
+      "The Oscar Nominees Portal serves as their exclusive digital haven, intricately designed for profile management and unparalleled access to prestigious Academy events, providing nominees with a personalized Oscars journey.",
+    toolsUsed: ["React.js", "MSAL", "AWS Cloudfront", "AWS S3", "Contentful"],
+    link: null,
+  });
+  const [academyMuseum] = useState({
+    img: "images/academyMuseum.png",
+    name: "The Academy Museum",
+    description:
+      "The Academy Museum website is a sophisticated online platform dedicated to the world of cinema. It enables seamless exploration of film history, captivating exhibits, and event updates. Visitors can immerse themselves in the magic of movies, while my contributions to the website's development ensure a user-friendly experience for enthusiasts worldwide.",
+    link: "academymuseum.org",
+  });
+  const [oscars] = useState({
+    img: "images/oscars.png",
+    name: "Oscars Official",
+    description:
+      "This official website provides a comprehensive portal for everything related to the Academy Awards. From nominee lists to event details, users can stay informed and engaged.",
+    link: "oscars.org",
+  });
+  const [aframe] = useState({
+    img: "images/aframe.png",
+    name: "Academy A.Frame NewsLetter",
+    description:
+      "Stay in the cinematic loop with aframe.oscars.org, the Academy's newsletter website. Dive into the latest updates, exclusive content, and behind-the-scenes stories.",
+    link: "aframe.oscars.org",
+  });
+
   const [nateLimo] = useState({
     img: "images/nateLimo.png",
     name: "Nate Limo Services",
@@ -26,8 +56,7 @@ const ProjectPage = () => {
       "Express.js",
       "Google Maps API",
     ],
-    link: "https://natelimoservices.firebaseapp.com/",
-    gitHubLink: "https://github.com/adibfazli/nate-limo-service",
+    link: null,
   });
   const [arcadiaCars] = useState({
     img: "images/arcadiacars.png",
@@ -46,71 +75,7 @@ const ProjectPage = () => {
       "AWS EC2",
       "AWS S3",
     ],
-    link: "http://www.arcadiacars.com/",
-    gitHubLink: "https://github.com/pmeisam/arcadia_automobile",
-  });
-  const [devSpot] = useState({
-    img: "images/devspot.png",
-    name: "devSpot",
-    description:
-      "DevSpot is a cutting-edge web app that allows developers to share their projects through interactive iframes. Users can chat seamlessly with each other, and what sets it apart is the live shared projects, creating an immersive experience that inspires developers of all levels.",
-    toolsUsed: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Heroku",
-      "Socket.io",
-      "Mongoose",
-      "Token Based Auth",
-      "Material UI",
-      "Bootstrap",
-    ],
-    link: "http://dev-spot.herokuapp.com/",
-    gitHubLink: "https://github.com/pmeisam/devSpot",
-  });
-  const [memesagram] = useState({
-    img: "images/memesagram.png",
-    name: "MEMESAGRAM",
-    description:
-      "Memesagram is a user-friendly social media platform for meme lovers, featuring easy photo uploads, commenting, liking, and profile updates. With powerful editing tools, users can effortlessly edit or delete their comments and captions, ensuring a seamless and enjoyable experience.",
-    toolsUsed: [
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Heroku",
-      "Mongoose",
-      "Passport Authentication",
-      "Cloudinary",
-      "Bootstrap",
-    ],
-    link: "http://memesagram.herokuapp.com/",
-    gitHubLink: "https://github.com/pmeisam/instagram",
-  });
-  const [triplaner] = useState({
-    img: "images/triplaner.png",
-    name: "TRIPLANER",
-    description:
-      "A full-service travel planning app that offers a personalized travel experience that caters to your budget. Whether you're looking for a romantic getaway, a family vacation, or a weekend escape, we'll match you with the best flights and hotels to suit your preferences.",
-    toolsUsed: [
-      "Python",
-      "django",
-      "PostgreSQL",
-      "IATA Codes API",
-      "Amadeus API",
-      "Bootstrap",
-    ],
-    link: "http://triplaner.herokuapp.com/",
-    gitHubLink: "https://github.com/pmeisam/trip-planner",
-  });
-  const [minesweeper] = useState({
-    img: "images/minesweeper.png",
-    name: "MINESWEEPER",
-    description:
-      "This game is a thrilling challenge that involves finding hidden mines. Each box you click reveals a number of nearby mines or a mine itself. By using flags, you can mark suspected mine locations. The goal is to click on all boxes without uncovering a mine. Be careful and strategic, as the stakes are high.",
-    toolsUsed: ["JavaScript", "jQuery", "HTML", "CSS"],
-    link: "https://pmeisam.github.io/minesweeper/",
-    gitHubLink: "https://github.com/pmeisam/minesweeper",
+    link: "arcadiacars.com",
   });
 
   useEffect(() => {
@@ -120,100 +85,93 @@ const ProjectPage = () => {
 
   return (
     <ProjectsWrapper>
-      <Fade big>
-        <div
-          className="project_container"
-          ref={(el) => {
-            firstDownRef.current = el;
-          }}
-        >
-          <ProjectComponent
-            project={nateLimo}
-            downRef={secondDownRef}
-            down={true}
-          />
-        </div>
-      </Fade>
+      <div
+        className="project_container"
+        ref={(el) => {
+          firstDownRef.current = el;
+        }}
+      >
+        <ProjectComponent
+          project={academyMuseum}
+          downRef={secondDownRef}
+          down={true}
+        />
+      </div>
 
-      <Fade big>
-        <div
-          className="project_container"
-          ref={(el) => {
-            secondDownRef.current = el;
-          }}
-        >
-          <ProjectComponent
-            project={arcadiaCars}
-            downRef={thirdDownRef}
-            down={true}
-            upRef={firstDownRef}
-            up={true}
-          />
-        </div>
-      </Fade>
+      <div
+        className="project_container"
+        ref={(el) => {
+          secondDownRef.current = el;
+        }}
+      >
+        <ProjectComponent
+          project={oscars}
+          downRef={thirdDownRef}
+          down={true}
+          upRef={firstDownRef}
+          up={true}
+        />
+      </div>
 
-      <Fade big>
-        <div
-          className="project_container"
-          ref={(el) => {
-            thirdDownRef.current = el;
-          }}
-        >
-          <ProjectComponent
-            project={devSpot}
-            downRef={fourthDownRef}
-            down={true}
-            upRef={secondDownRef}
-            up={true}
-          />
-        </div>
-      </Fade>
-      <Fade big>
-        <div
-          className="project_container"
-          ref={(el) => {
-            fourthDownRef.current = el;
-          }}
-        >
-          <ProjectComponent
-            project={triplaner}
-            downRef={fifthDownRef}
-            down={true}
-            upRef={thirdDownRef}
-            up={true}
-          />
-        </div>
-      </Fade>
-      <Fade big>
-        <div
-          className="project_container"
-          ref={(el) => {
-            fifthDownRef.current = el;
-          }}
-        >
-          <ProjectComponent
-            project={memesagram}
-            downRef={sixthDownRef}
-            down={true}
-            upRef={fourthDownRef}
-            up={true}
-          />
-        </div>
-      </Fade>
-      <Fade big>
-        <div
-          className="project_container"
-          ref={(el) => {
-            sixthDownRef.current = el;
-          }}
-        >
-          <ProjectComponent
-            project={minesweeper}
-            upRef={fifthDownRef}
-            up={true}
-          />
-        </div>
-      </Fade>
+      <div
+        className="project_container"
+        ref={(el) => {
+          thirdDownRef.current = el;
+        }}
+      >
+        <ProjectComponent
+          project={nomineesPortal}
+          downRef={fourthDownRef}
+          down={true}
+          upRef={secondDownRef}
+          up={true}
+        />
+      </div>
+
+      <div
+        className="project_container"
+        ref={(el) => {
+          fourthDownRef.current = el;
+        }}
+      >
+        <ProjectComponent
+          project={aframe}
+          downRef={fifthDownRef}
+          down={true}
+          upRef={thirdDownRef}
+          up={true}
+        />
+      </div>
+
+      <div
+        className="project_container"
+        ref={(el) => {
+          fifthDownRef.current = el;
+        }}
+      >
+        <ProjectComponent
+          project={arcadiaCars}
+          downRef={sixthDownRef}
+          down={true}
+          upRef={fourthDownRef}
+          up={true}
+        />
+      </div>
+
+      <div
+        className="project_container"
+        ref={(el) => {
+          sixthDownRef.current = el;
+        }}
+      >
+        <ProjectComponent
+          project={nateLimo}
+          downRef={null}
+          down={false}
+          upRef={fifthDownRef}
+          up={true}
+        />
+      </div>
     </ProjectsWrapper>
   );
 };
@@ -239,19 +197,4 @@ const ProjectsWrapper = styled.div`
       margin: 35% 0;
     }
   }
-  // height: 100vh;
-  // overflow-y: scroll;
-  // scroll-snap-type: y mandatory;
-
-  // .project_container {
-  //   height: 100vh;
-  //   flex: 0 0 100%;
-  //   scroll-snap-align: center;
-  // }
-  // .project_container {
-  //   display: flex;
-  //   height: 100vh;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
 `;

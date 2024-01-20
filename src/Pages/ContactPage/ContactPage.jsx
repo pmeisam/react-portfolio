@@ -6,8 +6,7 @@ import emailjs from "emailjs-com";
 import SubmitPopup from "../../Components/SubmitPopup/SubmitPopup";
 import Input from "../../Components/Shared/Input";
 import TextArea from "../../Components/Shared/Textarea";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { motion } from "framer-motion/dist/framer-motion";
 
 const ContactPage = () => {
   const { theme } = useContext(ThemeContext);
@@ -136,7 +135,7 @@ const ContactPage = () => {
       justify-content: center;
       margin: 30px auto;
       flex-wrap: wrap;
-      width: 50%;
+      width: 100%;
     }
 
     .contact_social i {
@@ -144,10 +143,14 @@ const ContactPage = () => {
     }
     .icon_social {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
-      background-image: linear-gradient( to bottom, rgb(117,101,236), rgb(122,42,196) ) !important;
+      background-image: linear-gradient(
+        to bottom,
+        rgb(117, 101, 236),
+        rgb(122, 42, 196)
+      ) !important;
       color: #fff;
       margin-top: 20px;
       margin-right: 20px;
@@ -162,7 +165,7 @@ const ContactPage = () => {
       align-items: center;
     }
     .icon_social:hover {
-      box-shadow: 0px 0px 26px 4px rgb(117,101,236);
+      box-shadow: 0px 0px 26px 4px rgb(117, 101, 236);
     }
 
     @media only screen and (max-width: 1300px) {
@@ -277,9 +280,6 @@ const ContactPage = () => {
   useEffect(() => {
     document.title = "Meisam Poorzand | Contact";
     window.scrollTo(0, 0);
-    AOS.init({
-      duration: 2000,
-    });
   }, []);
 
   return (
@@ -287,7 +287,12 @@ const ContactPage = () => {
       {popup ? <SubmitPopup closePopup={closePopup} /> : null}
       <main className="  m_w90_m-auto content ">
         <div className="parent_contact">
-          <div className="parent_form t_w90_m-auto">
+          <motion.div
+            animate={{ scale: 1 }}
+            transition={{ delay: 1 }}
+            initial={{ scale: 0 }}
+            className="parent_form t_w90_m-auto"
+          >
             <form onSubmit={sendEmail}>
               <h1 className="header">Contact me</h1>
               <Input
@@ -334,48 +339,22 @@ const ContactPage = () => {
                 Send
               </button>
             </form>
-          </div>
+          </motion.div>
           <div className="info t_w90_m-auto">
-            <div className="contact_bg_img">
+            <motion.div
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.5 }}
+              initial={{ scale: 0 }}
+              className="contact_bg_img"
+            >
               <ContactPageSVG className="contact_svg" />
-            </div>
+            </motion.div>
             <div>
-              <a
-                href="mailto: meisam.poorzand@gmail.com"
-                className="txt_social_contact"
-                rel="noopener noreferrer"
-              >
-                <p>meisam.poorzand@gmail.com</p>
-              </a>
               <div className="social contact_social">
-                <a
-                  target="_blank"
-                  href="https://www.instagram.com/me.i.sam/"
-                  className="icon_social"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-instagram"></i>
-                  {/* <p>Instagram</p> */}
-                </a>
-                <a
-                  target="_blank"
-                  href="https://www.facebook.com/pmeisam"
-                  className="icon_social"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-facebook-f"></i>
-                  {/* <p>Facebook</p> */}
-                </a>
-                <a
-                  target="_blank"
-                  href="https://www.twitter.com/pmeisam"
-                  className="icon_social"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-twitter"></i>
-                  {/* <p>Twitter</p> */}
-                </a>
-                <a
+                <motion.a
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 1.5 }}
+                  initial={{ scale: 0 }}
                   target="_blank"
                   href="https://www.github.com/pmeisam"
                   className="icon_social"
@@ -383,8 +362,11 @@ const ContactPage = () => {
                 >
                   <i className="fab fa-github"></i>
                   {/* <p>GitHub</p> */}
-                </a>
-                <a
+                </motion.a>
+                <motion.a
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 2 }}
+                  initial={{ scale: 0 }}
                   target="_blank"
                   href="https://www.linkedin.com/in/pmeisam"
                   className="icon_social"
@@ -392,8 +374,11 @@ const ContactPage = () => {
                 >
                   <i className="fab fa-linkedin"></i>
                   {/* <p>LinkedIn</p> */}
-                </a>
-                <a
+                </motion.a>
+                <motion.a
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 2.5 }}
+                  initial={{ scale: 0 }}
                   target="_blank"
                   href="mailto: meisam.poorzand@gmail.com"
                   className="icon_social"
@@ -401,7 +386,7 @@ const ContactPage = () => {
                 >
                   <i className="far fa-envelope"></i>
                   {/* <p>E-mail</p> */}
-                </a>
+                </motion.a>
               </div>
             </div>
           </div>

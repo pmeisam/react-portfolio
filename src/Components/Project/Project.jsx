@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { ThemeContext } from "../../Context/ThemeContext";
 import Arrow from "../../Components/Arrow/Arrow.jsx";
-// import Fade from "react-reveal/Zoom";
+import LinkSvg from "../SvgIcons/LinkSvg.jsx";
+import { motion } from "framer-motion/dist/framer-motion";
 
 const ProjectComponent = (props) => {
   const { theme } = useContext(ThemeContext);
@@ -39,7 +40,7 @@ const ProjectComponent = (props) => {
         }
         & > p {
           font-size: 16px;
-          margin-bottom: 10px;
+          margin-bottom: 4px;
           color: rgb(138, 138, 138);
         }
         & > .techs {
@@ -62,29 +63,35 @@ const ProjectComponent = (props) => {
           justify-content: space-evenly;
           width: 60%;
           & > a {
-            margin-top: 10px;
-            // font-size: 20px;
-            & > i {
-              font-size: 20px;
-              padding: 15px;
-              border-radius: 100px;
-              color: rgb(255, 255, 255);
-              background-image: linear-gradient(
-                to bottom,
-                rgb(117, 101, 236),
-                rgb(122, 42, 196)
-              ) !important;
+            --c: ${theme.hoverColor};
+            --h: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            line-height: var(--h);
+            background: linear-gradient(var(--c) 0 0) no-repeat
+              calc(200% - var(--_p, 0%)) 100%/200% var(--_p, 0.08em);
+            color: ${theme.linkColor};
+            overflow: hidden;
+            text-shadow: 0 calc(-1 * var(--_t, 0em)) var(--c),
+              0 calc(var(1.3em) - var(--_t, 0em)) #fff;
+            transition: 0.3s var(--_s, 0s),
+              background-position 0.3s calc(0.3s - var(--_s, 0s));
+            svg {
+              margin-right: 10px;
             }
-            & > i:hover {
-              box-shadow: 0px 0px 26px 4px rgb(122, 42, 196);
-            }
+          }
+          & > a:hover {
+            --_t: var(--h);
+            --_p: 100%;
+            --_s: 0.3s;
           }
         }
       }
     }
 
     @media screen and (max-width: 1324px) {
-      
       & > .project-container {
         & > img {
           width: 670px;
@@ -140,8 +147,8 @@ const ProjectComponent = (props) => {
             justify-content: space-evenly;
             width: 80%;
             & > a {
-              margin-top: 10px;
-              font-size: 40px;
+            }
+            & > a:hover {
             }
           }
         }
@@ -167,28 +174,17 @@ const ProjectComponent = (props) => {
           & > h1 {
             font-family: "Saira Stencil One", cursive;
             margin: 0;
+            font-size: 22px;
           }
           & > p {
-            font-size: 13px;
+            font-size: 16px;
           }
-          & > .techs {
-            display: grid;
-            text-align: center;
-            grid-template-columns: 120px 120px;
-            & > p {
-              font-size: 9px;
-              margin: 2px;
-              padding: 3px;
-            }
-          }
+
           & > .links {
             display: flex;
             align-items: center;
             justify-content: space-evenly;
-            width: 80%;
-            & > a {
-              font-size: 40px;
-            }
+            width: 100%;
           }
         }
       }
@@ -198,37 +194,50 @@ const ProjectComponent = (props) => {
   return props.project ? (
     <Project>
       <Arrow upRef={props.upRef} up={props.up} />
-      <div className="project-container">
-        <img src={props.project.img} alt="" />
+      <motion.div className="project-container">
+        <motion.img
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          src={props.project.img}
+          alt=""
+        />
 
         <div>
-          <h1>{props.project.name}</h1>
-          <p>{props.project.description}</p>
-
-          <div className="techs">
-            {props.project.toolsUsed.map((t, index) => (
-              <p key={index}>{t}</p>
-            ))}
-          </div>
-
-          <div className="links">
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href={props.project.link}
+          <motion.h1
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+          >
+            {props.project.name}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.9 }}
+          >
+            {props.project.description}
+          </motion.p>
+          {!!props.project.link && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
+              className="links"
             >
-              <i className="fas fa-globe-americas"></i>
-            </a>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href={props.project.gitHubLink}
-            >
-              <i className="fab fa-github"></i>
-            </a>
-          </div>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={`https://` + props.project.link}
+              >
+                {/* <i className="fas fa-globe-americas"></i> */}
+                <LinkSvg width={18} height={18} fill={theme.linkColor} />
+                {props.project.link}
+              </a>
+            </motion.div>
+          )}
         </div>
-      </div>
+      </motion.div>
       <Arrow downRef={props.downRef} down={props.down} />
     </Project>
   ) : (

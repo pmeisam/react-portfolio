@@ -247,7 +247,6 @@ function Navbar() {
           ::after {
             content: none;
           }
-
         }
         & .isActive {
           flex-direction: column;
@@ -324,7 +323,9 @@ function Navbar() {
           to="/"
           title="Home"
         >
-          <div className="divLinks"><i className="fas fa-home"></i></div>
+          <div className="divLinks">
+            <i className="fas fa-home"></i>
+          </div>
         </NavLink>
 
         <NavLink
@@ -332,7 +333,9 @@ function Navbar() {
           to="/experiences"
           title="Experiences"
         >
-          <div className="divLinks"><i className="fas fa-code"></i></div>
+          <div className="divLinks">
+            <i className="fas fa-code"></i>
+          </div>
         </NavLink>
 
         <NavLink
@@ -340,7 +343,9 @@ function Navbar() {
           to="/projects"
           title="Projects"
         >
-          <div className="divLinks"><i className="fas fa-layer-group"></i></div>
+          <div className="divLinks">
+            <i className="fas fa-layer-group"></i>
+          </div>
         </NavLink>
 
         <NavLink
@@ -348,14 +353,17 @@ function Navbar() {
           to="/contact"
           title="Contact"
         >
-          <div className="divLinks"><i className="fas fa-phone"></i></div>
+          <div className="divLinks">
+            <i className="fas fa-phone"></i>
+          </div>
         </NavLink>
 
         <div className="settingContent">
-          <p className="setting"><i className="fas fa-cog"></i></p>
+          <p className="setting">
+            <i className="fas fa-cog"></i>
+          </p>
           <Switch className="themes" />
         </div>
-        
       </div>
     </NavWrapper>
   );
