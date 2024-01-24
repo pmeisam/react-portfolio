@@ -9,7 +9,7 @@ export default function ExperiencePage() {
   const { theme } = useContext(ThemeContext);
   const [ampas] = useState({
     companyName:
-      "Full-Stack Developer at The Academy of Motion Picture Arts and Sciences",
+      "Senior Full-Stack Developer at The Academy of Motion Picture Arts and Sciences",
     companyLocationAndDate: "Los Angeles, CA - Remote / May 2023 – Present",
     tasks: [
       "Develop and contribute to the Academy Museum, Nominees Portal, Oscars Official, and AFrame Newsletter websites for the Academy of Motion Picture Arts and Sciences, ensuring visually appealing and user-friendly interfaces.",
