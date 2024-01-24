@@ -11,6 +11,7 @@ const Intro = styled.div`
     height: 300px;
     margin: 0 auto;
     display: block;
+    margin-top: 50px;
   }
 
   @media screen and (min-width: 600px) {
@@ -23,12 +24,12 @@ const Intro = styled.div`
   @media screen and (min-width: 900px) {
     .svg-container {
       position: absolute;
-      right: 10px;
+      right: 80px;
       bottom: 10px;
     }
     svg {
-      width: 500px;
-      height: 500px;
+      width: 400px;
+      height: 400px;
     }
   }
 `;
@@ -177,11 +178,11 @@ const HomePage = () => {
       </Wrapper>
       <motion.div
         className="svg-container"
-        animate={{ scale: 1 }}
-        transition={{ delay: 1 }}
-        initial={{ scale: 0 }}
+        animate={{ y: 0 }}
+        transition={{ delay: 0.5 }}
+        initial={{ y: -300 }}
       >
-        <HomePageSvg />
+        <HomePageSvg fill={theme.fontColor} />
       </motion.div>
     </Intro>
   );
